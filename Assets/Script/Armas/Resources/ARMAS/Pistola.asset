@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f503eb4b0061bf44930c808d7c9e9de, type: 3}
+  m_Name: Pistola
+  m_EditorClassIdentifier: 
+  cadencia: 0.5
+  retroceso: 8
+  au_noAu: 1
+  instantaneo: 1
+  cantidadPool: 10
+  _bala: {fileID: 11400000, guid: 982f7b6f476fdd24382bd222e8ba2875, type: 2}
+  dirPrefab: BALA_PISTOLA
+  velocidadBala: 20
+  m_so_CONFIG_PJ: {fileID: 11400000, guid: 1f64644d54fd1634fae3fb1450a476e2, type: 2}

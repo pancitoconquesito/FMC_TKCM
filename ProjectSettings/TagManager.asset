@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Platform
+  - NS
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Plataforma
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2494634073
+    locked: 0
+  - name: atras
+    uniqueID: 1629554295
+    locked: 0
+  - name: platform
+    uniqueID: 4057840731
+    locked: 0
+  - name: NS_NPC
+    uniqueID: 3696143067
+    locked: 0
+  - name: PJ
+    uniqueID: 1731201585
+    locked: 0
+  - name: sobre
+    uniqueID: 1230800305
+    locked: 0
+  - name: MasSobre
+    uniqueID: 1453700155
+    locked: 0
+  - name: particulas
+    uniqueID: 1078816517
+    locked: 0
+  - name: muerte
+    uniqueID: 1583975891
+    locked: 0
+  - name: ui
+    uniqueID: 3934658271
+    locked: 0
