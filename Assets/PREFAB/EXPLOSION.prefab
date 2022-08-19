@@ -66,6 +66,7 @@ MonoBehaviour:
   impactoEmpuje: 15
   posicionDanio: {x: 0, y: 0}
   m_transformAtacante: {fileID: 0}
+  m_A_QuienDania: 2
 --- !u!212 &4013825385935020635
 SpriteRenderer:
   m_ObjectHideFlags: 0

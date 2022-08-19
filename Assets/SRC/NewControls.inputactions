@@ -60,6 +60,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Special",
+                    "type": "Button",
+                    "id": "96402ca5-cf14-45d8-afa4-e136691a0049",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Inventary",
                     "type": "Button",
                     "id": "d7765136-ab70-4d6d-aded-ee3b591a5597",
@@ -232,6 +241,28 @@
                     "processors": "",
                     "groups": "GAMEPAD",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d061358e-3def-45e2-abb1-38984fd8e4b6",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KEYBOARD",
+                    "action": "Special",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2d0091e1-e09c-4ef8-be31-e4fa23d1e698",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GAMEPAD",
+                    "action": "Special",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

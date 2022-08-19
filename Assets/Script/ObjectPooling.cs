@@ -71,20 +71,23 @@ public class ObjectPooling : MonoBehaviour
         colaOBjeto.Enqueue(go);
     }
     //obtener
-    public void emitirObj(float tiempo, bool withTime)
+    public GameObject emitirObj(float tiempo, bool withTime)
     {
         
         GameObject objA = getObjPool();
         if (objA != null)
             StartCoroutine(retornarObjPool(tiempo, objA, withTime));
         //print("emitiendo : " + cantObjeto);
+
+        return objA;
     }
+    /*
     public void emitirObj_BALA(float tiempo, bool withTime)
     {
         GameObject objA = getObjPool();
         if (objA != null)
             StartCoroutine(retornarObjPool(1, objA, withTime));
-    }
+    }*/
     IEnumerator retornarObjPool(float tiempo, GameObject miObj, bool withTime)
     {
         yield return new WaitForSecondsRealtime(tiempo);
@@ -97,5 +100,14 @@ public class ObjectPooling : MonoBehaviour
     public string getNombre()
     {
         return nombreObjeto;
+    }
+
+    private void OnDestroy()
+    {
+        while (colaOBjeto.Count > 0)
+        {
+            GameObject currentOBJ = colaOBjeto.Dequeue();
+            Destroy(currentOBJ);
+        }
     }
 }

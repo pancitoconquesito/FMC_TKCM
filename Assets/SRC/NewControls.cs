@@ -82,6 +82,15 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Special"",
+                    ""type"": ""Button"",
+                    ""id"": ""96402ca5-cf14-45d8-afa4-e136691a0049"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Inventary"",
                     ""type"": ""Button"",
                     ""id"": ""d7765136-ab70-4d6d-aded-ee3b591a5597"",
@@ -256,6 +265,28 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d061358e-3def-45e2-abb1-38984fd8e4b6"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KEYBOARD"",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d0091e1-e09c-4ef8-be31-e4fa23d1e698"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GAMEPAD"",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -363,6 +394,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         m_PLAYER_Kick = m_PLAYER.FindAction("Kick", throwIfNotFound: true);
         m_PLAYER_Dash = m_PLAYER.FindAction("Dash", throwIfNotFound: true);
         m_PLAYER_Shoot = m_PLAYER.FindAction("Shoot", throwIfNotFound: true);
+        m_PLAYER_Special = m_PLAYER.FindAction("Special", throwIfNotFound: true);
         m_PLAYER_Inventary = m_PLAYER.FindAction("Inventary", throwIfNotFound: true);
         // DIALOGOS
         m_DIALOGOS = asset.FindActionMap("DIALOGOS", throwIfNotFound: true);
@@ -433,6 +465,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_PLAYER_Kick;
     private readonly InputAction m_PLAYER_Dash;
     private readonly InputAction m_PLAYER_Shoot;
+    private readonly InputAction m_PLAYER_Special;
     private readonly InputAction m_PLAYER_Inventary;
     public struct PLAYERActions
     {
@@ -444,6 +477,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         public InputAction @Kick => m_Wrapper.m_PLAYER_Kick;
         public InputAction @Dash => m_Wrapper.m_PLAYER_Dash;
         public InputAction @Shoot => m_Wrapper.m_PLAYER_Shoot;
+        public InputAction @Special => m_Wrapper.m_PLAYER_Special;
         public InputAction @Inventary => m_Wrapper.m_PLAYER_Inventary;
         public InputActionMap Get() { return m_Wrapper.m_PLAYER; }
         public void Enable() { Get().Enable(); }
@@ -472,6 +506,9 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @Shoot.started -= m_Wrapper.m_PLAYERActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_PLAYERActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_PLAYERActionsCallbackInterface.OnShoot;
+                @Special.started -= m_Wrapper.m_PLAYERActionsCallbackInterface.OnSpecial;
+                @Special.performed -= m_Wrapper.m_PLAYERActionsCallbackInterface.OnSpecial;
+                @Special.canceled -= m_Wrapper.m_PLAYERActionsCallbackInterface.OnSpecial;
                 @Inventary.started -= m_Wrapper.m_PLAYERActionsCallbackInterface.OnInventary;
                 @Inventary.performed -= m_Wrapper.m_PLAYERActionsCallbackInterface.OnInventary;
                 @Inventary.canceled -= m_Wrapper.m_PLAYERActionsCallbackInterface.OnInventary;
@@ -497,6 +534,9 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @Special.started += instance.OnSpecial;
+                @Special.performed += instance.OnSpecial;
+                @Special.canceled += instance.OnSpecial;
                 @Inventary.started += instance.OnInventary;
                 @Inventary.performed += instance.OnInventary;
                 @Inventary.canceled += instance.OnInventary;
@@ -571,6 +611,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         void OnKick(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnSpecial(InputAction.CallbackContext context);
         void OnInventary(InputAction.CallbackContext context);
     }
     public interface IDIALOGOSActions

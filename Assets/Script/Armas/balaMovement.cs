@@ -8,12 +8,13 @@ using UnityEngine;
 public class balaMovement : MonoBehaviour
 {
     [SerializeField] private float velocidad;
+    [SerializeField] private bool bulletENEMY;
     private Rigidbody2D m_Rigidbody2D;
     void Start()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
     }
-    private float lado;
+    private float lado=1;
     public void setLado()
     {
         changeMirada miradaPJ = referencesMASTER.instancia.miradaPJ;
@@ -32,10 +33,17 @@ public class balaMovement : MonoBehaviour
     private void OnEnable()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
-        setLado();
+        if(!bulletENEMY)
+            setLado();
     }
     private void FixedUpdate()
     {
-        m_Rigidbody2D.velocity=Vector2.right * velocidad * lado;
+        //m_Rigidbody2D.velocity=Vector2.right * velocidad * lado;
+        
+        if(bulletENEMY)
+            m_Rigidbody2D.velocity = transform.up * velocidad * lado;
+        else
+            m_Rigidbody2D.velocity = transform.right * velocidad * lado;
+
     }
 }

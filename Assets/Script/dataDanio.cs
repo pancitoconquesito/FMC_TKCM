@@ -11,7 +11,10 @@ public class dataDanio : MonoBehaviour
     public Vector2 posicionDanio;
     public Transform m_transformAtacante;
     private GLOBAL_TYPES.ladoMirada m_lado;
+    //public bool daniarAEnemigo;
 
+    
+    public GLOBAL_TYPES.TipoDanio m_A_QuienDania;
     private void Start()
     {
         m_transformAtacante = transform;

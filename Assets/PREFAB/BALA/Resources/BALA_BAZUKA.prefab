@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8945415274639529217}
   - component: {fileID: 7816895446748265040}
   - component: {fileID: 7012397364886410561}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,6 +151,7 @@ MonoBehaviour:
   impactoEmpuje: 10
   posicionDanio: {x: 0, y: 0}
   m_transformAtacante: {fileID: 0}
+  m_A_QuienDania: 1
 --- !u!1 &7778084617433731793
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +165,7 @@ GameObject:
   - component: {fileID: 7778084617433731792}
   - component: {fileID: 6188334112463514414}
   - component: {fileID: 3538642575673090671}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BALA_BAZUKA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,6 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 1
+  bulletENEMY: 0
 --- !u!114 &6188334112463514414
 MonoBehaviour:
   m_ObjectHideFlags: 0

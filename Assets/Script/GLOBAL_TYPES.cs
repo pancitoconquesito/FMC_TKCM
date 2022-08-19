@@ -17,12 +17,17 @@ public class GLOBAL_TYPES
         inventary,
         jumpingWalk,
         dash,
-        //poderes
+        special,
    }
 
     public enum TIPO_DANIO
     {
         normal
     }
-    public enum ladoMirada {  izquierda, derecha}
+    public enum ladoMirada {  izquierda, derecha }
+
+    public enum TipoDanio
+    {
+        daniaA_pj, daniA_ns, daniaA_ALLL, nadie
+    }
 }

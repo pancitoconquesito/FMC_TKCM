@@ -37,6 +37,11 @@ public class movementPJ : MonoBehaviour
     [Header("- Shoot -")]
     [SerializeField] private shootPJ m_shootPJ;
 
+    [Header("- Special -")]
+    private ISpecial m_ISpecial;
+    [SerializeField] private int aaaa;
+
+
     private NewControls m_ControlPJ;
     private float valorInput_Horizontal;
     private bool m_isGrounded = false;
@@ -66,8 +71,13 @@ public class movementPJ : MonoBehaviour
 
         m_ControlPJ.PLAYER.Shoot.performed += ctx => shootMethod();
         m_ControlPJ.PLAYER.Shoot.canceled += ctx => shootCancel();
-    }
 
+        m_ControlPJ.PLAYER.Special.started += ctx => special();
+    }
+    private void special()
+    {
+        m_ISpecial.activatePower();
+    }
     public void setParamMovement(so_CONFIG_PJ m_so_CONFIG_PJ)
     {
         velocidadCaminar = m_so_CONFIG_PJ.velocidadCaminar;
@@ -192,6 +202,7 @@ public class movementPJ : MonoBehaviour
     void Start()
     {
         m_estados = GLOBAL_TYPES.ESTADOS_PJ.normalMovement;
+
     }
     private void landed_function()
     {
@@ -287,6 +298,11 @@ public class movementPJ : MonoBehaviour
                     break;
                 }
             case GLOBAL_TYPES.ESTADOS_PJ.talk:
+                {
+                    m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x * 0.2f, m_rigidbody.velocity.y * 0.2f);
+                    break;
+                }
+            case GLOBAL_TYPES.ESTADOS_PJ.die:
                 {
                     m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x * 0.2f, m_rigidbody.velocity.y * 0.2f);
                     break;

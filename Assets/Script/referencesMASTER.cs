@@ -15,6 +15,7 @@ public class referencesMASTER : MonoBehaviour
     public ObjectPooling ObjectPooling_BALA_PJ;
     public changeMirada miradaPJ;
     public shootPJ m_shootPJ;
+    public Transform m_transformPJ;
     // Start is called before the first frame update
 
     private void Awake()

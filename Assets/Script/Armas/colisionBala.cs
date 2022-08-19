@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class colisionBala : MonoBehaviour
 {
-    //[SerializeField] private LayerMask layerSuelo;
     [SerializeField] private balaMovement m_balaMovement;
     [SerializeField] private balaVolverACola m_balaVolverACola;
     [SerializeField] private dataDanio m_dataDanio;
@@ -39,21 +38,13 @@ public class colisionBala : MonoBehaviour
 
             if (collision.CompareTag("Player"))
             {
-                //print("PJ _" + collision.name);
-                if (destruible_Player)
-                {
-                    m_balaVolverACola.volverPool();
-                    //verificarExplosion();
-                }
+                if (destruible_Player) m_balaVolverACola.volverPool();
             }
             if (collision.CompareTag("NS"))
             {
                 //print("NS _"+ collision.name);
-                if (destruible_NS)
-                {
-                    m_balaVolverACola.volverPool();
-                    //verificarExplosion();
-                }
+                if (destruible_NS) m_balaVolverACola.volverPool();
+        
             }
             idamageable.RecibirDanio_I(m_dataDanio);
         }
@@ -68,8 +59,6 @@ public class colisionBala : MonoBehaviour
                 current_cadenciaRespuesta = cadenciaRespuesta;
                 m_balaMovement.setVelocidad(-m_balaMovement.getVelocidad());
             }
-            //verificarExplosion();
-            //print("Suelo _" + collision.name);
         }
     }
 
@@ -78,7 +67,6 @@ public class colisionBala : MonoBehaviour
         if (explosivoColision && !explosionActiva)
         {
             explosionActiva = true;
-            //prefabExplosion
             Instantiate(prefabExplosion, transform.position, Quaternion.identity);
             print("explosion _");
         }
