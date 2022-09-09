@@ -17,10 +17,12 @@ public class colisionBala : MonoBehaviour
     private float cadenciaRespuesta = 0.08f;
     private float current_cadenciaRespuesta = 0;
     private bool explosionActiva=false;
+    //private ObjectPooling m_ObjectPooling;
+    [SerializeField] private retornarObjectPooling m_retornarObjectPooling;
     void Start()
     {
-
     }
+
     private void OnEnable()
     {
         explosionActiva = false;
@@ -32,19 +34,18 @@ public class colisionBala : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         IDamageable idamageable = collision.GetComponent<IDamageable>();
+        //print("nombre "+collision.name);
         if (idamageable != null)
         {
             verificarExplosion();
 
-            if (collision.CompareTag("Player"))
+            if (collision.transform.parent!=null && collision.transform.parent.CompareTag("Player"))
             {
-                if (destruible_Player) m_balaVolverACola.volverPool();
+                if (destruible_Player) m_retornarObjectPooling.retornar();//m_balaVolverACola.volverPool();
             }
-            if (collision.CompareTag("NS"))
+            if (collision.transform.CompareTag("NS"))
             {
-                //print("NS _"+ collision.name);
-                if (destruible_NS) m_balaVolverACola.volverPool();
-        
+                if (destruible_NS) m_retornarObjectPooling.retornar();//m_balaVolverACola.volverPool();
             }
             idamageable.RecibirDanio_I(m_dataDanio);
         }
@@ -52,8 +53,9 @@ public class colisionBala : MonoBehaviour
         {
             verificarExplosion();
 
-            if (destruible_Platform)
-                m_balaVolverACola.volverPool();
+            if (destruible_Platform) {
+                m_retornarObjectPooling.retornar();//m_balaVolverACola.volverPool();
+            }
             if (rebotable && current_cadenciaRespuesta<0)
             {
                 current_cadenciaRespuesta = cadenciaRespuesta;

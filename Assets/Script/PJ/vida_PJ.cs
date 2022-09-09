@@ -38,6 +38,7 @@ public class vida_PJ : MonoBehaviour, IDamageable
     public bool RecibirDanio_I(dataDanio m_dataDanio)
     {
         //print("VIDA PJ");
+        if (m_dataDanio.m_A_QuienDania == GLOBAL_TYPES.AFECTA_A_.daniA_ns || m_dataDanio.m_A_QuienDania == GLOBAL_TYPES.AFECTA_A_.nadie) return false;
         bool retorno = false;
         if (vivo && current_tiempoInvulnerable < 0)
         {

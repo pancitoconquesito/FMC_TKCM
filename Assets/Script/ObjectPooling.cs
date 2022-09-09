@@ -5,25 +5,36 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour
 {
-    public string nombreObjeto;
+    //public string nombreObjeto;
     public GameObject objeto;
     public int cantObjeto;
-    public bool AlinearConPadre=true;
+    public bool AlinearConPadre = true;
     private GameObject padre;
 
-    private Queue<GameObject> colaOBjeto;
+    public Queue<GameObject> colaOBjeto;
+    private List<GameObject> listaOBJEliminacion;
     [SerializeField] private bool With_startCola;
     public void startCola(int cantidadPool)
     {
+        padre = gameObject;
+        //print("Nombre padre : "+ padre);
+        listaOBJEliminacion = new List<GameObject>();
         cantObjeto = cantidadPool;
         colaOBjeto = new Queue<GameObject>();
         for (int i = 0; i < cantObjeto; i++)
         {
             GameObject newPolvo = Instantiate(objeto);
-            //if (AlinearConPadre)
-            //    newPolvo.transform.SetParent(padre.transform);
+
+            newPolvo.GetComponent<retornarObjectPooling>().setObjectPoolingMASTER(this);
+            
+
+
+            if (AlinearConPadre)
+                newPolvo.transform.SetParent(padre.transform);
             colaOBjeto.Enqueue(newPolvo);
             newPolvo.SetActive(false);
+
+            listaOBJEliminacion.Add(newPolvo);
         }
 
     }
@@ -45,8 +56,6 @@ public class ObjectPooling : MonoBehaviour
     }*/
     void Start()
     {
-        if(AlinearConPadre)
-            padre = transform.gameObject;
         if(With_startCola) startCola(cantObjeto);
     }
 
@@ -64,21 +73,24 @@ public class ObjectPooling : MonoBehaviour
         }
         return null;
     }
+
     public void ReturnObjPool(GameObject go)
     {
+        if (AlinearConPadre)
+            go.transform.SetParent(padre.transform);
         cantObjeto++;
         go.SetActive(false);
-        colaOBjeto.Enqueue(go);
+        this.colaOBjeto.Enqueue(go);
     }
     //obtener
     public GameObject emitirObj(float tiempo, bool withTime)
     {
-        
-        GameObject objA = getObjPool();
+        GameObject objA = this.getObjPool();
+        objA.transform.SetParent(null);
+        //objA.GetComponent<retornarObjectPooling>().setObjectPoolingMASTER(this);
         if (objA != null)
             StartCoroutine(retornarObjPool(tiempo, objA, withTime));
         //print("emitiendo : " + cantObjeto);
-
         return objA;
     }
     /*
@@ -96,18 +108,23 @@ public class ObjectPooling : MonoBehaviour
     }
 
 
-
+    /*
     public string getNombre()
     {
         return nombreObjeto;
-    }
+    }*/
 
-    private void OnDestroy()
+    public void DestruirPool()
     {
+        /*
         while (colaOBjeto.Count > 0)
         {
             GameObject currentOBJ = colaOBjeto.Dequeue();
             Destroy(currentOBJ);
+        }*/
+        foreach (GameObject item in listaOBJEliminacion)
+        {
+            Destroy(item);
         }
     }
 }

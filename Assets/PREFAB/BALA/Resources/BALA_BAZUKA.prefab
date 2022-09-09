@@ -134,6 +134,7 @@ MonoBehaviour:
   rebotable: 0
   explosivoColision: 1
   prefabExplosion: {fileID: 4748769434511453906, guid: 1e6146f91d3a442488731756a9835bda, type: 3}
+  m_retornarObjectPooling: {fileID: 8835638296068416505}
 --- !u!114 &7012397364886410561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +166,7 @@ GameObject:
   - component: {fileID: 7778084617433731792}
   - component: {fileID: 6188334112463514414}
   - component: {fileID: 3538642575673090671}
+  - component: {fileID: 8835638296068416505}
   m_Layer: 8
   m_Name: BALA_BAZUKA
   m_TagString: Untagged
@@ -223,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 1
   bulletENEMY: 0
+  direccion: {x: 0, y: 0}
 --- !u!114 &6188334112463514414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,3 +252,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_colisionBala: {fileID: 7816895446748265040}
   explosivoTermino: 1
+--- !u!114 &8835638296068416505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7778084617433731793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c0415af008ea148882d6344409e00d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ObjectPooling: {fileID: 0}

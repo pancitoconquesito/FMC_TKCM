@@ -25,6 +25,7 @@ public class Disparador_NS : MonoBehaviour
         m_transformPJ = referencesMASTER.instancia.m_transformPJ;
         m_estadoDisparador = EstadoDisparador.desactivado;
         current_CadenciaDisparo = cadenciaDisparo * .7f;
+        rangoVisionDisparar = rangoVisionRastrear - rangoVisionDisparar * factorVision;
     }
 
     // Update is called once per frame
@@ -64,8 +65,11 @@ public class Disparador_NS : MonoBehaviour
     private void Disparar()
     {
         current_CadenciaDisparo = cadenciaDisparo;
-        Instantiate(m_ObjectPooling.objeto, transform.position, transform.rotation);
-        //m_ObjectPooling.emitirObj(1,false);
+        //Instantiate(m_ObjectPooling.objeto, transform.position, transform.rotation);
+        Vector2 direccion = (m_transformPJ.position - transform.position).normalized;
+        direccion = transform.up;
+        m_ObjectPooling.emitirObj(1, false).GetComponent<balaMovement>().direccion = direccion;
+        //nuevaBala.GetComponent<balaMovement>().direccion = (m_transformPJ.position - transform.position).normalized;
     }
 
 
@@ -90,5 +94,10 @@ public class Disparador_NS : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         m_transformPJ = GameObject.FindGameObjectWithTag("Player").gameObject.transform;
+    }
+
+    private void OnDestroy()
+    {
+        m_ObjectPooling.DestruirPool();
     }
 }

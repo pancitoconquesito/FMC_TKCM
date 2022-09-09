@@ -36,12 +36,17 @@ public class balaMovement : MonoBehaviour
         if(!bulletENEMY)
             setLado();
     }
+    public Vector2 direccion;
     private void FixedUpdate()
     {
         //m_Rigidbody2D.velocity=Vector2.right * velocidad * lado;
-        
+        if (lado == 0)
+        {
+            print("eS 0!");
+            Debug.Break();
+        }
         if(bulletENEMY)
-            m_Rigidbody2D.velocity = transform.up * velocidad * lado;
+            m_Rigidbody2D.velocity = direccion * velocidad * lado;
         else
             m_Rigidbody2D.velocity = transform.right * velocidad * lado;
 

@@ -17,6 +17,8 @@ public class movementPJ : MonoBehaviour
     [Header("- PARAMETROS MOVEMENT ESTATICOS-")]
     [SerializeField] private float limiteInput_movX;
 
+    
+
     [Header("- PARAMETRO SEGUN ARMA (BASICO) -")]
     [SerializeField] private float velocidadCaminar;
     [SerializeField] private float velocidadRun;
@@ -39,7 +41,7 @@ public class movementPJ : MonoBehaviour
 
     [Header("- Special -")]
     private ISpecial m_ISpecial;
-    [SerializeField] private int aaaa;
+    //[SerializeField] private int aaaa;
 
 
     private NewControls m_ControlPJ;
@@ -74,8 +76,14 @@ public class movementPJ : MonoBehaviour
 
         m_ControlPJ.PLAYER.Special.started += ctx => special();
     }
+    public void setPoder(ISpecial m_Poder)=> m_ISpecial = m_Poder;
     private void special()
     {
+        if (m_ISpecial == null)
+        {
+            print("poder nulo");
+            return;
+        }
         m_ISpecial.activatePower();
     }
     public void setParamMovement(so_CONFIG_PJ m_so_CONFIG_PJ)
@@ -320,6 +328,7 @@ public class movementPJ : MonoBehaviour
     }
     public void returnNormalMovement()//FIX
     {
+        if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.die) return;
         switch (m_estados)
         {
             case GLOBAL_TYPES.ESTADOS_PJ.dash:

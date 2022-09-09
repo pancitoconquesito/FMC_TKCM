@@ -10,6 +10,8 @@ public class NS_Generico : MonoBehaviour, IDamageable
 
     private ObjectPooling m_ObjectPooling;
     [SerializeField] private Rigidbody2D m_rigidbody;
+    [SerializeField]private float m_cadenciaRecibirDanio=0.15f;
+    private float current_cadenciaRecibirDanio=0;
     protected bool vivo;
     public NS_Generico()
     {
@@ -25,11 +27,12 @@ public class NS_Generico : MonoBehaviour, IDamageable
     }
     public virtual bool recibirDanio(dataDanio m_dataDanio)
     {
-
-        if (m_dataDanio.m_A_QuienDania != GLOBAL_TYPES.TipoDanio.daniA_ns && m_dataDanio.m_A_QuienDania != GLOBAL_TYPES.TipoDanio.daniaA_ALLL) return false;
+        if (current_cadenciaRecibirDanio > 0) return false;
+        if (m_dataDanio.m_A_QuienDania != GLOBAL_TYPES.AFECTA_A_.daniA_ns && m_dataDanio.m_A_QuienDania != GLOBAL_TYPES.AFECTA_A_.daniaA_ALLL) return false;
         bool retorno = false;
         //print("Yo " + gameObject.name + " recibi danio desde Generico");
         vidaTotal -= m_dataDanio.danio;
+        current_cadenciaRecibirDanio = m_cadenciaRecibirDanio;
         if (vidaTotal < 0)
         {
             morir(m_dataDanio);
@@ -53,6 +56,6 @@ public class NS_Generico : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
-        
+        if (current_cadenciaRecibirDanio > -1) current_cadenciaRecibirDanio -= Time.deltaTime;
     }
 }

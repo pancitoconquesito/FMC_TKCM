@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class retornarObjectPooling : MonoBehaviour
+{
+    public ObjectPooling m_ObjectPooling;
+    private void Start()
+    {
+        
+    }
+    public void setObjectPoolingMASTER(ObjectPooling ObjectPooling_)
+    {
+        m_ObjectPooling = ObjectPooling_;
+    }
+    public void retornar()
+    {
+        if (m_ObjectPooling == null)
+        {
+            print("ES NULO");
+            Debug.Break();
+        }
+        m_ObjectPooling.ReturnObjPool(gameObject);
+    }
+}

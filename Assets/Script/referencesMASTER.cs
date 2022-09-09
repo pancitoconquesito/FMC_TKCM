@@ -16,6 +16,9 @@ public class referencesMASTER : MonoBehaviour
     public changeMirada miradaPJ;
     public shootPJ m_shootPJ;
     public Transform m_transformPJ;
+    public Animator m_animatorPJ;
+    public UpdateCirclePower m_UpdateCirclePower;
+    public UpdateRecargaPoder m_UpdateRecargaPoder;
     // Start is called before the first frame update
 
     private void Awake()

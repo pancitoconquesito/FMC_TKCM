@@ -14,7 +14,7 @@ public class Data_Singleton : MonoBehaviour
     }
     public TIPO_arma.ArmaTipo getArmaSeleccionada()
     {
-        print("paso arma tipo : "+armaSeleccionada);
+        //print("paso arma tipo : "+armaSeleccionada);
         return armaSeleccionada;
     }
 

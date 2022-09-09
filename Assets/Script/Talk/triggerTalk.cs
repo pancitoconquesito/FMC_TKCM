@@ -30,6 +30,7 @@ public class triggerTalk : MonoBehaviour
     }
     private void accionComenzar()
     {
+        print("m_estado == estadoTalk.stay :"+ m_estado);
         if (m_estado == estadoTalk.stay && m_movementPJ.comenzarTalk(transform.position.x))
         {
             collider_alejarPj_Conv.enabled = true;
@@ -54,12 +55,16 @@ public class triggerTalk : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //print("colisione con "+collision.name);
-        setControl();
-        m_estado = estadoTalk.stay;
+        if (collision.CompareTag("Player"))
+        {
+            setControl();
+            m_estado = estadoTalk.stay;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (!collision.CompareTag("Player")) return;
+        print("saliendo por trigger exit");
         m_estado = estadoTalk.fuera;
         desactivarControles();
     }
@@ -71,7 +76,7 @@ public class triggerTalk : MonoBehaviour
 
     public void exit()
     {
-        //print("ya sali!");
+        print("ya sali!");
         collider_alejarPj_Conv.enabled = false;
         m_estado = estadoTalk.stay;
         m_movementPJ.returnNormalMovement();

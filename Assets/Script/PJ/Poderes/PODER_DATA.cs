@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISpecial 
+public static class PODER_DATA  
 {
-    void activatePower();
-    void disablePower();
+    public static int PoderBAzuka = 1;
 }

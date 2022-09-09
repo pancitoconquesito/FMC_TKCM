@@ -14,7 +14,7 @@ public class dataDanio : MonoBehaviour
     //public bool daniarAEnemigo;
 
     
-    public GLOBAL_TYPES.TipoDanio m_A_QuienDania;
+    public GLOBAL_TYPES.AFECTA_A_ m_A_QuienDania;
     private void Start()
     {
         m_transformAtacante = transform;

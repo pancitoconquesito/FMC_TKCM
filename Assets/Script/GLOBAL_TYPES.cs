@@ -26,7 +26,7 @@ public class GLOBAL_TYPES
     }
     public enum ladoMirada {  izquierda, derecha }
 
-    public enum TipoDanio
+    public enum AFECTA_A_
     {
         daniaA_pj, daniA_ns, daniaA_ALLL, nadie
     }
