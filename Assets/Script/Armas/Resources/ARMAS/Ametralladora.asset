@@ -18,4 +18,4 @@ MonoBehaviour:
   instantaneo: 1
   cantidadPool: 20
   _bala: {fileID: 11400000, guid: 82d190883b589a449b2d7f9bb08908aa, type: 2}
-  m_so_CONFIG_PJ: {fileID: 11400000, guid: 1f64644d54fd1634fae3fb1450a476e2, type: 2}
+  m_so_CONFIG_PJ: {fileID: 11400000, guid: d93972f801079d2499435b6f8185be16, type: 2}

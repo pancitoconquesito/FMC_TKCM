@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     //public UnityEvent alTerminar;
     private ISpecial m_ISpecial;
     private float currenttime;
-    private bool activo = true;
+    private bool activo = false;
     void Start()
     {
         switch (m_modoInicio)

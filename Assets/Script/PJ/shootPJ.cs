@@ -29,7 +29,7 @@ public class shootPJ : MonoBehaviour
 
         //setearValoresMovementPJ
         m_movementPJ = referencesMASTER.instancia.m_movementPJ;
-        m_movementPJ.setParamMovement(m_so_ARMA.m_so_CONFIG_PJ);
+        m_movementPJ.setParamMovement(m_so_ARMA.m_so_CONFIG_PJ, true);
 
         m_ObjectPooling_BALA_PJ = referencesMASTER.instancia.ObjectPooling_BALA_PJ;
         m_ObjectPooling_BALA_PJ.objeto= Resources.Load<GameObject>(m_so_ARMA._bala.dirPrefab);

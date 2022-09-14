@@ -15,12 +15,17 @@ public class PoderBase : MonoBehaviour, ISpecial
     }
     void Start()
     {
-       
+
     }
     void Update()
     {
     }
-
+    protected void startParameterBase()
+    {
+        m_UpdateCirclePower = referencesMASTER.instancia.m_UpdateCirclePower;
+        m_UpdateRecargaPoder = referencesMASTER.instancia.m_UpdateRecargaPoder;
+        m_UpdateRecargaPoder.setParameters(tiempoRecarga);
+    }
     //[ContextMenu("activatePower")]
     public virtual void activatePower()
     {

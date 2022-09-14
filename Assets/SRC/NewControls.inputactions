@@ -214,10 +214,21 @@
                 {
                     "name": "",
                     "id": "a04c8115-b5dd-425c-8c2a-18c9e1aba775",
-                    "path": "",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "KEYBOARD",
+                    "action": "Inventary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f8fcee8c-60d5-4437-9fce-81289da83fa7",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GAMEPAD",
                     "action": "Inventary",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -247,7 +258,7 @@
                 {
                     "name": "",
                     "id": "d061358e-3def-45e2-abb1-38984fd8e4b6",
-                    "path": "<Keyboard>/x",
+                    "path": "<Keyboard>/u",
                     "interactions": "",
                     "processors": "",
                     "groups": "KEYBOARD",
@@ -333,6 +344,45 @@
                     "processors": "",
                     "groups": "GAMEPAD",
                     "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "INVENTARIO",
+            "id": "d6790bde-f348-4135-bb4a-891bd2743438",
+            "actions": [
+                {
+                    "name": "inventarioEXIT",
+                    "type": "Button",
+                    "id": "43e693b6-5e4b-48f8-99c5-f891ed42bb18",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c662979b-a26c-4187-9b21-4bde06b0b761",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GAMEPAD",
+                    "action": "inventarioEXIT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "77e36c8b-528c-4b74-9816-05f618b2bf72",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KEYBOARD",
+                    "action": "inventarioEXIT",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

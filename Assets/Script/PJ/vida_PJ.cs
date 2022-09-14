@@ -11,6 +11,7 @@ public class vida_PJ : MonoBehaviour, IDamageable
     //[SerializeField] private ui_corazon m_ui_corazon;
     private float current_tiempoInvulnerable;
     private bool vivo;
+    private bool m_invulnerable = false;
     //private DATA_SINGLETON m_DATA_SINGLETON;
 
     [Header("TEST")]
@@ -38,7 +39,14 @@ public class vida_PJ : MonoBehaviour, IDamageable
     public bool RecibirDanio_I(dataDanio m_dataDanio)
     {
         //print("VIDA PJ");
-        if (m_dataDanio.m_A_QuienDania == GLOBAL_TYPES.AFECTA_A_.daniA_ns || m_dataDanio.m_A_QuienDania == GLOBAL_TYPES.AFECTA_A_.nadie) return false;
+        if (!vivo || m_invulnerable || m_dataDanio.m_A_QuienDania == GLOBAL_TYPES.AFECTA_A_.daniA_ns || m_dataDanio.m_A_QuienDania == GLOBAL_TYPES.AFECTA_A_.nadie) return false;
+        if(m_dataDanio.tipo_danio == GLOBAL_TYPES.TIPO_DANIO.instakill)
+        {
+            if (addVida(-99))
+                m_movementPJ.recibirDanio(m_dataDanio, false);
+            vivo = false;
+            return true;
+        }
         bool retorno = false;
         if (vivo && current_tiempoInvulnerable < 0)
         {
@@ -50,7 +58,6 @@ public class vida_PJ : MonoBehaviour, IDamageable
         }
         return retorno;
     }
-
     public bool addVida(int valor)
     {
         if (vivo)
@@ -92,7 +99,7 @@ public class vida_PJ : MonoBehaviour, IDamageable
         */
         return false;
     }
-
+    public void turnInvulnerable(bool valor) => m_invulnerable = valor;
     private void morir()
     {
         print("me mori!!!");

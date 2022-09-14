@@ -22,12 +22,17 @@ public class GLOBAL_TYPES
 
     public enum TIPO_DANIO
     {
-        normal
+        normal, instakill
     }
     public enum ladoMirada {  izquierda, derecha }
 
     public enum AFECTA_A_
     {
         daniaA_pj, daniA_ns, daniaA_ALLL, nadie
+    }
+
+    public enum ESTADO_ALTERADO
+    {
+        none, plasma, explosionSonica
     }
 }

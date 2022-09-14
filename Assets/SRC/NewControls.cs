@@ -236,10 +236,21 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a04c8115-b5dd-425c-8c2a-18c9e1aba775"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KEYBOARD"",
+                    ""action"": ""Inventary"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f8fcee8c-60d5-4437-9fce-81289da83fa7"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GAMEPAD"",
                     ""action"": ""Inventary"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -269,7 +280,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d061358e-3def-45e2-abb1-38984fd8e4b6"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""path"": ""<Keyboard>/u"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KEYBOARD"",
@@ -359,6 +370,45 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""INVENTARIO"",
+            ""id"": ""d6790bde-f348-4135-bb4a-891bd2743438"",
+            ""actions"": [
+                {
+                    ""name"": ""inventarioEXIT"",
+                    ""type"": ""Button"",
+                    ""id"": ""43e693b6-5e4b-48f8-99c5-f891ed42bb18"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c662979b-a26c-4187-9b21-4bde06b0b761"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GAMEPAD"",
+                    ""action"": ""inventarioEXIT"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""77e36c8b-528c-4b74-9816-05f618b2bf72"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KEYBOARD"",
+                    ""action"": ""inventarioEXIT"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -400,6 +450,9 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         m_DIALOGOS = asset.FindActionMap("DIALOGOS", throwIfNotFound: true);
         m_DIALOGOS_Comenzar = m_DIALOGOS.FindAction("Comenzar", throwIfNotFound: true);
         m_DIALOGOS_Next = m_DIALOGOS.FindAction("Next", throwIfNotFound: true);
+        // INVENTARIO
+        m_INVENTARIO = asset.FindActionMap("INVENTARIO", throwIfNotFound: true);
+        m_INVENTARIO_inventarioEXIT = m_INVENTARIO.FindAction("inventarioEXIT", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -585,6 +638,39 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         }
     }
     public DIALOGOSActions @DIALOGOS => new DIALOGOSActions(this);
+
+    // INVENTARIO
+    private readonly InputActionMap m_INVENTARIO;
+    private IINVENTARIOActions m_INVENTARIOActionsCallbackInterface;
+    private readonly InputAction m_INVENTARIO_inventarioEXIT;
+    public struct INVENTARIOActions
+    {
+        private @NewControls m_Wrapper;
+        public INVENTARIOActions(@NewControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @inventarioEXIT => m_Wrapper.m_INVENTARIO_inventarioEXIT;
+        public InputActionMap Get() { return m_Wrapper.m_INVENTARIO; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(INVENTARIOActions set) { return set.Get(); }
+        public void SetCallbacks(IINVENTARIOActions instance)
+        {
+            if (m_Wrapper.m_INVENTARIOActionsCallbackInterface != null)
+            {
+                @inventarioEXIT.started -= m_Wrapper.m_INVENTARIOActionsCallbackInterface.OnInventarioEXIT;
+                @inventarioEXIT.performed -= m_Wrapper.m_INVENTARIOActionsCallbackInterface.OnInventarioEXIT;
+                @inventarioEXIT.canceled -= m_Wrapper.m_INVENTARIOActionsCallbackInterface.OnInventarioEXIT;
+            }
+            m_Wrapper.m_INVENTARIOActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @inventarioEXIT.started += instance.OnInventarioEXIT;
+                @inventarioEXIT.performed += instance.OnInventarioEXIT;
+                @inventarioEXIT.canceled += instance.OnInventarioEXIT;
+            }
+        }
+    }
+    public INVENTARIOActions @INVENTARIO => new INVENTARIOActions(this);
     private int m_KEYBOARDSchemeIndex = -1;
     public InputControlScheme KEYBOARDScheme
     {
@@ -618,5 +704,9 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     {
         void OnComenzar(InputAction.CallbackContext context);
         void OnNext(InputAction.CallbackContext context);
+    }
+    public interface IINVENTARIOActions
+    {
+        void OnInventarioEXIT(InputAction.CallbackContext context);
     }
 }

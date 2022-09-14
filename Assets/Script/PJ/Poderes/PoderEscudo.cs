@@ -12,12 +12,17 @@ public class PoderEscudo : PoderBase
     {
         
     }
+    private void Awake()
+    {
+        m_SpriteRenderer.enabled = false;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        base.m_UpdateCirclePower = referencesMASTER.instancia.m_UpdateCirclePower;
-        base.m_UpdateRecargaPoder = referencesMASTER.instancia.m_UpdateRecargaPoder;
-        base.m_UpdateRecargaPoder.setParameters(base.tiempoRecarga);
+        //base.m_UpdateCirclePower = referencesMASTER.instancia.m_UpdateCirclePower;
+        //base.m_UpdateRecargaPoder = referencesMASTER.instancia.m_UpdateRecargaPoder;
+        //base.m_UpdateRecargaPoder.setParameters(base.tiempoRecarga);
+        base.startParameterBase();
     }
     void Update()
     {
