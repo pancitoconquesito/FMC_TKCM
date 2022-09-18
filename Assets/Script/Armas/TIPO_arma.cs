@@ -8,6 +8,7 @@ public class TIPO_arma
 {
     public enum ArmaTipo
     {
+        none, 
         pistola, bazuca, ametralladora, plasma
     }
     public enum Au
@@ -20,6 +21,11 @@ public class TIPO_arma
         int retorno = 0;
         switch (arma)
         {
+            case TIPO_arma.ArmaTipo.none:
+                {
+                    retorno = -1;
+                    break;
+                }
             case TIPO_arma.ArmaTipo.pistola:
                 {
                     retorno = 0;
@@ -49,6 +55,11 @@ public class TIPO_arma
         string retorno = "ERROR";
         switch (arma)
         {
+            case TIPO_arma.ArmaTipo.none:
+                {
+                    retorno = "NULL";
+                    break;
+                }
             case TIPO_arma.ArmaTipo.pistola:
                 {
                     retorno = "Pistola";

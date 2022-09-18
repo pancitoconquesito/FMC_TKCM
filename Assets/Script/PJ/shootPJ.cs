@@ -31,11 +31,14 @@ public class shootPJ : MonoBehaviour
         m_movementPJ = referencesMASTER.instancia.m_movementPJ;
         m_movementPJ.setParamMovement(m_so_ARMA.m_so_CONFIG_PJ, true);
 
-        m_ObjectPooling_BALA_PJ = referencesMASTER.instancia.ObjectPooling_BALA_PJ;
-        m_ObjectPooling_BALA_PJ.objeto= Resources.Load<GameObject>(m_so_ARMA._bala.dirPrefab);
-        m_ObjectPooling_BALA_PJ.startCola(m_so_ARMA.cantidadPool);
-        //m_ObjectPooling_BALA_PJ.startCola();
-        automatica=m_so_ARMA.au_noAu == TIPO_arma.Au.automatica;
+        if (TIPO_arma.getParse_TipoArma_STRING(m_armaTipo) != "NULL")
+        {
+            m_ObjectPooling_BALA_PJ = referencesMASTER.instancia.ObjectPooling_BALA_PJ;
+            m_ObjectPooling_BALA_PJ.objeto= Resources.Load<GameObject>(m_so_ARMA._bala.dirPrefab);
+            m_ObjectPooling_BALA_PJ.startCola(m_so_ARMA.cantidadPool);
+            //m_ObjectPooling_BALA_PJ.startCola();
+            automatica=m_so_ARMA.au_noAu == TIPO_arma.Au.automatica;
+        }
     }
 
 

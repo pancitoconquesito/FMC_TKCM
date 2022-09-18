@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class Data_Singleton : MonoBehaviour
 {
     public static Data_Singleton instancia;
     [SerializeField] private TIPO_arma.ArmaTipo armaSeleccionada;
+    internal int cantidadVidaPJ;
 
     public void setArmaSeleccionada(TIPO_arma.ArmaTipo _arma)
     {
@@ -29,4 +31,8 @@ public class Data_Singleton : MonoBehaviour
             Destroy(gameObject);
     }
 
+    internal void actualizarVida(int valor)
+    {
+        throw new NotImplementedException();
+    }
 }

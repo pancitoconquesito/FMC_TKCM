@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage_TEST.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/TEST/testAudio_P.unity
+    guid: 1dc6e02042d89d1448b67e9e1b76ac39
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a121a7bafaebe3f4e92f672d9a37ee87, type: 2}

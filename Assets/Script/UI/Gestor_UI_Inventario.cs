@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.UI;
+//using UnityEditor.UI;
 using UnityEngine.EventSystems;
 public class Gestor_UI_Inventario : MonoBehaviour
 {
