@@ -38,7 +38,8 @@ public class gestorConversacion : MonoBehaviour
 
         dialogoActual = so_dialogo;
 
-        current_Idioma = TIPO_DIALOGO.getIDIOMA(TIPO_DIALOGO.IDIOMA.es);//TODO: CARGAR IDIOMA
+        //current_Idioma = TIPO_DIALOGO.getIDIOMA(TIPO_DIALOGO.IDIOMA.es);//TODO: CARGAR IDIOMA
+        current_Idioma = DATA.instance.getIdioma_INT();
 
         totalTurnos = dialogoActual.parrafo.Length;
         current_turno= 0;

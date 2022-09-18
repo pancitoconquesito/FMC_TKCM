@@ -22,6 +22,7 @@ public class SAVE_LOAD_SYSTEM : MonoBehaviour
             || m_dataGame.m_DATA_ITEMS == null
             || m_dataGame.m_DATA_PROGRESS == null
             || m_dataGame.m_DATA_CONF_AUDIO == null
+            || m_dataGame.m_DATA_CONFIG_GAME == null
             )
             erase_();
     }

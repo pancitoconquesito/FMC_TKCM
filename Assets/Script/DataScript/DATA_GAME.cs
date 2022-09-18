@@ -8,12 +8,15 @@ public class DATA_GAME
     public DATA_ITEMS m_DATA_ITEMS;
     public DATA_PROGRESS m_DATA_PROGRESS;
     public DATA_CONF_AUDIO m_DATA_CONF_AUDIO;
+    public DATA_CONFIG_GAME m_DATA_CONFIG_GAME;
+
     public DATA_GAME()
     {
         m_DATA_TEST = new DATA_TEST();
         m_DATA_ITEMS = new DATA_ITEMS();
         m_DATA_PROGRESS = new DATA_PROGRESS();
         m_DATA_CONF_AUDIO = new DATA_CONF_AUDIO();//configuracion de audio
+        m_DATA_CONFIG_GAME = new DATA_CONFIG_GAME();// guarda el idioma, 
     }
 
     public void Save_DATA(DATA_GAME data)
