@@ -234,7 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167dface566b88248a6afdb849bdd805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreObjeto: BALA_PISTOLA
   objeto: {fileID: 0}
   cantObjeto: 0
   AlinearConPadre: 0
@@ -283,7 +282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167dface566b88248a6afdb849bdd805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreObjeto: BALA_PISTOLA
   objeto: {fileID: 0}
   cantObjeto: 0
   AlinearConPadre: 0
@@ -410,7 +408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &115699080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -545,7 +543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &131400239
 RectTransform:
   m_ObjectHideFlags: 0
@@ -680,7 +678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &155579728
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1155,7 +1153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &414952100
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1732,7 +1730,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.6167675, g: 0.7924528, b: 0.751529, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2270,7 +2268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167dface566b88248a6afdb849bdd805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreObjeto: BALA_PISTOLA
   objeto: {fileID: 0}
   cantObjeto: 0
   AlinearConPadre: 0
@@ -3740,7 +3737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167dface566b88248a6afdb849bdd805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreObjeto: BALA_PISTOLA
   objeto: {fileID: 0}
   cantObjeto: 0
   AlinearConPadre: 0
@@ -3900,7 +3896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1290713207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4387,7 +4383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167dface566b88248a6afdb849bdd805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreObjeto: BALA_PISTOLA
   objeto: {fileID: 0}
   cantObjeto: 0
   AlinearConPadre: 0
@@ -4632,7 +4627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1632271674
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4794,7 +4789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167dface566b88248a6afdb849bdd805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreObjeto: BALA_PISTOLA
   objeto: {fileID: 0}
   cantObjeto: 0
   AlinearConPadre: 0

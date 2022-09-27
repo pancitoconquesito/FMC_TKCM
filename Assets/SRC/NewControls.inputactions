@@ -387,6 +387,82 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "INTERACCION",
+            "id": "6b4fbe46-e8b3-46bc-b43b-8bfde9b20738",
+            "actions": [
+                {
+                    "name": "Aceptar",
+                    "type": "Button",
+                    "id": "79642022-f0ad-4909-803d-eab87b51c24c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cancelar",
+                    "type": "Button",
+                    "id": "dd418eb9-14d8-4638-8150-d0504b040660",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "00e28dba-14ef-49e9-8ca3-42c28a279f71",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KEYBOARD",
+                    "action": "Aceptar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ef20094-e83a-44ed-9e98-587186131b66",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KEYBOARD",
+                    "action": "Cancelar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI_BIOMA",
+            "id": "de40ce7a-dbf0-4923-8f94-e5c9e707028f",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "64580534-d062-4132-8703-d4f190418d0c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "baa98b4f-579a-4966-a508-f14aba611efb",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KEYBOARD",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

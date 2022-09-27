@@ -28,6 +28,7 @@ public class referencesMASTER : MonoBehaviour
     public UpdateCirclePower m_UpdateCirclePower;
     public UpdateRecargaPoder m_UpdateRecargaPoder;
     public Gestor_UI_Inventario m_Gestor_UI_Inventario;
+    public Gestor_UI_Bioma m_Gestor_UI_Bioma;
 
     private void Awake()
     {

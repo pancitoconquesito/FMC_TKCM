@@ -18,14 +18,10 @@ public class Gestor_UI_Inventario : MonoBehaviour
     }
     private void habilitarControles()
     {
-        print("HOLO!");
-        
-        
         if (m_ControlINVENTARY !=null) return;
         m_ControlINVENTARY = new NewControls();
         m_ControlINVENTARY.INVENTARIO.Enable();
         //EventSystem.current.SetSelectedGameObject(firstButton);
-
     }
     private void desahabilitar()
     {

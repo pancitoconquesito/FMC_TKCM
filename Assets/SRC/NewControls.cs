@@ -409,6 +409,82 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""INTERACCION"",
+            ""id"": ""6b4fbe46-e8b3-46bc-b43b-8bfde9b20738"",
+            ""actions"": [
+                {
+                    ""name"": ""Aceptar"",
+                    ""type"": ""Button"",
+                    ""id"": ""79642022-f0ad-4909-803d-eab87b51c24c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cancelar"",
+                    ""type"": ""Button"",
+                    ""id"": ""dd418eb9-14d8-4638-8150-d0504b040660"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""00e28dba-14ef-49e9-8ca3-42c28a279f71"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KEYBOARD"",
+                    ""action"": ""Aceptar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ef20094-e83a-44ed-9e98-587186131b66"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KEYBOARD"",
+                    ""action"": ""Cancelar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI_BIOMA"",
+            ""id"": ""de40ce7a-dbf0-4923-8f94-e5c9e707028f"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""64580534-d062-4132-8703-d4f190418d0c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""baa98b4f-579a-4966-a508-f14aba611efb"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KEYBOARD"",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -453,6 +529,13 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         // INVENTARIO
         m_INVENTARIO = asset.FindActionMap("INVENTARIO", throwIfNotFound: true);
         m_INVENTARIO_inventarioEXIT = m_INVENTARIO.FindAction("inventarioEXIT", throwIfNotFound: true);
+        // INTERACCION
+        m_INTERACCION = asset.FindActionMap("INTERACCION", throwIfNotFound: true);
+        m_INTERACCION_Aceptar = m_INTERACCION.FindAction("Aceptar", throwIfNotFound: true);
+        m_INTERACCION_Cancelar = m_INTERACCION.FindAction("Cancelar", throwIfNotFound: true);
+        // UI_BIOMA
+        m_UI_BIOMA = asset.FindActionMap("UI_BIOMA", throwIfNotFound: true);
+        m_UI_BIOMA_Newaction = m_UI_BIOMA.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -671,6 +754,80 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         }
     }
     public INVENTARIOActions @INVENTARIO => new INVENTARIOActions(this);
+
+    // INTERACCION
+    private readonly InputActionMap m_INTERACCION;
+    private IINTERACCIONActions m_INTERACCIONActionsCallbackInterface;
+    private readonly InputAction m_INTERACCION_Aceptar;
+    private readonly InputAction m_INTERACCION_Cancelar;
+    public struct INTERACCIONActions
+    {
+        private @NewControls m_Wrapper;
+        public INTERACCIONActions(@NewControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Aceptar => m_Wrapper.m_INTERACCION_Aceptar;
+        public InputAction @Cancelar => m_Wrapper.m_INTERACCION_Cancelar;
+        public InputActionMap Get() { return m_Wrapper.m_INTERACCION; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(INTERACCIONActions set) { return set.Get(); }
+        public void SetCallbacks(IINTERACCIONActions instance)
+        {
+            if (m_Wrapper.m_INTERACCIONActionsCallbackInterface != null)
+            {
+                @Aceptar.started -= m_Wrapper.m_INTERACCIONActionsCallbackInterface.OnAceptar;
+                @Aceptar.performed -= m_Wrapper.m_INTERACCIONActionsCallbackInterface.OnAceptar;
+                @Aceptar.canceled -= m_Wrapper.m_INTERACCIONActionsCallbackInterface.OnAceptar;
+                @Cancelar.started -= m_Wrapper.m_INTERACCIONActionsCallbackInterface.OnCancelar;
+                @Cancelar.performed -= m_Wrapper.m_INTERACCIONActionsCallbackInterface.OnCancelar;
+                @Cancelar.canceled -= m_Wrapper.m_INTERACCIONActionsCallbackInterface.OnCancelar;
+            }
+            m_Wrapper.m_INTERACCIONActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Aceptar.started += instance.OnAceptar;
+                @Aceptar.performed += instance.OnAceptar;
+                @Aceptar.canceled += instance.OnAceptar;
+                @Cancelar.started += instance.OnCancelar;
+                @Cancelar.performed += instance.OnCancelar;
+                @Cancelar.canceled += instance.OnCancelar;
+            }
+        }
+    }
+    public INTERACCIONActions @INTERACCION => new INTERACCIONActions(this);
+
+    // UI_BIOMA
+    private readonly InputActionMap m_UI_BIOMA;
+    private IUI_BIOMAActions m_UI_BIOMAActionsCallbackInterface;
+    private readonly InputAction m_UI_BIOMA_Newaction;
+    public struct UI_BIOMAActions
+    {
+        private @NewControls m_Wrapper;
+        public UI_BIOMAActions(@NewControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_UI_BIOMA_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m_UI_BIOMA; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UI_BIOMAActions set) { return set.Get(); }
+        public void SetCallbacks(IUI_BIOMAActions instance)
+        {
+            if (m_Wrapper.m_UI_BIOMAActionsCallbackInterface != null)
+            {
+                @Newaction.started -= m_Wrapper.m_UI_BIOMAActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_UI_BIOMAActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_UI_BIOMAActionsCallbackInterface.OnNewaction;
+            }
+            m_Wrapper.m_UI_BIOMAActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
+            }
+        }
+    }
+    public UI_BIOMAActions @UI_BIOMA => new UI_BIOMAActions(this);
     private int m_KEYBOARDSchemeIndex = -1;
     public InputControlScheme KEYBOARDScheme
     {
@@ -708,5 +865,14 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     public interface IINVENTARIOActions
     {
         void OnInventarioEXIT(InputAction.CallbackContext context);
+    }
+    public interface IINTERACCIONActions
+    {
+        void OnAceptar(InputAction.CallbackContext context);
+        void OnCancelar(InputAction.CallbackContext context);
+    }
+    public interface IUI_BIOMAActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
     }
 }

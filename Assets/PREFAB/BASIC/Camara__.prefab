@@ -144,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482276189452129838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -937.25, y: -451.18, z: -26.736797}
+  m_LocalPosition: {x: -937.25, y: -451.18, z: -23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -563,33 +563,7 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   m_CustomBlends: {fileID: 0}
-  m_ParentHash:
-  - m_Hash: -1056049435
-    m_ParentHash: 756556552
-  - m_Hash: 868893298
-    m_ParentHash: 756556552
-  - m_Hash: 6198194
-    m_ParentHash: 756556552
-  - m_Hash: 434650673
-    m_ParentHash: 756556552
-  - m_Hash: -1601247454
-    m_ParentHash: 756556552
-  - m_Hash: 562032028
-    m_ParentHash: 756556552
-  - m_Hash: -1874695209
-    m_ParentHash: 756556552
-  - m_Hash: -413006335
-    m_ParentHash: 756556552
-  - m_Hash: 986561500
-    m_ParentHash: 756556552
-  - m_Hash: -1560249855
-    m_ParentHash: 756556552
-  - m_Hash: 1040731491
-    m_ParentHash: 756556552
-  - m_Hash: 624289063
-    m_ParentHash: 756556552
-  - m_Hash: -386136410
-    m_ParentHash: 756556552
+  m_ParentHash: []
 --- !u!1 &482276190260575590
 GameObject:
   m_ObjectHideFlags: 0

@@ -65,7 +65,6 @@ public class gestorConversacion : MonoBehaviour
         parrafoComplete = true;
         img_btnNext.color = new Color32(255, 255, 255, 255);
     }
-
     public void siguiente()
     {
         print("siguiente");
@@ -104,9 +103,7 @@ public class gestorConversacion : MonoBehaviour
             parrafoComplete = true;
             img_btnNext.color = new Color32(255, 255, 255, 255);
         }
-        
     }
-
     private string textoParrafo;
     private bool parrafoComplete;
     private void updateSRC()//"Conv_PJ/ pj_pensando"
@@ -130,8 +127,6 @@ public class gestorConversacion : MonoBehaviour
             img_IZ.color = new Color32(200, 200, 200, 120);
             img_DER.color = new Color32(255, 255, 255, 255);
         }
-        //
-
         //globo
         img_globo.sprite = Resources.Load<Sprite>("Conv_globo/"
             + TIPO_DIALOGO.getGlobo(dialogoActual.parrafo[current_turno].sp_globo));
@@ -140,18 +135,12 @@ public class gestorConversacion : MonoBehaviour
             img_btnNext.sprite = Resources.Load<Sprite>("Conv_globo/btn_CLOSE");
         }else img_btnNext.sprite = Resources.Load<Sprite>("Conv_globo/btn_NEXT");
         img_btnNext.color = new Color32(255,255,255,0);
-        //
-
         //nombres
         text_name_iz.text = TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_iz.sp_PJ);
         text_name_der.text = TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_der.sp_PJ);
         //
-
         textoParrafo = dialogoActual.parrafo[current_turno].text_IDIOMA[current_Idioma].text_textoParrafo[current_parrafo];
         //text_text.text = textoParrafo;
-
-
-
     }
 
 }

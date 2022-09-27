@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50981ea3cd2ad443851f75c19a2790f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayCambioScene: 2
+  delayCambioScene: 3
 --- !u!1 &1498399805434583323
 GameObject:
   m_ObjectHideFlags: 0
