@@ -744,6 +744,7 @@ MonoBehaviour:
   nameStage: testAudio_P
   delay: 0
   StartChange: 0
+  loadNameStage_singleton: 0
 --- !u!222 &318395558
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -966,6 +967,7 @@ MonoBehaviour:
   nameStage: testIDIOMA_P
   delay: 0
   StartChange: 0
+  loadNameStage_singleton: 0
 --- !u!222 &807032985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1548,6 +1550,7 @@ MonoBehaviour:
   nameStage: SelectGun
   delay: 0
   StartChange: 0
+  loadNameStage_singleton: 0
 --- !u!222 &1293466027
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1830,9 +1833,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5360d33cdb7600346a7520cf113cc34e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameStage: Stage_TEST
+  nameStage: Nivel_1
   delay: 0
   StartChange: 0
+  loadNameStage_singleton: 0
 --- !u!222 &1621327592
 CanvasRenderer:
   m_ObjectHideFlags: 0

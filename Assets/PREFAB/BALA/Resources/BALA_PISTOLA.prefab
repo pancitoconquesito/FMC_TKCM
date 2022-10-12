@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipo_danio: 0
-  danio: 2
-  impactoEmpuje: 10
+  danio: 3
+  impactoEmpuje: 8
   posicionDanio: {x: 0, y: 0}
   m_transformAtacante: {fileID: 0}
   m_A_QuienDania: 1
@@ -225,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 1
   bulletENEMY: 0
+  direccion: {x: 0, y: 0}
 --- !u!114 &6188334112463514414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,8 +250,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946f3dbd49cb2a545b0a6e751ec9a483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duracion: 0
+  velocidad: 0
   m_colisionBala: {fileID: 7816895446748265040}
   explosivoTermino: 0
+  isBALA_NS: 0
 --- !u!114 &5608196635649208479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,8 +262,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7778084617433731793}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70c0415af008ea148882d6344409e00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ObjectPooling: {fileID: 0}

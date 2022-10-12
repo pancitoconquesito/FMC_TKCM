@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Pistola
   m_EditorClassIdentifier: 
   cadencia: 0.5
-  retroceso: 8
+  retroceso_pj: 30
   au_noAu: 1
   instantaneo: 1
   cantidadPool: 10
+  shake_amount: 2
+  shake_time: 0.5
   _bala: {fileID: 11400000, guid: 982f7b6f476fdd24382bd222e8ba2875, type: 2}
-  dirPrefab: BALA_PISTOLA
-  velocidadBala: 20
   m_so_CONFIG_PJ: {fileID: 11400000, guid: 1f64644d54fd1634fae3fb1450a476e2, type: 2}

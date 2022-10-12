@@ -4,10 +4,10 @@ using UnityEngine;
 [System.Serializable]
 public class DATA_ITEMS
 {
-    public bool key_pika;
+    public bool itemTest;
 
     public DATA_ITEMS()
     {
-        key_pika = false;
+        itemTest = false;
     }
 }

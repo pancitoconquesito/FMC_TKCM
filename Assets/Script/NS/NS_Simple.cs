@@ -59,6 +59,7 @@ public class NS_Simple : NS_Generico
     }
     private void mostrarPArticulas()
     {
-        Instantiate(go_prefab_p_muerte, transform.position, Quaternion.identity);
+        if(go_prefab_p_muerte!=null)
+            Instantiate(go_prefab_p_muerte, transform.position, Quaternion.identity);
     }
 }

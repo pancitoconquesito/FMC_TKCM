@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde1bf95cd56d3749a947e7d4930676d, type: 3}
+  m_Name: item_TEST
+  m_EditorClassIdentifier: 
+  ID_ITEM: 0
+  infoEspanol:
+    nombre: "item test espa\xF1ol"
+    sp_imagen: {fileID: 21300000, guid: 086566d3bd0489b499abda259c8d0ce2, type: 3}
+    descripcion: "descripcion espa\xF1ol"
+  infoIngles:
+    nombre: item test ingles
+    sp_imagen: {fileID: 21300000, guid: 086566d3bd0489b499abda259c8d0ce2, type: 3}
+    descripcion: descripcion ingles

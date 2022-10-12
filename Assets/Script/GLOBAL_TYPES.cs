@@ -38,13 +38,16 @@ public class GLOBAL_TYPES
     }
     public enum TIPO_PREFAB
     {
-        ITEM
+        ITEM, NekoEsfera
     }
     public enum IDIOMA
     {
         ES, EN
     }
-
+    public enum TIPO_SCENE
+    {
+        etapa, nivel
+    }
     internal static int parseIdioma(IDIOMA m_idioma)
     {
         int retorno = 0;
@@ -60,4 +63,34 @@ public class GLOBAL_TYPES
         float mult = Mathf.Pow(10.0f, (float)digits);
         return Mathf.Round(value * mult) / mult;
     }
+    public static bool canInventary(GLOBAL_TYPES.ESTADOS_PJ estado)
+    {
+        //return estado==GLOBAL_TYPES.ESTADOS_PJ.normalMovement;
+        return estado == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || estado==GLOBAL_TYPES.ESTADOS_PJ.inventary || estado == GLOBAL_TYPES.ESTADOS_PJ.special;
+    }
+
+    internal static bool canSpecial(ESTADOS_PJ estado)
+    {
+        return estado != GLOBAL_TYPES.ESTADOS_PJ.talk && estado!=GLOBAL_TYPES.ESTADOS_PJ.inventary;
+    }
+    internal static bool canKick(ESTADOS_PJ estado)
+    {
+        return estado == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || estado == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk;
+    }
+
+    internal static bool canDash(ESTADOS_PJ estados)
+    {
+        return estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk;
+    }
+
+    internal static bool canShoot(ESTADOS_PJ estados)
+    {
+        return estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk;
+    }
+
+    internal static bool canMov_X(ESTADOS_PJ estados)
+    {
+        return estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk || estados == GLOBAL_TYPES.ESTADOS_PJ.pain;
+    }
+
 }

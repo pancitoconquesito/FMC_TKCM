@@ -365,6 +365,7 @@ MonoBehaviour:
   m_dashPJ: {fileID: 1498399805428279671}
   m_respawnPJ: {fileID: 1498399805428279670}
   limiteInput_movX: 0.1
+  m_vida_PJ: {fileID: 1498399805238534544}
   velocidadCaminar: 3.5
   velocidadRun: 2.5
   velocidadLimiteCaida: -18

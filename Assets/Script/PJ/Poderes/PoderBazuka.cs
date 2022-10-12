@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class PoderBazuka : PoderBase
 {
-    [SerializeField] private GameObject objExplosion;
-    [SerializeField] private Animator m_Animator_PJ;
+    //[SerializeField] private GameObject objExplosion;
+    [SerializeField] private Collider2D m_Collider2D;
+    private Animator m_Animator_PJ;
     [SerializeField] private Animator m_Animator_Explosion;
-    [SerializeField] private movementPJ m_movementPJ;
+    private movementPJ m_movementPJ;
+    [SerializeField]private Animator m_animator;
     public PoderBazuka() : base()
     {
-
+        m_Collider2D.enabled = false;
     }
     private void Awake()
     {
-        objExplosion.SetActive(false);
+        //objExplosion.SetActive(false);
     }
     void Start()
     {
@@ -42,19 +44,26 @@ public class PoderBazuka : PoderBase
     private void ejecutarPoder()
     {
         print("ExplOsion!!!");
-        objExplosion.SetActive(true);
+        //objExplosion.SetActive(true);
+
+        m_animator.SetTrigger("Start");
+        m_Collider2D.enabled = true;
         m_movementPJ.setEstadoAlterado_param(GLOBAL_TYPES.ESTADO_ALTERADO.explosionSonica, null);
         m_Animator_PJ.SetInteger("PODER_DATA", PODER_DATA.PoderBAzuka_anim);
         m_Animator_PJ.ResetTrigger("TriggerPoder");
         m_Animator_PJ.SetTrigger("TriggerPoder");
         //m_Animator_Explosion.SetTrigger("Start");
+
+
     }
     public override void disablePower()
     {
         base.disablePower();
         //efectos de cierre?
         print("Poder desactivado");
-        objExplosion.SetActive(false);
+        //objExplosion.SetActive(false);
+        m_Collider2D.enabled = false;
+
         m_movementPJ.setEstadoAlterado_param(GLOBAL_TYPES.ESTADO_ALTERADO.none, null);
 
     }

@@ -10,6 +10,7 @@ public class NS_mov_IZDER : MonoBehaviour
     [Range(0,100f)][SerializeField] private float rangoPatrulla;
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private float factorRetrocesoAlRecibirDanio;
+    [SerializeField] private NS_Generico m_NS_Generico;
     private changeMirada m_changeMirada;
     void Start()
     {
@@ -23,8 +24,16 @@ public class NS_mov_IZDER : MonoBehaviour
     private Vector3 vec_IZ, vec_DER;
     void Update()
     {
+        if (m_NS_Generico.isEmpujado()) return;
         setLado();
-        moverse();
+        //m_NS_Generico ==null || (m_NS_Generico != null && !m_NS_Generico.isEmpujado()))
+            moverse();
+        /*else
+        {
+            print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+           // m_rigidbody.AddForce(m_NS_Generico.getDir() * m_NS_Generico.getEmpuje() * 10f, ForceMode2D.Impulse);
+        }*/
+
     }
 
     private void setLado()
@@ -41,6 +50,7 @@ public class NS_mov_IZDER : MonoBehaviour
     private Vector3 lado;
     private void FixedUpdate()
     {
+        if (m_NS_Generico.isEmpujado()) return;
         if (!reciboiendoDanio)
             m_rigidbody.velocity = velocidad * lado;
         else
@@ -68,8 +78,10 @@ public class NS_mov_IZDER : MonoBehaviour
     }
     private bool reciboiendoDanio=false;
     private bool vivo = true;
+    
     public void recibirDanio(dataDanio m_dataDanio)
     {
+        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAA");
         //si no esta recibiendo daño ya
         reciboiendoDanio = true;
         Vector3 dirEmpuje = (transform.position - m_dataDanio.m_transformAtacante.position).normalized;

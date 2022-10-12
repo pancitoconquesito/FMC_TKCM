@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,14 @@ public class DATA : MonoBehaviour
     {
         instance = this;
         idioma_data.cargarIdioma(save_load_system.m_dataGame.m_DATA_CONFIG_GAME.IDIOMA);
+        GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent<Data_Singleton>().setCantidadVidaPJ(save_load_system.m_dataGame.m_DATA_PROGRESS.cantidadDeCorazonesTotales);
     }
+
+    internal int getCantidadNekoEsfera()
+    {
+        return save_load_system.m_dataGame.m_DATA_NEKO_ESFERA.cantidadDe_NekoEsfera;
+    }
+
     void Start()
     {
         
@@ -46,13 +54,14 @@ public class DATA : MonoBehaviour
         }
         return retorno;
     }
+    /*
     public int getVidaActual()
     {
-        return m_Data_Singleton.cantidadVidaPJ;
+        return m_Data_Singleton.getCantidadVidaPJ();
     }
     public void updateVidaPJ(int valor)
     {
         m_Data_Singleton.actualizarVida(valor);
-    }
+    }*/
 
 }

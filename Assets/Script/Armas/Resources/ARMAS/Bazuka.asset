@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Bazuka
   m_EditorClassIdentifier: 
   cadencia: 0.9
-  retroceso: 25
+  retroceso_pj: 50
   au_noAu: 1
   instantaneo: 1
   cantidadPool: 4
+  shake_amount: 5
+  shake_time: 0.8
   _bala: {fileID: 11400000, guid: cb3c5ede8621e8343a555a8477e9f250, type: 2}
   m_so_CONFIG_PJ: {fileID: 11400000, guid: b946ff19b89f46c4590c6a3672b168d0, type: 2}

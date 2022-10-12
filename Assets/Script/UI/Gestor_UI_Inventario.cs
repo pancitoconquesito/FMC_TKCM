@@ -6,11 +6,13 @@ using UnityEngine.EventSystems;
 public class Gestor_UI_Inventario : MonoBehaviour
 {
     [SerializeField] private GameObject m_obgALL;
-    [SerializeField]private GameObject firstButton;
+    [SerializeField]private GameObject firstButton_Nivel;
+    [SerializeField] private GameObject firstButton_Etapa;
     private NewControls m_ControlINVENTARY;
+    private GLOBAL_TYPES.TIPO_SCENE m_tipoScene;
     private void Start()
     {
-        
+        m_tipoScene=referencesMASTER.instancia.m_DataScene.getTipoScene();
     }
     private void OnEnable()
     {
@@ -47,7 +49,20 @@ public class Gestor_UI_Inventario : MonoBehaviour
         else
         {
             EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(firstButton);
+            switch (m_tipoScene)
+            {
+                case GLOBAL_TYPES.TIPO_SCENE.etapa:
+                    {
+                        EventSystem.current.SetSelectedGameObject(firstButton_Etapa);
+                        break;
+                    }
+                case GLOBAL_TYPES.TIPO_SCENE.nivel:
+                    {
+                        EventSystem.current.SetSelectedGameObject(firstButton_Nivel);
+                        break;
+                    }
+            }
+            
         }
     }
 }

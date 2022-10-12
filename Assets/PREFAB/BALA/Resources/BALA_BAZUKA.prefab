@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipo_danio: 0
-  danio: 2
-  impactoEmpuje: 10
+  danio: 7
+  impactoEmpuje: 15
   posicionDanio: {x: 0, y: 0}
   m_transformAtacante: {fileID: 0}
   m_A_QuienDania: 1
@@ -250,8 +250,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946f3dbd49cb2a545b0a6e751ec9a483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duracion: 0
+  velocidad: 0
   m_colisionBala: {fileID: 7816895446748265040}
   explosivoTermino: 1
+  isBALA_NS: 0
 --- !u!114 &8835638296068416505
 MonoBehaviour:
   m_ObjectHideFlags: 0

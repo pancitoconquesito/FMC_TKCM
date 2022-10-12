@@ -7,8 +7,58 @@ public class Data_Singleton : MonoBehaviour
 {
     public static Data_Singleton instancia;
     [SerializeField] private TIPO_arma.ArmaTipo armaSeleccionada;
-    internal int cantidadVidaPJ;
+    [SerializeField] private int cantidadVidaPJ;
+    [SerializeField] private int initialPosition;
+    [SerializeField] private string NextLevel_singleton;
+    private bool setVidaInicializada = false;
+    void Awake()
+    {
+        if (instancia == null)
+        {
+            //cantidadVidaPJ = 3;//@GONZO
+            instancia = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(gameObject);
+    }
+    public void setCantidadVidaPJ(int valor)
+    {
+        if (!setVidaInicializada) {
+            //print("AAAAAAAAAAAAAAAAAAAAAa");
+            setVidaInicializada = true;
+            cantidadVidaPJ = valor;
+        }
+    }
 
+    internal string getNextLevel_singleton()
+    {
+        return NextLevel_singleton;
+    }
+    public void setNextLevel_singleton(string valor)
+    {
+        NextLevel_singleton = valor;
+    }
+
+    /*
+void Awake()
+{
+
+
+   if (instancia == null)
+   {
+       cantidadVidaPJ = 2;
+       instancia = this;
+       DontDestroyOnLoad(gameObject);
+   }
+   else
+       Destroy(gameObject);
+}*/
+    private void Start()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = -1;
+    }
     public void setArmaSeleccionada(TIPO_arma.ArmaTipo _arma)
     {
         print("cambio de arma a : "+_arma);
@@ -19,20 +69,17 @@ public class Data_Singleton : MonoBehaviour
         //print("paso arma tipo : "+armaSeleccionada);
         return armaSeleccionada;
     }
+    public int getCantidadVidaPJ() => cantidadVidaPJ;
 
-    void Awake()
+    internal void saveVida(int vidaActual)//////////////////////////////////////////
     {
-        if (instancia == null)
-        {
-            instancia = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-            Destroy(gameObject);
+        cantidadVidaPJ = vidaActual;
     }
 
-    internal void actualizarVida(int valor)
+    internal void resetDataMorir()
     {
-        throw new NotImplementedException();
+        cantidadVidaPJ = DATA.instance.save_load_system.m_dataGame.m_DATA_PROGRESS.cantidadDeCorazonesTotales;
     }
+    public int getInitialPosition()=>initialPosition;
+    public int setInitialPosition(int value) => initialPosition=value;
 }

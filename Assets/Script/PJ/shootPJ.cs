@@ -31,7 +31,7 @@ public class shootPJ : MonoBehaviour
         m_movementPJ = referencesMASTER.instancia.m_movementPJ;
         m_movementPJ.setParamMovement(m_so_ARMA.m_so_CONFIG_PJ, true);
 
-        if (TIPO_arma.getParse_TipoArma_STRING(m_armaTipo) != "NULL")
+        if (referencesMASTER.instancia.m_DataScene.getTipoScene() != GLOBAL_TYPES.TIPO_SCENE.nivel && TIPO_arma.getParse_TipoArma_STRING(m_armaTipo) != "NULL")
         {
             m_ObjectPooling_BALA_PJ = referencesMASTER.instancia.ObjectPooling_BALA_PJ;
             m_ObjectPooling_BALA_PJ.objeto= Resources.Load<GameObject>(m_so_ARMA._bala.dirPrefab);
@@ -39,6 +39,10 @@ public class shootPJ : MonoBehaviour
             //m_ObjectPooling_BALA_PJ.startCola();
             automatica=m_so_ARMA.au_noAu == TIPO_arma.Au.automatica;
         }
+        /*else//no tengo arma
+        {
+            
+        }*/
     }
 
 
@@ -70,12 +74,13 @@ public class shootPJ : MonoBehaviour
     {
         if (m_movementPJ.canShoot())
         {
+            cameraShake.instancia.shake(m_so_ARMA.shake_amount, m_so_ARMA.shake_time);
             if (m_so_ARMA.instantaneo)
             {
                 current_Cadencia = m_so_ARMA.cadencia;
                 print("Shoot");
                 m_Animator.SetTrigger("Shoot");
-                m_movementPJ.retrocesoDisparo(m_so_ARMA.retroceso);
+                m_movementPJ.retrocesoDisparo(m_so_ARMA.retroceso_pj);
 
                 //GameObject obj= 
                 m_ObjectPooling_BALA_PJ.emitirObj(m_so_ARMA._bala.duracion, false);
@@ -94,7 +99,7 @@ public class shootPJ : MonoBehaviour
             current_Cadencia = m_so_ARMA.cadencia;
             print("Shoot");
             //m_Animator.SetTrigger("Shoot");
-            m_movementPJ.retrocesoDisparo(m_so_ARMA.retroceso);
+            m_movementPJ.retrocesoDisparo(m_so_ARMA.retroceso_pj);
 
             //GameObject obj= 
             m_ObjectPooling_BALA_PJ.emitirObj(m_so_ARMA._bala.duracion, false);

@@ -11,6 +11,8 @@ public class NS_Generico : MonoBehaviour, IDamageable
     private ObjectPooling m_ObjectPooling;
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField]private float m_cadenciaRecibirDanio=0.15f;
+    [SerializeField] private bool recibeEmpuje = true;
+    [SerializeField] private float factorEmpuje = 1f;
     private float current_cadenciaRecibirDanio=0;
     protected bool vivo;
     public NS_Generico()
@@ -25,6 +27,11 @@ public class NS_Generico : MonoBehaviour, IDamageable
             retorno = recibirDanio(m_dataDanio);
         return retorno;
     }
+    private Vector2 dir;
+    private float empuje;
+    private bool empujado;
+    public float getEmpuje()=> empuje;
+    public Vector2 getDir() => dir;
     public virtual bool recibirDanio(dataDanio m_dataDanio)
     {
         if (current_cadenciaRecibirDanio > 0) return false;
@@ -38,7 +45,25 @@ public class NS_Generico : MonoBehaviour, IDamageable
             morir(m_dataDanio);
             retorno = true;
         }
-        //m_rigidbody.velocity = Vector3.zero;
+
+
+        GameObject cubeObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cubeObject.transform.localPosition = m_dataDanio.posicionDanio;
+        cubeObject.transform.localScale = new Vector3(.1f, .1f, .1f);
+
+
+
+        dir = new Vector2(transform.position.x-m_dataDanio.posicionDanio.x ,transform.position.y -m_dataDanio.posicionDanio.y);
+        dir = dir.normalized;
+        //Vector3 posDanio = new Vector3(m_dataDanio.posicionDanio.x, m_dataDanio.posicionDanio.y, 0);
+        //Vector3 dir3d = transform.position - posDanio;
+        Debug.DrawRay(transform.position, dir, Color.yellow);
+
+        empuje = m_dataDanio.getImpactoEmpuje();
+        print("Empuje : "+ empuje);
+        if(recibeEmpuje)
+            m_rigidbody.AddForce(dir * empuje * factorEmpuje, ForceMode2D.Impulse);
+        //Debug.Break();
         return retorno;
     }
     public virtual void morir(dataDanio m_dataDanio)
@@ -57,5 +82,10 @@ public class NS_Generico : MonoBehaviour, IDamageable
     void Update()
     {
         if (current_cadenciaRecibirDanio > -1) current_cadenciaRecibirDanio -= Time.deltaTime;
+        empujado = recibeEmpuje && current_cadenciaRecibirDanio > m_cadenciaRecibirDanio / 2f;
+    }
+    public bool isEmpujado()
+    {
+        return empujado;
     }
 }

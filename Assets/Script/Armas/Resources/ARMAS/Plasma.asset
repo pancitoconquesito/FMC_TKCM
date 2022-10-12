@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Plasma
   m_EditorClassIdentifier: 
   cadencia: 0.3
-  retroceso: 10
+  retroceso_pj: 5
   au_noAu: 1
   instantaneo: 0
   cantidadPool: 5
+  shake_amount: 2
+  shake_time: 0.25
   _bala: {fileID: 11400000, guid: 14e61322ff92fbf459b52f7f7a5a419c, type: 2}
   m_so_CONFIG_PJ: {fileID: 11400000, guid: 4130f05ad1749fb449c204c3b77b0bce, type: 2}

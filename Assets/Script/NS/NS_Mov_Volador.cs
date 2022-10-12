@@ -12,7 +12,7 @@ public class NS_Mov_Volador : MonoBehaviour
     [SerializeField] private NS_mov_IZDER m_NS_mov_IZDER;
     [SerializeField] private float factorRetrocesoRecibirDanio;
     [SerializeField] private Animator m_animator;
-    
+    [SerializeField] private NS_Generico m_NS_Generico;
     private changeMirada m_changeMirada;
 
     private Vector3 direccion;
@@ -35,6 +35,7 @@ public class NS_Mov_Volador : MonoBehaviour
     }
     void Update()
     {
+        if (m_NS_Generico.isEmpujado()) return;
         if (!recibiendoDanio)
         {
             switch (m_estados)
@@ -95,6 +96,7 @@ public class NS_Mov_Volador : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (m_NS_Generico.isEmpujado()) return;
         if (!recibiendoDanio) { 
             if(m_estados==estados.persiguiendo || m_estados== estados.volviendo)    m_rigidbody.velocity=direccion * velocidad;
         }

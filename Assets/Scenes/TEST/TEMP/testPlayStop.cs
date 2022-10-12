@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class testPlayStop : MonoBehaviour
+using UnityEngine.EventSystems;
+public class testPlayStop : MonoBehaviour//, ISelectHandler
 {
     public enum TIPO_CANAL
     {
@@ -38,7 +39,7 @@ public class testPlayStop : MonoBehaviour
         m_estado = ESTADO_PLAY.stop;
         ColorBlock cb = m_btn.colors;
         cb.normalColor = m_colorPlay;
-        cb.highlightedColor = m_colorPlay;
+        //cb.highlightedColor = m_colorPlay;
         m_btn.colors = cb;
     }
 
@@ -97,6 +98,7 @@ public class testPlayStop : MonoBehaviour
             m_estado = ESTADO_PLAY.play;
             cb.normalColor = m_colorStop;
             cb.highlightedColor = m_colorStop;
+            //cb.selectedColor = m_colorStop;
             m_textBtn.text = "STOP";
             
         }
@@ -105,6 +107,7 @@ public class testPlayStop : MonoBehaviour
             m_estado = ESTADO_PLAY.stop;
             cb.normalColor = m_colorPlay;
             cb.highlightedColor = m_colorPlay;
+            //cb.selectedColor = m_colorPlay;
             m_textBtn.text = "Play";
         }
         m_btn.colors = cb;
@@ -115,4 +118,13 @@ public class testPlayStop : MonoBehaviour
     {
         updateEstado();
     }
+
+    /*public void OnSelect(BaseEventData eventData)
+    {
+        print("aaaaaaaaaaaaa");
+    }
+    void OnMouseExit()
+    {
+        Debug.Log("Button Unselected");
+    }*/
 }

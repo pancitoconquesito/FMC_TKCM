@@ -16,6 +16,7 @@ public class movementPJ : MonoBehaviour
 
     [Header("- PARAMETROS MOVEMENT ESTATICOS-")]
     [SerializeField] private float limiteInput_movX;
+    [SerializeField] private vida_PJ m_vida_PJ;
 
     [Header("- PARAMETRO SEGUN ARMA (BASICO) -")]
     [SerializeField] private float velocidadCaminar;
@@ -72,7 +73,7 @@ public class movementPJ : MonoBehaviour
     }
     private void c_inventary()
     {
-
+        if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canInventary(m_estados)) return;
         if (m_estados!= GLOBAL_TYPES.ESTADOS_PJ.inventary)
         {
             m_estados = GLOBAL_TYPES.ESTADOS_PJ.inventary;
@@ -94,6 +95,7 @@ public class movementPJ : MonoBehaviour
     public void setPoder(ISpecial m_Poder)=> m_ISpecial = m_Poder;
     private void special()
     {
+        if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canSpecial(m_estados)) return;
         if (m_ISpecial == null)
         {
             print("poder nulo");
@@ -121,7 +123,8 @@ public class movementPJ : MonoBehaviour
     }
     private void shootMethod()
     {
-        if((m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || m_estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk) && !m_checkPared.checkIsPared())
+        if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canShoot(m_estados)) return;
+        if (GLOBAL_TYPES.canShoot(m_estados) && !m_checkPared.checkIsPared()) //if ((m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || m_estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk) && !m_checkPared.checkIsPared())
         {
             m_shootPJ.Shoot();
         }
@@ -136,7 +139,8 @@ public class movementPJ : MonoBehaviour
     }
     private void kick()
     {
-        if (current_cadenciaKick < 0 && m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || m_estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk)
+        if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canKick(m_estados) || onWalk) return;
+        if (current_cadenciaKick < 0)//m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || m_estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk)
         {
             current_cadenciaKick = cadenciaKick;
             m_animator.SetTrigger("Kick");
@@ -146,8 +150,9 @@ public class movementPJ : MonoBehaviour
     private bool accesoDash = true;
     private void dash()
     {
+        if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canDash(m_estados)) return;
         if (m_estadoAlterado == GLOBAL_TYPES.ESTADO_ALTERADO.plasma) return;
-        if (accesoDash && (m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || m_estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk))
+        if (accesoDash )//&& (m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || m_estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk))
         {
             if (m_dashPJ.startDash(m_changeMirada.getMirada()))
             {
@@ -159,30 +164,29 @@ public class movementPJ : MonoBehaviour
     }
     private void jump()
     {
-        if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement)
+        if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canMov_X(m_estados)) return;
+        //if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement)
+        //{
+        if (m_isGrounded)
+            m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, potenciaSalto);
+        if (onWalk)
         {
-
-            if (m_isGrounded)
-                m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, potenciaSalto);
-            if (onWalk)
+            onWalk = false;
+            m_estados = GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk;
+            m_animator.Play("anim_pj_jump");
+            //referencesMASTER.instancia.sp_brazo.enabled = true;
+            //referencesMASTER.instancia.sp_Arma.enabled = true;
+            if (m_changeMirada.getMirada() == GLOBAL_TYPES.ladoMirada.izquierda)
             {
-                onWalk = false;
-                m_estados = GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk;
-                m_animator.Play("anim_pj_jump");
-                //referencesMASTER.instancia.sp_brazo.enabled = true;
-                //referencesMASTER.instancia.sp_Arma.enabled = true;
-
-                if (m_changeMirada.getMirada() == GLOBAL_TYPES.ladoMirada.izquierda)
-                {
-                    m_rigidbody.AddForce(new Vector2(potenciaRepulsionWALL_X, potenciaRepulsionWALL_Y),ForceMode2D.Impulse);
-                }
-                else
-                {
-                    m_rigidbody.AddForce(new Vector2(-potenciaRepulsionWALL_X, potenciaRepulsionWALL_Y), ForceMode2D.Impulse);
-                }
-                Invoke("returnNormalMovement", tiempoInactivoRepulsion);
+                m_rigidbody.AddForce(new Vector2(potenciaRepulsionWALL_X, potenciaRepulsionWALL_Y),ForceMode2D.Impulse);
             }
+            else
+            {
+                m_rigidbody.AddForce(new Vector2(-potenciaRepulsionWALL_X, potenciaRepulsionWALL_Y), ForceMode2D.Impulse);
+            }
+            Invoke("returnNormalMovement", tiempoInactivoRepulsion);
         }
+        //}
     }
     private void detenerJump()
     {
@@ -203,7 +207,8 @@ public class movementPJ : MonoBehaviour
     private float m_currentValor_X;
     private void getInput_Axis_LEFT(float currentValor_X)
     {
-        if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.inventary)
+        if (!m_vida_PJ.isVivo()) return;
+        if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.inventary || !GLOBAL_TYPES.canMov_X(m_estados))
         {
             valorInput_Horizontal = 0;
             m_currentValor_X = 0;
@@ -237,23 +242,26 @@ public class movementPJ : MonoBehaviour
     }
     private void landed_function()
     {
-        print("landed()");
+        //print("landed()");
     }
     // Update is called once per frame
     void Update()
     {
-        grounded_landed();
-
-        if (m_rigidbody.velocity.y < velocidadLimiteCaida) m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, velocidadLimiteCaida);
-
-        if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement)
+        if (m_vida_PJ.isVivo())
         {
-            isPared();
-            m_changeMirada.miradaPj(m_currentValor_X);
-        }
-        if (m_estados != GLOBAL_TYPES.ESTADOS_PJ.kick && current_cadenciaKick > -1)
-        {
-            current_cadenciaKick -= Time.deltaTime;
+            grounded_landed();
+
+            if (m_rigidbody.velocity.y < velocidadLimiteCaida) m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, velocidadLimiteCaida);
+
+            if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement)
+            {
+                isPared();
+                m_changeMirada.miradaPj(m_currentValor_X);
+            }
+            if (m_estados != GLOBAL_TYPES.ESTADOS_PJ.kick && current_cadenciaKick > -1)
+            {
+                current_cadenciaKick -= Time.deltaTime;
+            }
         }
     }
 
@@ -277,7 +285,7 @@ public class movementPJ : MonoBehaviour
         if(m_estadoAlterado == GLOBAL_TYPES.ESTADO_ALTERADO.plasma)
         {
             onWalk = false;
-            m_animator.SetBool("checkWalk", onWalk);
+            m_animator.SetBool("checkWalk", false);
             return;
         }
         if (!m_isGrounded && m_checkPared.checkIsPared() && m_rigidbody.velocity.y < 0)
@@ -344,6 +352,11 @@ public class movementPJ : MonoBehaviour
             case GLOBAL_TYPES.ESTADOS_PJ.die:
                 {
                     m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x * 0.2f, m_rigidbody.velocity.y * 0.2f);
+                    break;
+                }
+            case GLOBAL_TYPES.ESTADOS_PJ.inventary:
+                {
+                    m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x * 0.1f, m_rigidbody.velocity.y);
                     break;
                 }
         }
@@ -416,6 +429,8 @@ public class movementPJ : MonoBehaviour
         m_animator.SetTrigger("Die");
         m_rigidbody.velocity = Vector2.zero;
         m_rigidbody.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+        desactivarControles();
+        m_rigidbody.constraints= RigidbodyConstraints2D.FreezeAll;
         respawnear();
     }
 
@@ -462,6 +477,7 @@ public class movementPJ : MonoBehaviour
     }
     public void setEstadoAlterado_param(GLOBAL_TYPES.ESTADO_ALTERADO estadoAlterado_, so_CONFIG_PJ newParam)
     {
+        //print("acaaaa");
         //if (newParam == null) estadoAlterado_ = GLOBAL_TYPES.ESTADO_ALTERADO.none;
         m_estadoAlterado = estadoAlterado_;
         switch (m_estadoAlterado) {

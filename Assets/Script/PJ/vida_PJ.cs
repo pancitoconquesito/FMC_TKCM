@@ -12,17 +12,24 @@ public class vida_PJ : MonoBehaviour, IDamageable
     private float current_tiempoInvulnerable;
     private bool vivo;
     private bool m_invulnerable = false;
-    //private DATA_SINGLETON m_DATA_SINGLETON;
-
+    private Data_Singleton m_DATA_SINGLETON;
+    private ui_corazon m_ui_corazon;
     [Header("TEST")]
     [SerializeField] private TextMeshProUGUI textTestVida;
+    [SerializeField] private TransicionMuerte m_transicionMuerte;
     void Start()
     {
+        m_DATA_SINGLETON = GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent<Data_Singleton>();
         current_tiempoInvulnerable = 0;
         vivo = true;
         totalVida = 10;
-        vidaActual = 10;
-        textTestVida.text = "Vida : " + vidaActual;
+        //vidaActual = 10;
+        vidaActual = GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent<Data_Singleton>().getCantidadVidaPJ();
+
+        if (textTestVida!=null)
+            textTestVida.text = "Vida : " + vidaActual;
+        m_ui_corazon = referencesMASTER.instancia.m_ui_corazon;
+        m_ui_corazon.updateVida_UI(vidaActual);
         //m_DATA_SINGLETON = GameObject.FindGameObjectWithTag("DATA_SINGLETON").GetComponent<DATA_SINGLETON>();
         //vidaActual = m_DATA_SINGLETON.vidaPj;
         //totalVida = m_DATA_SINGLETON.vidaMAXIMA_pj;
@@ -64,46 +71,31 @@ public class vida_PJ : MonoBehaviour, IDamageable
         {
             vidaActual += valor;
 
-            textTestVida.text = "Vida : " + vidaActual;
-
-            if (vidaActual > totalVida) vidaActual = totalVida;
-
-            if (vidaActual <= 0)
-            {
-                vidaActual = 0;
-                vivo = false;
-                morir();
-                return false;
-            }
-            return true;
-        }
-        /*
-        if (vivo && m_movementPJ.test_getEstado() != GLOBAL_TYPE.ESTADOS.entrandoScene)
-        {
-            vidaActual += valor;
-            if (vidaActual > totalVida) vidaActual = totalVida;
-            
-            m_DATA_SINGLETON.vidaPj = vidaActual;
+            if(textTestVida!=null)
+                textTestVida.text = "Vida : " + vidaActual;
             m_ui_corazon.updateVida_UI(vidaActual);
+            m_DATA_SINGLETON.saveVida(vidaActual);//@GONZO
+
+            if (vidaActual > totalVida) vidaActual = totalVida;
+
             if (vidaActual <= 0)
             {
                 vidaActual = 0;
                 vivo = false;
-                m_DATA_SINGLETON.vidaPj = vidaActual;
-                m_ui_corazon.updateVida_UI(vidaActual);
                 morir();
                 return false;
             }
             return true;
         }
-        */
         return false;
     }
     public void turnInvulnerable(bool valor) => m_invulnerable = valor;
     private void morir()
     {
         print("me mori!!!");
-        //m_DATA_SINGLETON.resetDataMorir();
         m_movementPJ.morir();
+        m_DATA_SINGLETON.resetDataMorir();
+        //da
     }
+    public bool isVivo() => vivo;
 }

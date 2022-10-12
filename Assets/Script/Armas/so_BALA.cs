@@ -6,7 +6,7 @@ using UnityEngine;
 public class so_BALA : ScriptableObject
 {
     //public int danio;// cuando danio hace al objetivo
-    public float empuje;//cuando empuja al objetivo 
+    //public float empuje;//cuando empuja al objetivo 
     //public bool rebote;// si rebota al chocar con un solido
     public float duracion;//cuanto dura antes de destruirse
 

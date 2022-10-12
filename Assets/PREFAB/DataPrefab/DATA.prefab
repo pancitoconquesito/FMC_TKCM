@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 350598827856622965}
   m_Layer: 0
   m_Name: DATA
-  m_TagString: Untagged
+  m_TagString: Data_Singleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,10 +66,17 @@ MonoBehaviour:
       valorData_test: 0
       valorData_test_b: 10
     m_DATA_ITEMS:
-      key_pika: 0
+      itemTest: 0
     m_DATA_PROGRESS:
       cantidadDeCorazonesTotales: 3
       nameStageSaveRoom: S0_A
+    m_DATA_CONF_AUDIO:
+      lv_MASTER: 1
+      lv_BackgroundMusic: 1
+      lv_FX: 1
+      lv_Voces: 1
+    m_DATA_CONFIG_GAME:
+      IDIOMA: 0
 --- !u!114 &350598827856622965
 MonoBehaviour:
   m_ObjectHideFlags: 0

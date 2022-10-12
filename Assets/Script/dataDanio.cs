@@ -10,6 +10,7 @@ public class dataDanio : MonoBehaviour
     [SerializeField] private float impactoEmpuje;
     public Vector2 posicionDanio;
     public Transform m_transformAtacante;
+    //public Vector2 posicion;
     private GLOBAL_TYPES.ladoMirada m_lado;
     //public bool daniarAEnemigo;
 
@@ -17,7 +18,7 @@ public class dataDanio : MonoBehaviour
     public GLOBAL_TYPES.AFECTA_A_ m_A_QuienDania;
     private void Start()
     {
-        m_transformAtacante = transform;
+        //m_transformAtacante = transform;
     }
     public int getDanio()
     {

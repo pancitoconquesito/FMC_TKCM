@@ -7,6 +7,7 @@ public class CambiarScene : MonoBehaviour
     [SerializeField] private string nameStage;
     [SerializeField] private float delay;
     [SerializeField] private bool StartChange;
+    [SerializeField] private bool loadNameStage_singleton;
     private void Start()
     {
         if(StartChange) Invoke("changeStageWithOutDATA", delay);
@@ -17,6 +18,7 @@ public class CambiarScene : MonoBehaviour
     }
     public void changeScene()
     {
+        if (loadNameStage_singleton) nameStage = referencesMASTER.instancia.m_Data_Singleton.getNextLevel_singleton();
         Invoke("changeStageNow",delay);
     }
     public void changeScene(string _name)
@@ -36,6 +38,7 @@ public class CambiarScene : MonoBehaviour
     private void changeStageNow()
     {
         //if(nameStage=="asdf") nameStage= DATA.instance.save_load_system.m_dataGame.m_DATA_PROGRESS.nameStageSaveRoom;
+        if (loadNameStage_singleton && referencesMASTER.instancia.m_Data_Singleton.getNextLevel_singleton()=="") nameStage = "Nivel_1";
         SceneManager.LoadScene(nameStage);
     }
     private void changeStageWithOutDATA()

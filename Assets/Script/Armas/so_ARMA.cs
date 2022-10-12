@@ -7,10 +7,15 @@ public class so_ARMA : ScriptableObject
 {
     [Header("- ARMA -")]
     public float cadencia;
-    public float retroceso;
+    public float retroceso_pj;
+    //public float retroceso_NS;
     public TIPO_arma.Au au_noAu;
     public bool instantaneo;
     public int cantidadPool;
+
+    [Header("- Shake -")]
+    public float shake_amount;
+    public float shake_time;
 
     [Header("- BALA -")]
     public so_BALA _bala;
