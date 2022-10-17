@@ -13,7 +13,7 @@ public class cargarPoder : MonoBehaviour
         if (tipoArma_TIPO == TIPO_arma.ArmaTipo.none) return;
         string tipoArmas_s=TIPO_arma.getParse_TipoArma_STRING(tipoArma_TIPO);
         GameObject poder = Resources.Load<GameObject>("Poderes/PODER_"+ tipoArmas_s);
-        print($"Cargar prefab poder en direccion : Poderes/PODER_{tipoArmas_s}");
+        //print($"Cargar prefab poder en direccion : Poderes/PODER_{tipoArmas_s}");
         Instantiate(poder, transform.position, Quaternion.identity, transform);
 
         Invoke("enviarReferencia",0.1f);

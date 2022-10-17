@@ -7,12 +7,12 @@ public class PoderBazuka : PoderBase
     //[SerializeField] private GameObject objExplosion;
     [SerializeField] private Collider2D m_Collider2D;
     private Animator m_Animator_PJ;
-    [SerializeField] private Animator m_Animator_Explosion;
+    //[SerializeField] private Animator m_Animator_Explosion;
     private movementPJ m_movementPJ;
     [SerializeField]private Animator m_animator;
     public PoderBazuka() : base()
     {
-        m_Collider2D.enabled = false;
+        
     }
     private void Awake()
     {
@@ -20,6 +20,8 @@ public class PoderBazuka : PoderBase
     }
     void Start()
     {
+        if (m_Collider2D == null) m_Collider2D = transform.GetChild(1).GetComponent<Collider2D>();
+        m_Collider2D.enabled = false;
         //base.m_UpdateCirclePower = referencesMASTER.instancia.m_UpdateCirclePower;
         //base.m_UpdateRecargaPoder = referencesMASTER.instancia.m_UpdateRecargaPoder;
         //base.m_UpdateRecargaPoder.setParameters(base.tiempoRecarga);

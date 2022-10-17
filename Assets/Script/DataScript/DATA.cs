@@ -8,13 +8,17 @@ public class DATA : MonoBehaviour
 
     [SerializeField] private testIdiomaSAVE_LOAD idioma_data;
     [SerializeField] private Data_Singleton m_Data_Singleton;
+    [SerializeField] private bool cargarArma=true;
     public SAVE_LOAD_SYSTEM save_load_system;
     //private int indiceSiguientePosicion;
     private void Awake()
     {
         instance = this;
         idioma_data.cargarIdioma(save_load_system.m_dataGame.m_DATA_CONFIG_GAME.IDIOMA);
-        GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent<Data_Singleton>().setCantidadVidaPJ(save_load_system.m_dataGame.m_DATA_PROGRESS.cantidadDeCorazonesTotales);
+        if(GameObject.FindGameObjectWithTag("DataScene").GetComponent<DataScene>().getTipoScene() != GLOBAL_TYPES.TIPO_SCENE.TEST_OST)
+            GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent<Data_Singleton>().setCantidadVidaPJ(save_load_system.m_dataGame.m_DATA_PROGRESS.cantidadDeCorazonesTotales);
+        if(!cargarArma)
+            GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent< Data_Singleton >().setArmaSeleccionada(TIPO_arma.ArmaTipo.none);
     }
 
     internal int getCantidadNekoEsfera()

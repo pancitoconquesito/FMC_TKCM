@@ -17,6 +17,7 @@ public class NS_Mov_Volador : MonoBehaviour
 
     private Vector3 direccion;
     private Vector3 direccionInicial;
+    private bool vivo = true;
     private enum estados
     {
         patrullando, persiguiendo, volviendo, muerto
@@ -35,35 +36,43 @@ public class NS_Mov_Volador : MonoBehaviour
     }
     void Update()
     {
-        if (m_NS_Generico.isEmpujado()) return;
-        if (!recibiendoDanio)
+        if (m_NS_Generico.getIsVivo())
         {
-            switch (m_estados)
+            if (m_NS_Generico.isEmpujado()) return;
+            if (!recibiendoDanio)
             {
-                case estados.patrullando:
-                    {
-                        revisarPJDistancia();
-                        break;
-                    }
-                case estados.persiguiendo:
-                    {
-                        revisarPJDistancia();
-                        direccion = (targetPJ.position - transform.position).normalized;
-                        revisarMirada(targetPJ.position.x - transform.position.x);
-                        break;
-                    }
-                case estados.volviendo:
-                    {
-                        direccion = (direccionInicial - transform.position).normalized;
-                        revisarMirada(direccionInicial.x - transform.position.x);
-                        if (m_estados == estados.volviendo && Vector2.Distance(transform.position, direccionInicial) < 0.1f)
+                switch (m_estados)
+                {
+                    case estados.patrullando:
                         {
-                            m_estados = estados.patrullando;
-                            m_NS_mov_IZDER.enabled = true;
+                            revisarPJDistancia();
+                            break;
                         }
-                        break;
-                    }
+                    case estados.persiguiendo:
+                        {
+                            revisarPJDistancia();
+                            direccion = (targetPJ.position - transform.position).normalized;
+                            revisarMirada(targetPJ.position.x - transform.position.x);
+                            break;
+                        }
+                    case estados.volviendo:
+                        {
+                            direccion = (direccionInicial - transform.position).normalized;
+                            revisarMirada(direccionInicial.x - transform.position.x);
+                            if (m_estados == estados.volviendo && Vector2.Distance(transform.position, direccionInicial) < 0.1f)
+                            {
+                                m_estados = estados.patrullando;
+                                m_NS_mov_IZDER.enabled = true;
+                            }
+                            break;
+                        }
+                }
             }
+        }
+        else
+        {
+            if(vivo)
+                morir();
         }
         
         
@@ -134,9 +143,9 @@ public class NS_Mov_Volador : MonoBehaviour
     }
     public void morir()
     {
-        //vivo = false;
+        vivo = false;
         velocidad = 0;
-        m_animator.SetTrigger("morir");
+        //m_animator.SetTrigger("morir");
         
     }
 

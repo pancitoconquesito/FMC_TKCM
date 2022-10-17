@@ -5,6 +5,7 @@ using UnityEngine;
 public class I_interaccion_BIOMA : MonoBehaviour, IInteraccion
 {
     [SerializeField] private string m_nameStage;
+    [SerializeField] private bool testLevel;
     [SerializeField, Range(1, 5)] private int m_numero_NIVEL;
     [SerializeField, Range(1, 3)] private int m_numero_BIOMA;
     [SerializeField, Range(1, 4)] private int m_numero_ETAPA;
@@ -12,7 +13,8 @@ public class I_interaccion_BIOMA : MonoBehaviour, IInteraccion
     private void Start()
     {
         m_ui_bioma_GO = referencesMASTER.instancia.m_Gestor_UI_Bioma;
-        m_nameStage = $"N{m_numero_NIVEL}_B_{m_numero_BIOMA}_E{m_numero_ETAPA}";
+        if(!testLevel)
+            m_nameStage = $"N{m_numero_NIVEL}_B_{m_numero_BIOMA}_E{m_numero_ETAPA}";
     }
     public void comenzarInteraccion()
     {

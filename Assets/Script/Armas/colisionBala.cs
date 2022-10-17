@@ -46,6 +46,7 @@ public class colisionBala : MonoBehaviour
             }
             if (collision.transform.CompareTag("NS"))
             {
+                //print("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
                 if (destruible_NS) m_retornarObjectPooling.retornar();//m_balaVolverACola.volverPool();
             }
             idamageable.RecibirDanio_I(m_dataDanio);

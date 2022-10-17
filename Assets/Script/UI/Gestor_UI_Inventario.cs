@@ -16,7 +16,7 @@ public class Gestor_UI_Inventario : MonoBehaviour
     }
     private void OnEnable()
     {
-        habilitarControles();
+        //habilitarControles();
     }
     private void habilitarControles()
     {
@@ -61,8 +61,19 @@ public class Gestor_UI_Inventario : MonoBehaviour
                         EventSystem.current.SetSelectedGameObject(firstButton_Nivel);
                         break;
                     }
+                case GLOBAL_TYPES.TIPO_SCENE.TESTEO_SIN_ARMA:
+                    {
+                        EventSystem.current.SetSelectedGameObject(firstButton_Nivel);
+                        break;
+                    }
+                case GLOBAL_TYPES.TIPO_SCENE.TESTEO_CON_ARMA:
+                    {
+                        EventSystem.current.SetSelectedGameObject(firstButton_Nivel);
+                        break;
+                    }
             }
             
         }
+        habilitarControles();
     }
 }

@@ -34,12 +34,13 @@ public class NS_Simple : NS_Generico
     }
     public override bool recibirDanio(dataDanio m_dataDanio)
     {
-        if(currentCadenciaRecibirDanio < 0)
+        //print("ns simple");
+        if (currentCadenciaRecibirDanio < 0)
         {
             currentCadenciaRecibirDanio = cadenciaRecibirDanio;
 
             if (base.recibirDanio(m_dataDanio)) { 
-                m_animator.SetTrigger("morir");
+                m_animator.SetTrigger("died");
                 Invoke("mostrarPArticulas",delayParticulas);
                 if (m_NS_Mov_Volador != null) m_NS_Mov_Volador.morir();
                 else if (m_NS_mov_IZDER != null) m_NS_mov_IZDER.morir();

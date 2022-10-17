@@ -11,6 +11,7 @@ public class NS_mov_IZDER : MonoBehaviour
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private float factorRetrocesoAlRecibirDanio;
     [SerializeField] private NS_Generico m_NS_Generico;
+    //[SerializeField] private Animator m_Animator;
     private changeMirada m_changeMirada;
     void Start()
     {
@@ -33,7 +34,10 @@ public class NS_mov_IZDER : MonoBehaviour
             print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
            // m_rigidbody.AddForce(m_NS_Generico.getDir() * m_NS_Generico.getEmpuje() * 10f, ForceMode2D.Impulse);
         }*/
-
+        if (!m_NS_Generico.getIsVivo() && vivo)
+        {
+            morir();
+        }
     }
 
     private void setLado()
@@ -41,20 +45,30 @@ public class NS_mov_IZDER : MonoBehaviour
         if (direccionCaminata == GLOBAL_TYPES.ladoMirada.izquierda && transform.position.x < vec_IZ.x )
         {
             direccionCaminata = GLOBAL_TYPES.ladoMirada.derecha;
+            m_changeMirada.miradaPj(1);
         }
         if (direccionCaminata == GLOBAL_TYPES.ladoMirada.derecha && transform.position.x > vec_DER.x)
         {
             direccionCaminata = GLOBAL_TYPES.ladoMirada.izquierda;
+            m_changeMirada.miradaPj(-1);
         }
     }
     private Vector3 lado;
     private void FixedUpdate()
     {
-        if (m_NS_Generico.isEmpujado()) return;
-        if (!reciboiendoDanio)
-            m_rigidbody.velocity = velocidad * lado;
-        else
-            m_rigidbody.velocity = lado;
+        if (vivo)
+        {
+
+            if (m_NS_Generico.isEmpujado()) return;
+            if (!reciboiendoDanio)
+                m_rigidbody.velocity = velocidad * lado;
+            else
+                m_rigidbody.velocity = lado;
+        }
+        else {
+            m_rigidbody.velocity = Vector2.zero;
+        }
+
     }
     private void moverse()
     {
@@ -75,13 +89,13 @@ public class NS_mov_IZDER : MonoBehaviour
     {
         vivo = false;
         velocidad = 0;
+        //Destroy(this);
     }
     private bool reciboiendoDanio=false;
     private bool vivo = true;
     
     public void recibirDanio(dataDanio m_dataDanio)
     {
-        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAA");
         //si no esta recibiendo daño ya
         reciboiendoDanio = true;
         Vector3 dirEmpuje = (transform.position - m_dataDanio.m_transformAtacante.position).normalized;

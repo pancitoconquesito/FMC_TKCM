@@ -403,6 +403,9 @@ MonoBehaviour:
   m_cadenciaRecibirDanio: 0.15
   recibeEmpuje: 0
   factorEmpuje: 0
+  m_Animator: {fileID: 0}
+  m_Collider2D_realizarDanio: {fileID: 0}
+  m_Collider2D_recibirDanio: {fileID: 0}
 --- !u!61 &96168459
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -884,6 +887,9 @@ MonoBehaviour:
   m_cadenciaRecibirDanio: 0.15
   recibeEmpuje: 1
   factorEmpuje: 3
+  m_Animator: {fileID: 0}
+  m_Collider2D_realizarDanio: {fileID: 0}
+  m_Collider2D_recibirDanio: {fileID: 0}
 --- !u!61 &399965665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1152,6 +1158,9 @@ MonoBehaviour:
   m_cadenciaRecibirDanio: 0.2
   recibeEmpuje: 1
   factorEmpuje: 2
+  m_Animator: {fileID: 0}
+  m_Collider2D_realizarDanio: {fileID: 0}
+  m_Collider2D_recibirDanio: {fileID: 0}
 --- !u!61 &678782466
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1212,6 +1221,9 @@ MonoBehaviour:
   m_cadenciaRecibirDanio: 0.2
   recibeEmpuje: 1
   factorEmpuje: 1
+  m_Animator: {fileID: 0}
+  m_Collider2D_realizarDanio: {fileID: 0}
+  m_Collider2D_recibirDanio: {fileID: 0}
   m_animator: {fileID: 1908144259}
   m_NS_mov_IZDER: {fileID: 47595230}
   m_NS_Mov_Volador: {fileID: 0}
@@ -2850,6 +2862,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_so_dialogo: {fileID: 11400000, guid: 46e7df9ad60934448a479c7d86b5cb39, type: 2}
   collider_alejarPj_Conv: {fileID: 1641710978}
+  m_animator_globoBTN: {fileID: 0}
+  m_SpriteRenderer: {fileID: 0}
 --- !u!61 &1538242052
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4811,6 +4825,10 @@ PrefabInstance:
     - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
       propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[59].numeroNivel
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622971, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: cargarArma
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 350598827856622971, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
       propertyPath: m_Data_Singleton

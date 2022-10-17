@@ -1,0 +1,2536 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 9
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.01
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 3
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 0}
+  m_HaloStrength: 0.5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
+  m_DefaultReflectionMode: 0
+  m_DefaultReflectionResolution: 128
+  m_ReflectionBounces: 1
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_UseRadianceAmbientProbe: 0
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 12
+  m_GIWorkflowMode: 1
+  m_GISettings:
+    serializedVersion: 2
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 0
+    m_EnableRealtimeLightmaps: 0
+  m_LightmapEditorSettings:
+    serializedVersion: 12
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_AtlasSize: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 1
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 512
+    m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 256
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 1
+    m_PVRDenoiserTypeDirect: 1
+    m_PVRDenoiserTypeIndirect: 1
+    m_PVRDenoiserTypeAO: 1
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
+    m_PVREnvironmentMIS: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 5
+    m_PVRFilteringGaussRadiusAO: 2
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
+  m_LightingDataAsset: {fileID: 0}
+  m_LightingSettings: {fileID: 0}
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 2
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
+    debug:
+      m_Flags: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &13625143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 13625144}
+  - component: {fileID: 13625146}
+  - component: {fileID: 13625145}
+  m_Layer: 6
+  m_Name: Square (5)
+  m_TagString: Platform
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &13625144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13625143}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 34.1118, y: 13.7821, z: 0}
+  m_LocalScale: {x: 34.89975, y: 31.327557, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863585190}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &13625145
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13625143}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &13625146
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13625143}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &191648571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 191648572}
+  - component: {fileID: 191648574}
+  - component: {fileID: 191648573}
+  m_Layer: 6
+  m_Name: Square (6)
+  m_TagString: Platform
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &191648572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191648571}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.0318, y: 35.0224, z: 0}
+  m_LocalScale: {x: 89.60614, y: 24.290495, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863585190}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &191648573
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191648571}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &191648574
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191648571}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &322882409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 322882410}
+  - component: {fileID: 322882413}
+  - component: {fileID: 322882411}
+  - component: {fileID: 322882415}
+  - component: {fileID: 322882414}
+  m_Layer: 0
+  m_Name: col
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &322882410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322882409}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1747816375}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &322882411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322882409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1231d7aae6ad5bb43b742cc2cca77d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ESTADO_ACTIVO: 0
+--- !u!212 &322882413
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322882409}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!61 &322882414
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322882409}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &322882415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322882409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f1825fbc1a586549aeaac16e85e0de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_nameStage: TEST_Arma_ARma_NS
+  testLevel: 1
+  m_numero_NIVEL: 1
+  m_numero_BIOMA: 1
+  m_numero_ETAPA: 1
+--- !u!1 &548862780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 548862782}
+  - component: {fileID: 548862781}
+  m_Layer: 0
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &548862781
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548862780}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1800333223
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 904bedce79d93bd43a7c431d2db42ba5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 2
+  m_Size: {x: 109.53452, y: 29.507824}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &548862782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548862780}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.87, y: 8.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1016705174}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &699867228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699867229}
+  - component: {fileID: 699867232}
+  - component: {fileID: 699867231}
+  - component: {fileID: 699867230}
+  m_Layer: 0
+  m_Name: CHECKPOINT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &699867229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699867228}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.97, y: -2.23, z: 0}
+  m_LocalScale: {x: 1, y: 2.1542, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1956255760}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &699867230
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699867228}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &699867231
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699867228}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0, g: 0.5987654, b: 1, a: 0.5882353}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &699867232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699867228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dedeb5268968de45ad2ce75058253d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numero: 0
+  valor: 0
+  activo: 0
+  miPosicion: {x: 0, y: 0, z: 0}
+--- !u!1 &751620906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751620908}
+  - component: {fileID: 751620907}
+  m_Layer: 0
+  m_Name: DataScene
+  m_TagString: DataScene
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &751620907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751620906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b60867d4f5e3cc4e82d78968b7f7a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tipoScene: 2
+--- !u!4 &751620908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751620906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -930.09283, y: -449.02908, z: -0.060745366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1016705173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1016705174}
+  m_Layer: 0
+  m_Name: _ESCENARIO
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1016705174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016705173}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -942.74524, y: -453.52, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 548862782}
+  - {fileID: 1863585190}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1111511884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1111511885}
+  - component: {fileID: 1111511887}
+  - component: {fileID: 1111511886}
+  m_Layer: 6
+  m_Name: Square (7)
+  m_TagString: Platform
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1111511885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111511884}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 23.6195, y: 7.73, z: 0}
+  m_LocalScale: {x: 4.742655, y: 10.025673, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863585190}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1111511886
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111511884}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &1111511887
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111511884}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &1127773569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1127773570}
+  - component: {fileID: 1127773572}
+  - component: {fileID: 1127773571}
+  m_Layer: 6
+  m_Name: Square (8)
+  m_TagString: Platform
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1127773570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127773569}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 31.2614, y: -13.4383, z: 0}
+  m_LocalScale: {x: 50.57577, y: 24.493757, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863585190}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1127773571
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127773569}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &1127773572
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127773569}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &1241359200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1241359201}
+  m_Layer: 0
+  m_Name: ------------------------------------------ (1)
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1241359201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241359200}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4020386, y: -0.22988892, z: 3.7367978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1439866170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1439866173}
+  - component: {fileID: 1439866172}
+  - component: {fileID: 1439866171}
+  m_Layer: 6
+  m_Name: Square (1)
+  m_TagString: Platform
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1439866171
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439866170}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &1439866172
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439866170}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1439866173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439866170}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.5804, y: 2.8126, z: 0}
+  m_LocalScale: {x: 45.760677, y: 42.756054, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863585190}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1721482174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1721482175}
+  - component: {fileID: 1721482177}
+  - component: {fileID: 1721482176}
+  m_Layer: 6
+  m_Name: Square (9)
+  m_TagString: Platform
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1721482175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721482174}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 49.8561, y: 11.615, z: 0}
+  m_LocalScale: {x: 27.957117, y: 71.10557, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863585190}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1721482176
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721482174}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &1721482177
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721482174}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &1747816374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1747816375}
+  m_Layer: 0
+  m_Name: ETAPA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1747816375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747816374}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -928.47, y: -454.17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1756629942}
+  - {fileID: 322882410}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1756629941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1756629942}
+  - component: {fileID: 1756629943}
+  m_Layer: 0
+  m_Name: visual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1756629942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756629941}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1747816375}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1756629943
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756629941}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &1761860762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1761860763}
+  - component: {fileID: 1761860765}
+  - component: {fileID: 1761860764}
+  m_Layer: 6
+  m_Name: Square (4)
+  m_TagString: Platform
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1761860763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761860762}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -16.4197, y: 15.3574, z: 0}
+  m_LocalScale: {x: 18.704185, y: 30.95838, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863585190}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1761860764
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761860762}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &1761860765
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761860762}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &1863585189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863585190}
+  - component: {fileID: 1863585191}
+  m_Layer: 6
+  m_Name: SOLIDO
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1863585190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863585189}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1439866173}
+  - {fileID: 1761860763}
+  - {fileID: 13625144}
+  - {fileID: 1111511885}
+  - {fileID: 1127773570}
+  - {fileID: 191648572}
+  - {fileID: 1721482175}
+  m_Father: {fileID: 1016705174}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1863585191
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863585189}
+  m_Enabled: 1
+  m_SortingLayerID: -237126565
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+--- !u!1001 &1910165702
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2160364873722904563, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: m_Name
+      value: DATA_Singleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126358582685000849, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126358582685000849, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126358582685000849, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126358582685000849, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126358582685000849, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126358582685000849, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126358582685000849, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126358582685000849, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126358582685000849, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126358582685000849, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126358582685000849, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+--- !u!114 &1910165703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7033262323963527129, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+  m_PrefabInstance: {fileID: 1910165702}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27d3e8c86667d1243b699fcbafcf30e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1956255758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1956255760}
+  - component: {fileID: 1956255759}
+  m_Layer: 0
+  m_Name: Gestor_CHECKPOINT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1956255759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956255758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572d682544f772c40a5a448d29d1c1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_L_checkpoints: []
+--- !u!4 &1956255760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956255758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -935.37, y: -451.3992, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 699867229}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2034386453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2034386454}
+  m_Layer: 0
+  m_Name: ------------------------------------------
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2034386454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034386453}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4020386, y: -0.22988892, z: 3.7367978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &350598828819734754
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 350598827856622964, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_Name
+      value: DATA
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622964, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622968, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622968, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622968, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622968, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622968, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622968, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622968, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622968, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622968, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622968, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622968, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.size
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[0].nombre
+      value: N0 - B0 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[1].nombre
+      value: N0 - B0 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[2].nombre
+      value: N0 - B0 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[3].nombre
+      value: N0 - B0 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[4].nombre
+      value: N0 - B1 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[5].nombre
+      value: N0 - B1 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[6].nombre
+      value: N0 - B1 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[7].nombre
+      value: N0 - B1 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[8].nombre
+      value: N0 - B2 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[9].nombre
+      value: N0 - B2 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[10].nombre
+      value: N0 - B2 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[11].nombre
+      value: N0 - B2 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[12].nombre
+      value: N1 - B0 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[13].nombre
+      value: N1 - B0 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[14].nombre
+      value: N1 - B0 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[15].nombre
+      value: N1 - B0 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[16].nombre
+      value: N1 - B1 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[17].nombre
+      value: N1 - B1 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[18].nombre
+      value: N1 - B1 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[19].nombre
+      value: N1 - B1 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[20].nombre
+      value: N1 - B2 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[21].nombre
+      value: N1 - B2 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[22].nombre
+      value: N1 - B2 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[23].nombre
+      value: N1 - B2 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[24].nombre
+      value: N2 - B0 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[25].nombre
+      value: N2 - B0 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[26].nombre
+      value: N2 - B0 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[27].nombre
+      value: N2 - B0 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[28].nombre
+      value: N2 - B1 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[29].nombre
+      value: N2 - B1 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[30].nombre
+      value: N2 - B1 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[31].nombre
+      value: N2 - B1 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[32].nombre
+      value: N2 - B2 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[33].nombre
+      value: N2 - B2 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[34].nombre
+      value: N2 - B2 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[35].nombre
+      value: N2 - B2 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[36].nombre
+      value: N3 - B0 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[37].nombre
+      value: N3 - B0 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[38].nombre
+      value: N3 - B0 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[39].nombre
+      value: N3 - B0 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[40].nombre
+      value: N3 - B1 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[41].nombre
+      value: N3 - B1 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[42].nombre
+      value: N3 - B1 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[43].nombre
+      value: N3 - B1 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[44].nombre
+      value: N3 - B2 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[45].nombre
+      value: N3 - B2 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[46].nombre
+      value: N3 - B2 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[47].nombre
+      value: N3 - B2 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[48].nombre
+      value: N4 - B0 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[49].nombre
+      value: N4 - B0 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[50].nombre
+      value: N4 - B0 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[51].nombre
+      value: N4 - B0 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[52].nombre
+      value: N4 - B1 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[53].nombre
+      value: N4 - B1 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[54].nombre
+      value: N4 - B1 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[55].nombre
+      value: N4 - B1 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[56].nombre
+      value: N4 - B2 - E0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[57].nombre
+      value: N4 - B2 - E1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[58].nombre
+      value: N4 - B2 - E2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[59].nombre
+      value: N4 - B2 - E3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[0].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[0].numeroNivel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[1].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[1].numeroNivel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[2].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[2].numeroNivel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[3].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[3].numeroNivel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[4].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[4].numeroNivel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[5].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[5].numeroNivel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[6].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[6].numeroNivel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[7].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[7].numeroNivel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[8].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[8].numeroNivel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[9].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[9].numeroNivel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[10].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[10].numeroNivel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[11].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[11].numeroNivel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[12].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[12].numeroNivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[13].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[13].numeroNivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[14].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[14].numeroNivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[15].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[15].numeroNivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[16].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[16].numeroNivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[17].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[17].numeroNivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[18].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[18].numeroNivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[19].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[19].numeroNivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[20].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[20].numeroNivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[21].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[21].numeroNivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[22].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[22].numeroNivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[23].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[23].numeroNivel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[24].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[24].numeroNivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[25].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[25].numeroNivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[26].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[26].numeroNivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[27].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[27].numeroNivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[28].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[28].numeroNivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[29].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[29].numeroNivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[30].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[30].numeroNivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[31].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[31].numeroNivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[32].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[32].numeroNivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[33].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[33].numeroNivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[34].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[34].numeroNivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[35].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[35].numeroNivel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[36].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[36].numeroNivel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[37].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[37].numeroNivel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[38].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[38].numeroNivel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[39].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[39].numeroNivel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[40].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[40].numeroNivel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[41].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[41].numeroNivel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[42].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[42].numeroNivel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[43].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[43].numeroNivel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[44].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[44].numeroNivel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[45].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[45].numeroNivel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[46].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[46].numeroNivel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[47].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[47].numeroNivel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[48].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[48].numeroNivel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[49].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[49].numeroNivel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[50].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[50].numeroNivel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[51].numeroBioma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[51].numeroNivel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[52].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[52].numeroNivel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[53].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[53].numeroNivel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[54].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[54].numeroNivel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[55].numeroBioma
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[55].numeroNivel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[56].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[56].numeroNivel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[57].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[57].numeroNivel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[58].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[58].numeroNivel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[59].numeroBioma
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622970, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas.Array.data[59].numeroNivel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622971, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: cargarArma
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 350598827856622971, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+      propertyPath: m_Data_Singleton
+      value: 
+      objectReference: {fileID: 1910165703}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4cf9fee87c565004e9ddb4a930b364d8, type: 3}
+--- !u!1001 &7022516599922327756
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2976511319074862175, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -62.7218
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022516600355298621, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_Name
+      value: BASIC
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022516600355298622, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022516600355298622, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022516600355298622, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022516600355298622, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022516600355298622, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022516600355298622, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022516600355298622, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022516600355298622, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022516600355298622, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022516600355298622, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022516600355298622, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295119673096764700, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac9ecf187290953468b0265a9280c058, type: 3}

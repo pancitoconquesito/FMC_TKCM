@@ -603,6 +603,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7022516600355298622}
     m_Modifications:
+    - target: {fileID: 1875116827, guid: 37b8f695f4638154db98707081834f18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875116828, guid: 37b8f695f4638154db98707081834f18, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875116828, guid: 37b8f695f4638154db98707081834f18, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875116828, guid: 37b8f695f4638154db98707081834f18, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875116828, guid: 37b8f695f4638154db98707081834f18, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 81.75879
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875116828, guid: 37b8f695f4638154db98707081834f18, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875116828, guid: 37b8f695f4638154db98707081834f18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875116830, guid: 37b8f695f4638154db98707081834f18, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1327104764608073774, guid: 37b8f695f4638154db98707081834f18, type: 3}
       propertyPath: m_RootOrder
       value: 5

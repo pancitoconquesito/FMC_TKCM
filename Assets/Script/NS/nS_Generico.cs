@@ -13,8 +13,12 @@ public class NS_Generico : MonoBehaviour, IDamageable
     [SerializeField]private float m_cadenciaRecibirDanio=0.15f;
     [SerializeField] private bool recibeEmpuje = true;
     [SerializeField] private float factorEmpuje = 1f;
+    [SerializeField] private Animator m_Animator;
+    [SerializeField] private Collider2D m_Collider2D_realizarDanio;
+    [SerializeField] private Collider2D m_Collider2D_recibirDanio;
     private float current_cadenciaRecibirDanio=0;
     protected bool vivo;
+
     public NS_Generico()
     {
         vivo = true;
@@ -34,6 +38,7 @@ public class NS_Generico : MonoBehaviour, IDamageable
     public Vector2 getDir() => dir;
     public virtual bool recibirDanio(dataDanio m_dataDanio)
     {
+        //print("ns generico");
         if (current_cadenciaRecibirDanio > 0) return false;
         if (m_dataDanio.m_A_QuienDania != GLOBAL_TYPES.AFECTA_A_.daniA_ns && m_dataDanio.m_A_QuienDania != GLOBAL_TYPES.AFECTA_A_.daniaA_ALLL) return false;
         bool retorno = false;
@@ -47,10 +52,10 @@ public class NS_Generico : MonoBehaviour, IDamageable
         }
 
 
-        GameObject cubeObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        /*GameObject cubeObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
         cubeObject.transform.localPosition = m_dataDanio.posicionDanio;
         cubeObject.transform.localScale = new Vector3(.1f, .1f, .1f);
-
+        */
 
 
         dir = new Vector2(transform.position.x-m_dataDanio.posicionDanio.x ,transform.position.y -m_dataDanio.posicionDanio.y);
@@ -60,7 +65,7 @@ public class NS_Generico : MonoBehaviour, IDamageable
         Debug.DrawRay(transform.position, dir, Color.yellow);
 
         empuje = m_dataDanio.getImpactoEmpuje();
-        print("Empuje : "+ empuje);
+        //print("Empuje : "+ empuje);
         if(recibeEmpuje)
             m_rigidbody.AddForce(dir * empuje * factorEmpuje, ForceMode2D.Impulse);
         //Debug.Break();
@@ -69,8 +74,11 @@ public class NS_Generico : MonoBehaviour, IDamageable
     public virtual void morir(dataDanio m_dataDanio)
     {
         vivo = false;
-        print("acabo de morir!");
-        Destroy(container);
+        //print("acabo de morir!");
+        //Destroy(container);
+        m_Animator.SetTrigger("died");
+        m_Collider2D_realizarDanio.enabled = false;
+        m_Collider2D_recibirDanio.enabled = false;
     }
     // Start is called before the first frame update
     void Start()
@@ -88,4 +96,5 @@ public class NS_Generico : MonoBehaviour, IDamageable
     {
         return empujado;
     }
+    public bool getIsVivo() => vivo;
 }

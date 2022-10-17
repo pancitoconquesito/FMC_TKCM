@@ -21,6 +21,27 @@ EditorBuildSettings:
     path: Assets/Scenes/DEPRECATED/Stage_TEST.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/TEST/Test_Move.unity
+    guid: 15bac1c6b08c961419d70c48013000e3
+  - enabled: 1
+    path: Assets/Scenes/TEST/TEST_ARMA_SELECT.unity
+    guid: 87fcf0d239180d547b1ad97ae0394316
+  - enabled: 1
+    path: Assets/Scenes/TEST_Arma_ARma.unity
+    guid: 008db26f094975d4a8b9cd3dc0976636
+  - enabled: 1
+    path: Assets/Scenes/TEST/test_Conversar.unity
+    guid: 27b735222ffd8e0438160ff054605ee8
+  - enabled: 1
+    path: Assets/Scenes/TEST/TEST_ARMA_SELECT_NS.unity
+    guid: aa688d98452eb674d904ee4f6a58a421
+  - enabled: 1
+    path: Assets/Scenes/TEST_Arma_ARma_NS.unity
+    guid: 0c26bc8a186c6af4d990dbbab00b025d
+  - enabled: 1
+    path: Assets/Scenes/OST.unity
+    guid: c73b3914d6513504bad57142f56dd014
+  - enabled: 1
     path: Assets/Scenes/TEST/testAudio_P.unity
     guid: 1dc6e02042d89d1448b67e9e1b76ac39
   - enabled: 1

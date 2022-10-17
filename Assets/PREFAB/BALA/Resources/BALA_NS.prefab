@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipo_danio: 0
-  danio: 2
+  danio: 1
   impactoEmpuje: 10
   posicionDanio: {x: 0, y: 0}
   m_transformAtacante: {fileID: 0}

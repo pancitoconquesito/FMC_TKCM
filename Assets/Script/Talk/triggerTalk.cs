@@ -7,8 +7,11 @@ public class triggerTalk : MonoBehaviour
 {
     [SerializeField] private SO_DIALOGO m_so_dialogo;
     [SerializeField] private Collider2D collider_alejarPj_Conv;
+    [SerializeField] private Animator m_animator_globoBTN;
+    [SerializeField] private SpriteRenderer m_SpriteRenderer;
     private gestorConversacion m_gestorConversacion;
     private movementPJ m_movementPJ;
+    private Transform m_transform_PJ;
     public enum estadoTalk
     {
         stay, conversando, fuera
@@ -36,6 +39,9 @@ public class triggerTalk : MonoBehaviour
             collider_alejarPj_Conv.enabled = true;
             m_estado = estadoTalk.conversando;
             m_gestorConversacion.comenzarConversacion(m_so_dialogo, this);
+            m_animator_globoBTN.ResetTrigger("end");
+            m_animator_globoBTN.SetTrigger("end");
+            m_SpriteRenderer .flipX= m_transform_PJ.position.x > transform.position.x;
         }
     }
     private void OnDisable() { desactivarControles(); }
@@ -52,6 +58,7 @@ public class triggerTalk : MonoBehaviour
         m_estado = estadoTalk.fuera;
         m_movementPJ = referencesMASTER.instancia.m_movementPJ;
         m_gestorConversacion = referencesMASTER.instancia.m_gestorConversacion;
+        m_transform_PJ = referencesMASTER.instancia.m_transformPJ;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -59,12 +66,19 @@ public class triggerTalk : MonoBehaviour
         {
             setControl();
             m_estado = estadoTalk.stay;
+            m_animator_globoBTN.ResetTrigger("start");
+            m_animator_globoBTN.SetTrigger("start");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.CompareTag("Player")) return;
         print("saliendo por trigger exit");
+        if (m_estado == estadoTalk.stay)
+        {
+            m_animator_globoBTN.ResetTrigger("end");
+            m_animator_globoBTN.SetTrigger("end");
+        }
         m_estado = estadoTalk.fuera;
         desactivarControles();
     }
@@ -80,5 +94,7 @@ public class triggerTalk : MonoBehaviour
         collider_alejarPj_Conv.enabled = false;
         m_estado = estadoTalk.stay;
         m_movementPJ.returnNormalMovement();
+        m_animator_globoBTN.ResetTrigger("start");
+        m_animator_globoBTN.SetTrigger("start");
     }
 }

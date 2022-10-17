@@ -8,7 +8,7 @@ public class UpdateCirclePower : MonoBehaviour
     [SerializeField] private Timer m_Timer;
     [SerializeField] private float totalTime;
     [SerializeField] private float percentage;
-
+    [SerializeField] private Animator m_aniamtor_UI_circlePJ;
     private float currentTime;
     private Image m_imagen;
     private bool activo = false;
@@ -27,7 +27,20 @@ public class UpdateCirclePower : MonoBehaviour
         if (percentage < 0) percentage = 0;
         m_imagen.fillAmount = percentage;
     }
-    public void setActivo(bool valor)=> m_imagen.enabled = valor;
+    /*deprecated
+    public void setActivo(bool valor)=> m_imagen.enabled = valor;*/
+    public void setActivo(bool valor) {
+
+        if (valor)
+        {
+            m_aniamtor_UI_circlePJ.SetTrigger("start");
+        }
+        else
+        {
+            m_aniamtor_UI_circlePJ.SetTrigger("end");
+        }
+        //m_imagen.enabled = valor;
+    } 
     public void setParameters(Timer _Timer)
     {
         m_Timer = _Timer;

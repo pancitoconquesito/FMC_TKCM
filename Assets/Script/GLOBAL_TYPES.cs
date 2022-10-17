@@ -46,7 +46,7 @@ public class GLOBAL_TYPES
     }
     public enum TIPO_SCENE
     {
-        etapa, nivel
+        etapa, nivel, TESTEO_SIN_ARMA, TESTEO_CON_ARMA, TEST_OST
     }
     internal static int parseIdioma(IDIOMA m_idioma)
     {

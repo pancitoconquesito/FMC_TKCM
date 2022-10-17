@@ -11,10 +11,10 @@ public class ui_corazon : MonoBehaviour
     {
         cantidadCorazones = GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent<Data_Singleton>().getCantidadVidaPJ();
         tamanio = m_RectTransformCorazones.sizeDelta.x;
+        print($"VIDA : {cantidadCorazones}  ___ tamanio: {tamanio}");
         if (tamanio == 0) tamanio = 130;
         m_RectTransformCorazones.sizeDelta = new Vector2(tamanio * cantidadCorazones, tamanio);
 
-        print($"VIDA : {cantidadCorazones}  ___ tamanio: {tamanio}");
     }
     public void updateVida_UI(int cantidadCorazonesActual)
     {
