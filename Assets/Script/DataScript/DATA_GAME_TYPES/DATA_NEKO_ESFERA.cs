@@ -42,5 +42,9 @@ public class DATA_NEKO_ESFERA
             L_D_etapas_SECRETAS[i] = nuevaEtapaSecreta;
         }
     }
-    
+
+    internal void addNekoEsfera()
+    {
+        cantidadDe_NekoEsfera+=1;
+    }
 }

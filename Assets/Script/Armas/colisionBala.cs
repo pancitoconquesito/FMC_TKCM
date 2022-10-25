@@ -33,6 +33,8 @@ public class colisionBala : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+
+
         IDamageable idamageable = collision.GetComponent<IDamageable>();
         m_dataDanio.posicionDanio = this.transform.position;
         //print("nombre "+collision.name);

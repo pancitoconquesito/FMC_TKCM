@@ -12,6 +12,12 @@ public class respawnPJ : MonoBehaviour
         //transicion y cambio de layers
         Invoke("cambiarScene", delayCambioScene);
     }
+    public void respawn(float delay)
+    {
+        //animacion de pivoteCam
+        //transicion y cambio de layers
+        Invoke("cambiarScene", delay);
+    }
     private void cambiarScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

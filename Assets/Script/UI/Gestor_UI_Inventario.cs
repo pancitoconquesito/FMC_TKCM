@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -72,8 +73,14 @@ public class Gestor_UI_Inventario : MonoBehaviour
                         break;
                     }
             }
-            
+            habilitarControles();
         }
-        habilitarControles();
+        
+    }
+
+    internal void closeInventary()
+    {
+        
+        turnActive(false);
     }
 }

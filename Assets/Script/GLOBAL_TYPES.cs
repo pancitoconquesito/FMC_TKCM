@@ -23,7 +23,7 @@ public class GLOBAL_TYPES
 
     public enum TIPO_DANIO
     {
-        normal, instakill
+        normal, instakill, kick
     }
     public enum ladoMirada {  izquierda, derecha }
 

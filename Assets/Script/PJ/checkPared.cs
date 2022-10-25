@@ -28,8 +28,9 @@ public class checkPared : MonoBehaviour
     {
         Vector2 newPosition = new Vector2(transform.position.x + offetX, transform.position.y - offsetY);
         RaycastHit2D hit = Physics2D.Raycast(newPosition, Vector2.up, largeRay);
-        if (hit.collider != null && hit.collider.CompareTag(tagCompare))
+        if (hit.collider != null && hit.collider.CompareTag(tagCompare) )//&& !hit.collider.CompareTag("tru"))
         {
+            if (hit.collider.GetComponent<PlatformEffector2D>() != null) return false;
             Debug.DrawRay(newPosition, Vector2.up * largeRay, Color.yellow);
             return true;
         }

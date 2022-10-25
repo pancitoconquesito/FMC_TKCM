@@ -107,6 +107,8 @@ public class SAVE_LOAD_SYSTEM : MonoBehaviour
     /***********************************************/
     public void saveItem(int idItem)
     {
+        
+
         switch (idItem)
         {
             case 0://item TEST
@@ -145,6 +147,7 @@ public class SAVE_LOAD_SYSTEM : MonoBehaviour
     private void setNekoEsfera(int idPrefab)
     {
         m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas[idPrefab].completado = true;
+        m_dataGame.m_DATA_NEKO_ESFERA.addNekoEsfera();
     }
 
     private bool isNekoEsfera(int idPrefab)

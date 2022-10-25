@@ -34,7 +34,7 @@ public class grounded : MonoBehaviour
     {
         Vector2 newPosition = new Vector2(transform.position.x + offetX, transform.position.y - offsetY);
         RaycastHit2D hit = Physics2D.Raycast(newPosition, Vector2.down, largeRay, layer);
-        if (hit.collider != null && hit.collider.CompareTag(tagCompare)  )
+        if (hit.collider != null && (hit.collider.CompareTag(tagCompare) || !hit.collider.CompareTag("tru"))  )
         {
             Debug.DrawRay(newPosition, Vector2.down * largeRay, Color.yellow);
             return true;

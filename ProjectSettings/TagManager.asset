@@ -9,6 +9,7 @@ TagManager:
   - Poder
   - Data_Singleton
   - DataScene
+  - tru
   layers:
   - Default
   - TransparentFX

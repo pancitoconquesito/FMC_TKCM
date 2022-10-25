@@ -12,13 +12,14 @@ public class objDepProgress : MonoBehaviour
     [SerializeField] private ACCION accion;
     [Header("-- Animacion --")]
     [SerializeField] private Animator m_animator;
-    [SerializeField]private string nombreAnimacion;
+    [SerializeField]private string m_Start_TR_Animacion;
     [SerializeField] private bool startWithTrigger;
     [SerializeField] private string tagTrigger;
     void Start()
     {
         if(DATA.instance.save_load_system.isGenericProgress(tipoPrefab, idPrefab))
         {
+            //print("obtenido");
             switch (accion)
             {
                 case ACCION.destruir:
@@ -28,8 +29,8 @@ public class objDepProgress : MonoBehaviour
                     }
                 case ACCION.animacion:
                     {
-                        if(!startWithTrigger)
-                            m_animator.SetTrigger(nombreAnimacion);
+                        //if(!startWithTrigger)
+                            m_animator.SetTrigger(m_Start_TR_Animacion);
                         break;
                     }
             }
@@ -38,10 +39,15 @@ public class objDepProgress : MonoBehaviour
     private bool complete=false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (startWithTrigger && !complete && collision.CompareTag(tagTrigger))
+        /*if (startWithTrigger && !complete && collision.CompareTag(tagTrigger))
         {
             complete = true;
             m_animator.SetTrigger(nombreAnimacion);
+        }*/
+        if (startWithTrigger && !complete && collision.CompareTag(tagTrigger))
+        {
+            complete = true;
+            m_animator.SetTrigger(m_Start_TR_Animacion);
         }
     }
 }

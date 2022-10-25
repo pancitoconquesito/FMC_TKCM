@@ -8,6 +8,8 @@ public class danioPatada : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         IDamageable idamageable = collision.GetComponent<IDamageable>();
+        m_dataDanio.setTransform(this.transform);
+        m_dataDanio.posicionDanio = transform.position;
         if (idamageable != null)    idamageable.RecibirDanio_I(m_dataDanio);
     }
 }

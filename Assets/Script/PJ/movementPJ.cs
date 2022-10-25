@@ -44,6 +44,15 @@ public class movementPJ : MonoBehaviour
     [SerializeField] private GLOBAL_TYPES.ESTADO_ALTERADO m_estadoAlterado=GLOBAL_TYPES.ESTADO_ALTERADO.none;
     //[SerializeField] private int aaaa;
 
+    [Header("-- Particles --")]
+    [SerializeField] private ObjectPooling m_OP_polvo;
+    [SerializeField] private float tiempoPolvo_walk;
+    [SerializeField] private float tiempoPolvo_run;
+    private float currentTiempoPolvo;
+
+
+
+
     private NewControls m_ControlPJ;
     private float valorInput_Horizontal;
     private bool m_isGrounded = false;
@@ -168,9 +177,13 @@ public class movementPJ : MonoBehaviour
         //if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement)
         //{
         if (m_isGrounded)
+        {
+            fisrtCencelJump = false;
             m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, potenciaSalto);
+        }
         if (onWalk)
         {
+            fisrtCencelJump = false;
             onWalk = false;
             m_estados = GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk;
             m_animator.Play("anim_pj_jump");
@@ -188,9 +201,13 @@ public class movementPJ : MonoBehaviour
         }
         //}
     }
+    private bool fisrtCencelJump = false;
     private void detenerJump()
     {
-        m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, m_rigidbody.velocity.y * 0.5f);
+        if (!fisrtCencelJump) {
+            fisrtCencelJump = true;
+            m_rigidbody.velocity = new Vector3(m_rigidbody.velocity.x, m_rigidbody.velocity.y * 0.5f);
+        }
     }
     
     private void startRun(InputAction.CallbackContext ctx)
@@ -234,7 +251,7 @@ public class movementPJ : MonoBehaviour
     }
     private void Awake()
     {
-        setControl();
+        Invoke("setControl",1f);
     }
     void Start()
     {
@@ -242,13 +259,15 @@ public class movementPJ : MonoBehaviour
     }
     private void landed_function()
     {
-        //print("landed()");
+        print("landed()");
     }
     // Update is called once per frame
     void Update()
     {
         if (m_vida_PJ.isVivo())
         {
+            m_animator.SetFloat("Velocidad_Y",m_rigidbody.velocity.y);
+
             grounded_landed();
 
             if (m_rigidbody.velocity.y < velocidadLimiteCaida) m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, velocidadLimiteCaida);
@@ -262,9 +281,30 @@ public class movementPJ : MonoBehaviour
             {
                 current_cadenciaKick -= Time.deltaTime;
             }
+
+            emitirPolvo();
         }
     }
+    private void emitirPolvo()
+    {
+        if (currentTiempoPolvo > -1)
+            currentTiempoPolvo -= Time.deltaTime;
+        if (currentTiempoPolvo < 0 && m_isGrounded && m_animator.GetFloat("velocidad_X") !=0)
+        {
+            //float n_random = Random.Range(1f,3f);// .(0.1f, 0.5f);
+            if (isRun)
+            {
+                currentTiempoPolvo = tiempoPolvo_run;
+                m_OP_polvo.emitirObj(0.6f, false);
+            }
+            else
+            {
+                currentTiempoPolvo = tiempoPolvo_walk;
+                m_OP_polvo.emitirObj(0.6f, false);
+            }
 
+        }
+    }
     private void grounded_landed()
     {
         m_isGrounded = m_grounded.isGrounded();
@@ -395,31 +435,17 @@ public class movementPJ : MonoBehaviour
 
     public void recibirDanio(dataDanio m_dataDanio, bool vvv)
     {
-        /*
-        Vector3 dir = Vector3.up;
-        if (m_dataDanio.posicionDanio.x != 0)
-        {
-            Vector3 posicionNueva = new Vector3(m_dataDanio.posicionDanio.x, m_dataDanio.posicionDanio.y,0);
-            if(Mathf.Abs(posicionNueva.x) > 0.1f)
-            {
-                GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                Instantiate(sphere, posicionNueva, Quaternion.identity);
-                dir = (transform.position - posicionNueva).normalized;
-                print("instanciado");
-            }
+        referencesMASTER.instancia.m_Gestor_UI_Inventario.closeInventary();
 
-        }
-        */
-        if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.inventary) cancelarInventario();
         m_estados = GLOBAL_TYPES.ESTADOS_PJ.pain;
         m_animator.SetTrigger("Pain");
         m_rigidbody.velocity = Vector2.zero;
         m_rigidbody.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
     }
-
+    
     private void cancelarInventario()
     {
-        throw new NotImplementedException();
+        referencesMASTER.instancia.m_Gestor_UI_Inventario.closeInventary();
     }
 
     public void morir()
@@ -428,10 +454,15 @@ public class movementPJ : MonoBehaviour
         m_estados = GLOBAL_TYPES.ESTADOS_PJ.die;
         m_animator.SetTrigger("Die");
         m_rigidbody.velocity = Vector2.zero;
-        m_rigidbody.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
-        desactivarControles();
+        m_rigidbody.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
+        //desactivarControles();
         m_rigidbody.constraints= RigidbodyConstraints2D.FreezeAll;
         respawnear();
+
+        disabledALL();
+        referencesMASTER.instancia.m_GO_UI_died.SetActive(true);
+
+        //quitar poderes
     }
 
     public bool comenzarTalk(float x_pos_NPC)
@@ -507,5 +538,18 @@ public class movementPJ : MonoBehaviour
         m_estados = GLOBAL_TYPES.ESTADOS_PJ.cinematic;
         m_estadoAlterado = GLOBAL_TYPES.ESTADO_ALTERADO.none;
         desactivarControles();
+    }
+    public GLOBAL_TYPES.ESTADOS_PJ getEstado() => m_estados;
+
+    internal void getNekoEsfera()
+    {
+        // inhabilitar pj mov
+        disabledALL();
+        // no danio pj
+        referencesMASTER.instancia.m_GO_recibirDanio.SetActive(false);
+        // set anim festejo => camara + cerca
+        m_animator.SetTrigger("Win_A");
+        m_rigidbody.velocity = Vector2.zero;
+
     }
 }

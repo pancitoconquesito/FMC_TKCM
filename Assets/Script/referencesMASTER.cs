@@ -14,6 +14,8 @@ public class referencesMASTER : MonoBehaviour
     public Animator     m_brazoPJ;
     public changeMirada miradaPJ;
     public shootPJ      m_shootPJ;
+    public GameObject   m_GO_recibirDanio;
+    public respawnPJ m_respawnPJ;
 
     [Header("------------  ARMA  ------------")]
     public SpriteRenderer   sp_brazo;
@@ -35,6 +37,8 @@ public class referencesMASTER : MonoBehaviour
     public GameObject           m_GO_UI_nekoEsfera;
     public GameObject           m_GO_UI_CargadorPoder;
     public GameObject           m_GO_UI_volverNivel;
+    public GameObject           m_GO_UI_died;
+    public Animator             m_anim_UI_transicion;
 
     [Header("-- Xtra --")]
     public Data_Singleton m_Data_Singleton;

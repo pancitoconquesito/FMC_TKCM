@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+
 public class vida_PJ : MonoBehaviour, IDamageable
 {
     private int totalVida;
@@ -46,10 +48,13 @@ public class vida_PJ : MonoBehaviour, IDamageable
     public bool RecibirDanio_I(dataDanio m_dataDanio)
     {
         //print("VIDA PJ");
+        //print($"Estado persona : {m_movementPJ.getEstado()}");
         if (!vivo || m_invulnerable || m_dataDanio.m_A_QuienDania == GLOBAL_TYPES.AFECTA_A_.daniA_ns || m_dataDanio.m_A_QuienDania == GLOBAL_TYPES.AFECTA_A_.nadie) return false;
+        quitarInventario();
         if(m_dataDanio.tipo_danio == GLOBAL_TYPES.TIPO_DANIO.instakill)
         {
             if (addVida(-99))
+            //addVida(-99);
                 m_movementPJ.recibirDanio(m_dataDanio, false);
             vivo = false;
             return true;
@@ -65,6 +70,12 @@ public class vida_PJ : MonoBehaviour, IDamageable
         }
         return retorno;
     }
+
+    private void quitarInventario()
+    {
+        //if(referencesMASTER.instancia.m_GO_UI_died.)
+    }
+
     public bool addVida(int valor)
     {
         if (vivo)

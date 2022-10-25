@@ -24,7 +24,7 @@ public class testIdiomaSAVE_LOAD : MonoBehaviour
             case 0: { m_idioma = GLOBAL_TYPES.IDIOMA.ES; break; }
             case 1: { m_idioma = GLOBAL_TYPES.IDIOMA.EN; break; }
         }
-        print("Idioma actual : "+m_idioma);
+        print("IDIOMA : "+m_idioma);
     }
     public GLOBAL_TYPES.IDIOMA getIdioma()
     {

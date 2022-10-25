@@ -56,19 +56,32 @@ public class NS_Generico : MonoBehaviour, IDamageable
         cubeObject.transform.localPosition = m_dataDanio.posicionDanio;
         cubeObject.transform.localScale = new Vector3(.1f, .1f, .1f);
         */
+        float posX_PJ = referencesMASTER.instancia.m_transformPJ.position.x;
+        float posX_NS = transform.position.x;
+        float posX_BALA = m_dataDanio.posicionDanio.x;
+        float posY_BALA = m_dataDanio.posicionDanio.y;
+        if (posX_PJ< posX_NS && posX_NS < posX_BALA)//hacia la derecha
+        {
+            posX_BALA = posX_PJ;
+            //print($"A  posKick_{posX_BALA}____{m_dataDanio.posicionDanio.x}");
+        }
+        if (posX_BALA<posX_NS && posX_NS<posX_PJ)//hacia la izquierda
+        {
+            posX_BALA = posX_PJ;
+            //print("B");
+        }
 
-
-        dir = new Vector2(transform.position.x-m_dataDanio.posicionDanio.x ,transform.position.y -m_dataDanio.posicionDanio.y);
+        //dir = new Vector2(transform.position.x-m_dataDanio.posicionDanio.x ,transform.position.y -m_dataDanio.posicionDanio.y);
+        dir = new Vector2(posX_NS - posX_BALA, transform.position.y - posY_BALA);
         dir = dir.normalized;
-        //Vector3 posDanio = new Vector3(m_dataDanio.posicionDanio.x, m_dataDanio.posicionDanio.y, 0);
-        //Vector3 dir3d = transform.position - posDanio;
+        
+
         Debug.DrawRay(transform.position, dir, Color.yellow);
 
         empuje = m_dataDanio.getImpactoEmpuje();
         //print("Empuje : "+ empuje);
         if(recibeEmpuje)
             m_rigidbody.AddForce(dir * empuje * factorEmpuje, ForceMode2D.Impulse);
-        //Debug.Break();
         return retorno;
     }
     public virtual void morir(dataDanio m_dataDanio)

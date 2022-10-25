@@ -9,7 +9,8 @@ public class SUB_cambioIdioma : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_GestorCambioIdioma = referencesMASTER.instancia.m_GestorCambioIdioma;
+        if (referencesMASTER.instancia == null) m_GestorCambioIdioma = GetComponent<GestorCambioIdioma>();
+        else m_GestorCambioIdioma = referencesMASTER.instancia.m_GestorCambioIdioma;
         m_GestorCambioIdioma.CambioLenguaje += cambioLenguaje;
     }
 

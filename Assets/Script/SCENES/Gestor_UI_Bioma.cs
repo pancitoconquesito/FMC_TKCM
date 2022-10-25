@@ -19,17 +19,24 @@ public class Gestor_UI_Bioma : MonoBehaviour
     {
         
     }
-
+    private bool activado = false;
     internal void comenzar(string m_nameStage)
     {
+        activado = true;
         m_CambiarScene.setNameScene(m_nameStage);
+        Invoke("ShowWindow",0.5f);
+        
+    }
+    private void ShowWindow()
+    {
+        if (!activado) return;
         m_uiBioma_GO.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(m_firstGO);
     }
-
     internal void desactivar()
     {
+        activado = false;
         m_uiBioma_GO.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
     }

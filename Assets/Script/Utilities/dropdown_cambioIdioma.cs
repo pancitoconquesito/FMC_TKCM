@@ -20,7 +20,7 @@ public class dropdown_cambioIdioma : MonoBehaviour
         print("Se cambio");
         valorIdiomaSelect = m_Dropdown.value;
         if(m_GestorCambioIdioma==null) m_GestorCambioIdioma = referencesMASTER.instancia.m_GestorCambioIdioma;
-        m_GestorCambioIdioma.invokeCambioIdioma(valorIdiomaSelect);
+        m_GestorCambioIdioma.InvokeCambioIdioma(valorIdiomaSelect);
     }
     
     private void OnEnable()

@@ -13,7 +13,7 @@ public class ChangeText_IDIOMA : MonoBehaviour
     {
         GLOBAL_TYPES.IDIOMA m_idioma = DATA.instance.getIdioma_TYPE();
         //DATA.instance.save_load_system.m_dataGame.m_DATA_CONFIG_GAME.IDIOMA;
-        print("IDIOMA : "+ m_idioma);
+        //print("IDIOMA : "+ m_idioma);
         switch (m_idioma)
         {
             case GLOBAL_TYPES.IDIOMA.ES:

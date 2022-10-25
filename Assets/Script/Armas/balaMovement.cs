@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 
-public class balaMovement : MonoBehaviour
+public class balaMovement : MonoBehaviour, IDamageable
 {
     [SerializeField] private float velocidad;
     [SerializeField] private bool bulletENEMY;
@@ -50,5 +50,16 @@ public class balaMovement : MonoBehaviour
         else
             m_Rigidbody2D.velocity = transform.right * velocidad * lado;
 
+    }
+
+    public bool RecibirDanio_I(dataDanio m_dataDanio)
+    {
+        if(m_dataDanio.tipo_danio == GLOBAL_TYPES.TIPO_DANIO.kick)
+        {
+            print("ay!!!!");
+            Debug.Break();
+            //cambair direccion
+        }
+        return true;
     }
 }
