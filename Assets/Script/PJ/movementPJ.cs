@@ -387,7 +387,7 @@ public class movementPJ : MonoBehaviour
                 }
             case GLOBAL_TYPES.ESTADOS_PJ.dash:
                 {
-                    m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x , 1.5f);
+                    m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x , 1.4f);
                     break;
                 }
             case GLOBAL_TYPES.ESTADOS_PJ.kick:
