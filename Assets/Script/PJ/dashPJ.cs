@@ -8,7 +8,9 @@ public class dashPJ : MonoBehaviour
     [SerializeField] private float potenciaDash;
     [SerializeField] private float cadencia;
     [SerializeField] private float duracionDash;
-    
+    [SerializeField] private ObjectPooling m_part_dash;
+    [SerializeField] private TrailRenderer m_TrailRenderer;
+    [SerializeField]private changeMirada m_changeMirada;
     private float current_cadencia;
 
     public void setValores(float _potenciaDash, float _cadenciaDash, float _duracionDash)
@@ -32,7 +34,23 @@ public class dashPJ : MonoBehaviour
     {
         if(current_cadencia < 0)
         {
+            GameObject objDash =  m_part_dash.emitirObj(0.4f,false);
+            cameraShake.instancia.shake(4f, 0.5f);
+            Vector3 scaleCurrent = objDash.transform.localScale;
+            //si mira a la derecha ok, si mira a la izquierda voltear
+            if (m_changeMirada.getMirada() == GLOBAL_TYPES.ladoMirada.izquierda)
+            {
+                //voltear
+                objDash.transform.localScale = new Vector3(Mathf.Abs(scaleCurrent.x) *-1, scaleCurrent.y, scaleCurrent.z);
+            }
+            else
+            {
+                //ok
+                objDash.transform.localScale = new Vector3(Mathf.Abs(scaleCurrent.x), scaleCurrent.y, scaleCurrent.z);
+            }
+            m_TrailRenderer.enabled = true;
             Invoke("terminarDash", duracionDash);
+            
             current_cadencia = cadencia;
             int _lado;
             if (lado == GLOBAL_TYPES.ladoMirada.izquierda)
@@ -51,7 +69,9 @@ public class dashPJ : MonoBehaviour
     }
     private void terminarDash()
     {
+        cameraShake.instancia.shake(2f, 0.2f);
         m_movementPJ.returnNormalMovement();
+        m_TrailRenderer.enabled = false;
     }
 
    

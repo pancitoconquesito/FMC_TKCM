@@ -49,7 +49,10 @@ public class movementPJ : MonoBehaviour
     [SerializeField] private float tiempoPolvo_walk;
     [SerializeField] private float tiempoPolvo_run;
     private float currentTiempoPolvo;
-
+    //--
+    [SerializeField] private ObjectPooling m_OP_polvoPared;
+    [SerializeField] private float tiempoPolvoPared;
+    private float currentTiempoPolvoPared=0f;
 
 
 
@@ -281,27 +284,40 @@ public class movementPJ : MonoBehaviour
             {
                 current_cadenciaKick -= Time.deltaTime;
             }
-
-            emitirPolvo();
+            emitirParticulas();
         }
     }
-    private void emitirPolvo()
+    private void emitirParticulas()
+    {
+        emitirPolvoSuelo();
+        emitirPolvoPared();
+    }
+    private void emitirPolvoPared()
+    {
+        if (currentTiempoPolvoPared > -1f)
+            currentTiempoPolvoPared -= Time.deltaTime;
+        if (onWalk && currentTiempoPolvoPared < 0)
+        {
+            currentTiempoPolvoPared = tiempoPolvoPared;
+            m_OP_polvoPared.emitirObj(1f, false);
+        }
+    }
+    private void emitirPolvoSuelo()
     {
         if (currentTiempoPolvo > -1)
             currentTiempoPolvo -= Time.deltaTime;
         if (currentTiempoPolvo < 0 && m_isGrounded && m_animator.GetFloat("velocidad_X") !=0)
         {
-            //float n_random = Random.Range(1f,3f);// .(0.1f, 0.5f);
+            float n_random = UnityEngine.Random.Range(0.2f, 0.8f);// Random.Range(1f,3f);// .(0.1f, 0.5f);
             if (isRun)
             {
                 currentTiempoPolvo = tiempoPolvo_run;
-                m_OP_polvo.emitirObj(0.6f, false);
             }
             else
             {
                 currentTiempoPolvo = tiempoPolvo_walk;
-                m_OP_polvo.emitirObj(0.6f, false);
             }
+            m_OP_polvo.emitirObj(1f + n_random, false);
 
         }
     }
@@ -371,7 +387,7 @@ public class movementPJ : MonoBehaviour
                 }
             case GLOBAL_TYPES.ESTADOS_PJ.dash:
                 {
-                    m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x , 0);
+                    m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x , 1.5f);
                     break;
                 }
             case GLOBAL_TYPES.ESTADOS_PJ.kick:

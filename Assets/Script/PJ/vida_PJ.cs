@@ -10,6 +10,7 @@ public class vida_PJ : MonoBehaviour, IDamageable
     private int vidaActual;
     [SerializeField] private movementPJ m_movementPJ;
     [SerializeField] private float tiempoInvulnerable;
+    [SerializeField] private ObjectPooling m_OP_dolor;
     //[SerializeField] private ui_corazon m_ui_corazon;
     private float current_tiempoInvulnerable;
     private bool vivo;
@@ -50,6 +51,8 @@ public class vida_PJ : MonoBehaviour, IDamageable
         //print("VIDA PJ");
         //print($"Estado persona : {m_movementPJ.getEstado()}");
         if (!vivo || m_invulnerable || m_dataDanio.m_A_QuienDania == GLOBAL_TYPES.AFECTA_A_.daniA_ns || m_dataDanio.m_A_QuienDania == GLOBAL_TYPES.AFECTA_A_.nadie) return false;
+
+
         quitarInventario();
         if(m_dataDanio.tipo_danio == GLOBAL_TYPES.TIPO_DANIO.instakill)
         {
@@ -57,12 +60,16 @@ public class vida_PJ : MonoBehaviour, IDamageable
             //addVida(-99);
                 m_movementPJ.recibirDanio(m_dataDanio, false);
             vivo = false;
+            m_OP_dolor.emitirObj(0.4f, false);
+
             return true;
         }
         bool retorno = false;
         if (vivo && current_tiempoInvulnerable < 0)
         {
             //current_tiempoInvulnerable = tiempoInvulnerable;
+            m_OP_dolor.emitirObj(0.4f, false);
+            cameraShake.instancia.shake(50f, 0.4f);
             current_tiempoInvulnerable = 0.7f;
             if (addVida(-m_dataDanio.getDanio())) 
                 m_movementPJ.recibirDanio(m_dataDanio, false);

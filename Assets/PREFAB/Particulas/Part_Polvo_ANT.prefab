@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 361104324145902883}
   - component: {fileID: 4508844474344721217}
   m_Layer: 0
-  m_Name: Part_Polvo
+  m_Name: Part_Polvo_ANT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
