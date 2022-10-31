@@ -5,10 +5,11 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     public int numero;
-    public bool valor;
+    private bool valor;
     public bool activo;
     public Vector3 miPosicion;
     private GestorCheckpoint m_GestorCheckpoint;
+    public void setGestorCheckpoint(GestorCheckpoint value) => m_GestorCheckpoint = value;
     private void Awake()
     {
         valor = false;
@@ -17,7 +18,8 @@ public class Checkpoint : MonoBehaviour
     }
     void Start()
     {
-        m_GestorCheckpoint = transform.parent.GetComponent<GestorCheckpoint>();
+        //m_GestorCheckpoint = transform.parent.GetComponent<GestorCheckpoint>();
+        //if(m_GestorCheckpoint==null) transform.parent.parent.GetComponent<GestorCheckpoint>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

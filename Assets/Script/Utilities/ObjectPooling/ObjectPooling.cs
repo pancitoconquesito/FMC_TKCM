@@ -87,6 +87,7 @@ public class ObjectPooling : MonoBehaviour
     {
         GameObject objA = this.getObjPool();
         objA.transform.SetParent(null);
+        //print("AHHH");
         //objA.GetComponent<retornarObjectPooling>().setObjectPoolingMASTER(this);
         if (objA != null)
             StartCoroutine(retornarObjPool(tiempo, objA, withTime));

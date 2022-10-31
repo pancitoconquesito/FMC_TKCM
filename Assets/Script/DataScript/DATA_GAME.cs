@@ -11,8 +11,13 @@ public class DATA_GAME
     public DATA_CONFIG_GAME m_DATA_CONFIG_GAME;
 
     public DATA_NEKO_ESFERA m_DATA_NEKO_ESFERA;
-    public DATA_GAME()
+
+    private ISaveLoadSystem m_ISaveLoadSystem;
+    public DATA_GAME(ISaveLoadSystem _ISaveLoadSystem)
     {
+        m_ISaveLoadSystem = _ISaveLoadSystem;
+
+
         m_DATA_TEST = new DATA_TEST();
         m_DATA_ITEMS = new DATA_ITEMS();
         m_DATA_PROGRESS = new DATA_PROGRESS();
@@ -24,10 +29,12 @@ public class DATA_GAME
 
     public void Save_DATA(DATA_GAME data)
     {
-        SAVE_LOAD.SAVE_DATA_GAME(data);
+        //SAVE_LOAD.SAVE_DATA_GAME(data);
+        m_ISaveLoadSystem.SAVE_DATA_GAME(data);
     }
     public DATA_GAME Load_DATA()
     {
-        return SAVE_LOAD.LOAD_DATA_GAME();
+        //return SAVE_LOAD.LOAD_DATA_GAME();
+        return m_ISaveLoadSystem.LOAD_DATA_GAME();
     }
 }

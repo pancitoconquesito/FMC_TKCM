@@ -53,8 +53,8 @@ public class movementPJ : MonoBehaviour
     [SerializeField] private ObjectPooling m_OP_polvoPared;
     [SerializeField] private float tiempoPolvoPared;
     private float currentTiempoPolvoPared=0f;
-
-
+    [SerializeField] private emitirParticulas m_PO_polvoSaltoSuelo;
+    [SerializeField] private emitirParticulas m_PO_polvoSaltoPared;
 
     private NewControls m_ControlPJ;
     private float valorInput_Horizontal;
@@ -102,7 +102,6 @@ public class movementPJ : MonoBehaviour
             this.returnNormalMovement();
             referencesMASTER.instancia.m_Gestor_UI_Inventario.turnActive(false);
         }
-        
     }
     public void setPoder(ISpecial m_Poder)=> m_ISpecial = m_Poder;
     private void special()
@@ -181,11 +180,14 @@ public class movementPJ : MonoBehaviour
         //{
         if (m_isGrounded)
         {
+            m_PO_polvoSaltoSuelo.emitir();
             fisrtCencelJump = false;
             m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, potenciaSalto);
         }
-        if (onWalk)
+        if (onWalk)//&& m_estados!= GLOBAL_TYPES.ESTADOS_PJ.dash )
         {
+            m_PO_polvoSaltoPared.emitir();
+
             fisrtCencelJump = false;
             onWalk = false;
             m_estados = GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk;
@@ -200,7 +202,8 @@ public class movementPJ : MonoBehaviour
             {
                 m_rigidbody.AddForce(new Vector2(-potenciaRepulsionWALL_X, potenciaRepulsionWALL_Y), ForceMode2D.Impulse);
             }
-            Invoke("returnNormalMovement", tiempoInactivoRepulsion);
+            if(m_estados != GLOBAL_TYPES.ESTADOS_PJ.dash)//FIX
+                Invoke("returnNormalMovement", tiempoInactivoRepulsion);
         }
         //}
     }
@@ -228,13 +231,9 @@ public class movementPJ : MonoBehaviour
     private void getInput_Axis_LEFT(float currentValor_X)
     {
         if (!m_vida_PJ.isVivo()) return;
-        if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.inventary || !GLOBAL_TYPES.canMov_X(m_estados))
-        {
-            valorInput_Horizontal = 0;
-            m_currentValor_X = 0;
-            m_animator.SetFloat("velocidad_X", 0);
-            return;
-        }
+        /**/
+
+
         //if(m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || m_estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk || m_estados == GLOBAL_TYPES.ESTADOS_PJ.pain)
         //{
             m_currentValor_X = currentValor_X;
@@ -244,8 +243,16 @@ public class movementPJ : MonoBehaviour
             else valorInput_Horizontal = 0;
 
             m_animator.SetFloat("velocidad_X",currentValorX_abs);
-       // }
-
+        // }
+       if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.inventary )//|| m_estados == GLOBAL_TYPES.ESTADOS_PJ.dash || m_estados == GLOBAL_TYPES.ESTADOS_PJ.kick)//|| !GLOBAL_TYPES.canMov_X(m_estados))
+        {
+            valorInput_Horizontal = 0;
+            m_currentValor_X = 0;
+            //if(m_estados== GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk) m_animator.SetFloat("velocidad_X", currentValor_X);
+            //else 
+            m_animator.SetFloat("velocidad_X", 0);
+            //return;
+        }
     }
     private void setZerotInput_Axis_LEFT(InputAction.CallbackContext ctx)
     {
@@ -262,7 +269,7 @@ public class movementPJ : MonoBehaviour
     }
     private void landed_function()
     {
-        print("landed()");
+        //print("landed()");
     }
     // Update is called once per frame
     void Update()
@@ -275,7 +282,7 @@ public class movementPJ : MonoBehaviour
 
             if (m_rigidbody.velocity.y < velocidadLimiteCaida) m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, velocidadLimiteCaida);
 
-            if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement)
+            if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || m_estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk)
             {
                 isPared();
                 m_changeMirada.miradaPj(m_currentValor_X);
@@ -448,17 +455,27 @@ public class movementPJ : MonoBehaviour
     {
         m_estados = _estado;
     }
-
+    private Animator m_at_ui_dolor;
     public void recibirDanio(dataDanio m_dataDanio, bool vvv)
     {
         referencesMASTER.instancia.m_Gestor_UI_Inventario.closeInventary();
+        m_at_ui_dolor = referencesMASTER.instancia.m_at_ui_dolor;
+        m_at_ui_dolor.SetTrigger("Start");
+
 
         m_estados = GLOBAL_TYPES.ESTADOS_PJ.pain;
         m_animator.SetTrigger("Pain");
         m_rigidbody.velocity = Vector2.zero;
         m_rigidbody.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+        
+        StartCoroutine(detenerTiempo());
     }
-    
+    IEnumerator detenerTiempo()
+    {
+        Time.timeScale = 0.01f;
+        yield return new WaitForSecondsRealtime(0.2f);
+        Time.timeScale = 1f;
+    }
     private void cancelarInventario()
     {
         referencesMASTER.instancia.m_Gestor_UI_Inventario.closeInventary();

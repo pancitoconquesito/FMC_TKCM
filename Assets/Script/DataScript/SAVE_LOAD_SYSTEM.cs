@@ -14,7 +14,7 @@ public class SAVE_LOAD_SYSTEM : MonoBehaviour
     [ContextMenu("load")]
     public void load_()
     {
-        DATA_GAME dataGame = new DATA_GAME();
+        DATA_GAME dataGame = new DATA_GAME(new SAVE_LOAD_ADAPTER());
         m_dataGame = dataGame.Load_DATA();
 
         if (m_dataGame == null
@@ -41,7 +41,7 @@ public class SAVE_LOAD_SYSTEM : MonoBehaviour
         guardarContextoConfiguracion(m_dataGame.m_DATA_CONFIG_GAME, m_dataGame.m_DATA_CONF_AUDIO);
 
         m_dataGame = null;
-        m_dataGame = new DATA_GAME();
+        m_dataGame = new DATA_GAME(new SAVE_LOAD_ADAPTER());
         cargarContexto();
         m_dataGame.Save_DATA(m_dataGame);
     }

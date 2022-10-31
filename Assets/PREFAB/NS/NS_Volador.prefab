@@ -116,6 +116,8 @@ GameObject:
   - component: {fileID: 6884121347613935314}
   - component: {fileID: 6932805019617328932}
   - component: {fileID: 2177041567697576455}
+  - component: {fileID: 5763537792584789549}
+  - component: {fileID: 7345613930079035016}
   m_Layer: 8
   m_Name: recibirDanio
   m_TagString: NS
@@ -185,6 +187,43 @@ MonoBehaviour:
   m_Animator: {fileID: 8155903005567371703}
   m_Collider2D_realizarDanio: {fileID: 4849005402042075080}
   m_Collider2D_recibirDanio: {fileID: 6932805019617328932}
+  m_FlashSprite: {fileID: 7345613930079035016}
+  m_OP_Pain: {fileID: 5763537792584789549}
+  m_GO_Part_Destroy: {fileID: 5322821172346005187, guid: deebb1d69e3d1ce4fba7f13709ca11ee, type: 3}
+  delayPartMuerte: 0.15
+--- !u!114 &5763537792584789549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4332730470375306851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167dface566b88248a6afdb849bdd805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objeto: {fileID: 3589839973025302887, guid: 81b2acdf61cd02a45b3c5f1020121fdd, type: 3}
+  cantObjeto: 4
+  AlinearConPadre: 1
+  With_startCola: 1
+--- !u!114 &7345613930079035016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4332730470375306851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64975c74d69afc046ab8182afc294e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NAME_MATERIAL: 0
+  m_countFlash: 4
+  m_timeChangeTo_flash: 0.08
+  m_timeChangeTo_normal: 0.04
+  m_SpriteRenderer: {fileID: 7464999086595240309}
 --- !u!1 &7453939112898463194
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +254,7 @@ Transform:
   m_GameObject: {fileID: 7453939112898463194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 11.31, y: 3.24, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1448503016555552800}

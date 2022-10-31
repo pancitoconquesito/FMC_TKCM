@@ -20,6 +20,10 @@ public class vida_PJ : MonoBehaviour, IDamageable
     [Header("TEST")]
     [SerializeField] private TextMeshProUGUI textTestVida;
     [SerializeField] private TransicionMuerte m_transicionMuerte;
+
+    [SerializeField] private FlashSprite[] m_L_FlashSprite;
+    //[SerializeField] private FlashSprite m_FlashSprite_arm;
+
     void Start()
     {
         m_DATA_SINGLETON = GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent<Data_Singleton>();
@@ -59,8 +63,17 @@ public class vida_PJ : MonoBehaviour, IDamageable
             if (addVida(-99))
             //addVida(-99);
                 m_movementPJ.recibirDanio(m_dataDanio, false);
+
             vivo = false;
+
+            
+
             m_OP_dolor.emitirObj(0.4f, false);
+            foreach (var item in m_L_FlashSprite)
+            {
+                item.Flashear();
+            }
+
 
             return true;
         }
@@ -70,10 +83,19 @@ public class vida_PJ : MonoBehaviour, IDamageable
             //current_tiempoInvulnerable = tiempoInvulnerable;
             m_OP_dolor.emitirObj(0.4f, false);
             cameraShake.instancia.shake(50f, 0.4f);
+
+            
+
+
             current_tiempoInvulnerable = 0.7f;
             if (addVida(-m_dataDanio.getDanio())) 
                 m_movementPJ.recibirDanio(m_dataDanio, false);
             retorno = true;
+
+            foreach (var item in m_L_FlashSprite)
+            {
+                item.Flashear();
+            }
         }
         return retorno;
     }

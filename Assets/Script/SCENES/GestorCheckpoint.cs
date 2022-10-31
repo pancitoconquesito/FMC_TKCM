@@ -14,8 +14,11 @@ public class GestorCheckpoint : MonoBehaviour
     {
         cantidadHijos = transform.childCount;
         m_L_checkpoints = new Checkpoint[cantidadHijos];
-        for (int i = 0; i < cantidadHijos; i++)
+        for (int i = 0; i < cantidadHijos; i++) { 
+        
             m_L_checkpoints[i]=transform.GetChild(i).GetComponent<Checkpoint>();
+            m_L_checkpoints[i].setGestorCheckpoint(this);
+        }
 
     }
     private void Start()

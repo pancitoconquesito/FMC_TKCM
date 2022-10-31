@@ -66,6 +66,7 @@ public class shootPJ : MonoBehaviour
         }
     }
     private ObjectPooling m_ObjectPooling_BALA_PJ;
+    //private ObjectPooling m_OP_SHOOT;
     private bool shootHold = false;
     public void Shoot()
     {
@@ -81,6 +82,7 @@ public class shootPJ : MonoBehaviour
         if (m_movementPJ.canShoot())
         {
             cameraShake.instancia.shake(m_so_ARMA.shake_amount, m_so_ARMA.shake_time);
+
             if (m_so_ARMA.instantaneo)
             {
                 current_Cadencia = m_so_ARMA.cadencia;
@@ -102,6 +104,8 @@ public class shootPJ : MonoBehaviour
     {
         if (m_movementPJ.canShoot())
         {
+            cameraShake.instancia.shake(m_so_ARMA.shake_amount, m_so_ARMA.shake_time);
+
             current_Cadencia = m_so_ARMA.cadencia;
             print("Shoot");
             //m_Animator.SetTrigger("Shoot");

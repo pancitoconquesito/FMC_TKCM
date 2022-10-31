@@ -43,12 +43,13 @@ public class setAnimBala : MonoBehaviour
     void Start()
     {
         m_Animator = GetComponent<Animator>();
-        setAnim();
+        //setAnim();
     }
     private void OnEnable()
     {
         if(m_Animator==null)
             m_Animator = GetComponent<Animator>();
+        setAnim();
     }
     // Update is called once per frame
     void Update()

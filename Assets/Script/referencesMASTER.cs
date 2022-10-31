@@ -39,6 +39,7 @@ public class referencesMASTER : MonoBehaviour
     public GameObject           m_GO_UI_volverNivel;
     public GameObject           m_GO_UI_died;
     public Animator             m_anim_UI_transicion;
+    public Animator             m_at_ui_dolor;
 
     [Header("-- Xtra --")]
     public Data_Singleton m_Data_Singleton;

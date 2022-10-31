@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,11 @@ public class dataDanio : MonoBehaviour
     public void setLado(GLOBAL_TYPES.ladoMirada valor) { m_lado = valor; }
     public float getImpactoEmpuje() { return impactoEmpuje; }
     public void setTransform(Transform valor) { m_transformAtacante = valor; }
+
+    internal void setAfectaA(GLOBAL_TYPES.AFECTA_A_ _afectaA)
+    {
+        this.m_A_QuienDania = _afectaA;
+    }
 
     /*
     public void updateTransform()

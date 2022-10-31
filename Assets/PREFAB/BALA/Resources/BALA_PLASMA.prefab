@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 6188334112463514414}
   - component: {fileID: 3538642575673090671}
   - component: {fileID: 7647581885376034596}
+  - component: {fileID: 7119878417386707775}
   m_Layer: 8
   m_Name: BALA_PLASMA
   m_TagString: Untagged
@@ -303,3 +304,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ObjectPooling: {fileID: 0}
+  m_OP_PART_BALA: {fileID: 7119878417386707775}
+--- !u!114 &7119878417386707775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7778084617433731793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167dface566b88248a6afdb849bdd805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objeto: {fileID: 3095216919571255548, guid: d3dd962cd8eb26942b6159dfe53ecf17, type: 3}
+  cantObjeto: 2
+  AlinearConPadre: 1
+  With_startCola: 1

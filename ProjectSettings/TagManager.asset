@@ -10,6 +10,7 @@ TagManager:
   - Data_Singleton
   - DataScene
   - tru
+  - kick
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Plataforma
   - NS_solid
   - Damage
-  - 
+  - PP
   - 
   - 
   - 

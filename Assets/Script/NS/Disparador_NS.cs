@@ -10,7 +10,7 @@ public class Disparador_NS : MonoBehaviour
     [SerializeField, Range(0, 1)] private float factorVelocidadRotacion_rastreo;
     [SerializeField, Range(0, 1)] private float factorVelocidadRotacion_Disparo;
     [SerializeField] private float cadenciaDisparo;
-    [SerializeField] private ObjectPooling m_ObjectPooling;
+    [SerializeField] private ObjectPooling m_ObjectPooling_BALA, m_ObjectPooling_PArtDisp_INI;
     private float current_CadenciaDisparo;
     private float rangoVisionDisparar;
     public enum EstadoDisparador
@@ -64,11 +64,12 @@ public class Disparador_NS : MonoBehaviour
 
     private void Disparar()
     {
+        m_ObjectPooling_PArtDisp_INI.emitirObj(.6f,false);
         current_CadenciaDisparo = cadenciaDisparo;
         //Instantiate(m_ObjectPooling.objeto, transform.position, transform.rotation);
         Vector2 direccion = (m_transformPJ.position - transform.position).normalized;
         direccion = transform.up;
-        m_ObjectPooling.emitirObj(1, false).GetComponent<balaMovement>().direccion = direccion;
+        m_ObjectPooling_BALA.emitirObj(1, false).GetComponent<balaMovement>().direccion = direccion;
         //nuevaBala.GetComponent<balaMovement>().direccion = (m_transformPJ.position - transform.position).normalized;
     }
 
@@ -98,6 +99,6 @@ public class Disparador_NS : MonoBehaviour
 
     private void OnDestroy()
     {
-        m_ObjectPooling.DestruirPool();
+        m_ObjectPooling_BALA.DestruirPool();
     }
 }

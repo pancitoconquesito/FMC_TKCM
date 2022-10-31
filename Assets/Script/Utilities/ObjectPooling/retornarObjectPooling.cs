@@ -5,6 +5,9 @@ using UnityEngine;
 public class retornarObjectPooling : MonoBehaviour
 {
     public ObjectPooling m_ObjectPooling;
+    [SerializeField] private ObjectPooling m_OP_PART_BALA;
+
+
     private void Start()
     {
         
@@ -15,10 +18,15 @@ public class retornarObjectPooling : MonoBehaviour
     }
     public void retornar()
     {
+        if (m_OP_PART_BALA != null)
+        {
+            //print("NICE");
+            m_OP_PART_BALA.emitirObj(1.5f, false);
+        }
         if (m_ObjectPooling == null)
         {
             print("ES NULO");
-            Debug.Break();
+            //Debug.Break();
         }
         m_ObjectPooling.ReturnObjPool(gameObject);
     }

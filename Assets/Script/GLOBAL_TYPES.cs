@@ -91,6 +91,7 @@ public class GLOBAL_TYPES
     internal static bool canMov_X(ESTADOS_PJ estados)
     {
         return estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk || estados == GLOBAL_TYPES.ESTADOS_PJ.pain;
+        //return estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement ||  estados == GLOBAL_TYPES.ESTADOS_PJ.pain ;
     }
 
 }

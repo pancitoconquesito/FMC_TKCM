@@ -56,8 +56,9 @@ void Awake()
 }*/
     private void Start()
     {
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = -1;
+        //QualitySettings.vSyncCount = 0;
+        //Application.targetFrameRate = -1;
+        Application.targetFrameRate = 144;
     }
     public void setArmaSeleccionada(TIPO_arma.ArmaTipo _arma)
     {

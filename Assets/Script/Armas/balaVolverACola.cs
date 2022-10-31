@@ -17,6 +17,7 @@ public class balaVolverACola : MonoBehaviour
     //[SerializeField] private dataDanio m_dataDanio;
     private retornarObjectPooling m_retornarObjectPooling;
     [SerializeField] private bool isBALA_NS = false;
+
     void Start()
     {
         m_retornarObjectPooling = transform.GetComponentInParent<retornarObjectPooling>();
@@ -39,7 +40,7 @@ public class balaVolverACola : MonoBehaviour
     }
     private bool firstTime = false;
     private void OnEnable()
-    {
+    {  
         if (!isBALA_NS)
         {
             firstTime = true;
@@ -55,9 +56,6 @@ public class balaVolverACola : MonoBehaviour
             m_balaMovement.setVelocidad(velocidad);
         }
 
-
-
-
         activar();
     }
     public void activar()
@@ -68,6 +66,7 @@ public class balaVolverACola : MonoBehaviour
     private bool activo=false;
     public void volverPool()
     {
+        
         if (explosivoTermino)
         {
             m_colisionBala.verificarExplosion();

@@ -8,7 +8,6 @@ public class NS_Generico : MonoBehaviour, IDamageable
     [SerializeField] private int vidaTotal;
     [SerializeField] private GameObject container;
 
-    private ObjectPooling m_ObjectPooling;
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField]private float m_cadenciaRecibirDanio=0.15f;
     [SerializeField] private bool recibeEmpuje = true;
@@ -16,9 +15,15 @@ public class NS_Generico : MonoBehaviour, IDamageable
     [SerializeField] private Animator m_Animator;
     [SerializeField] private Collider2D m_Collider2D_realizarDanio;
     [SerializeField] private Collider2D m_Collider2D_recibirDanio;
-    private float current_cadenciaRecibirDanio=0;
-    protected bool vivo;
+    [SerializeField] private FlashSprite m_FlashSprite;
 
+    [Header("-- Particles --")]
+    [SerializeField] private ObjectPooling m_OP_Pain;
+    [SerializeField] private GameObject m_GO_Part_Destroy;
+    [SerializeField] private float delayPartMuerte;
+
+    protected bool vivo;
+    private float current_cadenciaRecibirDanio=0;
     public NS_Generico()
     {
         vivo = true;
@@ -41,6 +46,11 @@ public class NS_Generico : MonoBehaviour, IDamageable
         //print("ns generico");
         if (current_cadenciaRecibirDanio > 0) return false;
         if (m_dataDanio.m_A_QuienDania != GLOBAL_TYPES.AFECTA_A_.daniA_ns && m_dataDanio.m_A_QuienDania != GLOBAL_TYPES.AFECTA_A_.daniaA_ALLL) return false;
+
+        m_OP_Pain.emitirObj(0.3f, false);
+        m_FlashSprite.Flashear();
+
+        //print("yo emiti??");
         bool retorno = false;
         //print("Yo " + gameObject.name + " recibi danio desde Generico");
         vidaTotal -= m_dataDanio.danio;
@@ -86,12 +96,19 @@ public class NS_Generico : MonoBehaviour, IDamageable
     }
     public virtual void morir(dataDanio m_dataDanio)
     {
+        Invoke("instanciarPartMuerte",delayPartMuerte);
         vivo = false;
         //print("acabo de morir!");
         //Destroy(container);
         m_Animator.SetTrigger("died");
         m_Collider2D_realizarDanio.enabled = false;
         m_Collider2D_recibirDanio.enabled = false;
+    }
+    private void instanciarPartMuerte()
+    {
+        GameObject _particulaDied=  Instantiate(m_GO_Part_Destroy, this.transform);
+        _particulaDied.transform.parent = null;
+
     }
     // Start is called before the first frame update
     void Start()

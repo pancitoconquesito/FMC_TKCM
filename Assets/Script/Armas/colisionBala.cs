@@ -38,6 +38,13 @@ public class colisionBala : MonoBehaviour
         IDamageable idamageable = collision.GetComponent<IDamageable>();
         m_dataDanio.posicionDanio = this.transform.position;
         //print("nombre "+collision.name);
+        if (collision.CompareTag("kick"))
+        {
+            print("nombre " + collision.name);
+            Vector2 newDirection = transform.position- collision.transform.position;
+            m_balaMovement.setDireccion(newDirection,1.8f,GLOBAL_TYPES.AFECTA_A_.daniaA_ALLL);
+            return;
+        }
         if (idamageable != null)
         {
             verificarExplosion();

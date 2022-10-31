@@ -5,9 +5,9 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
 
-public static class SAVE_LOAD
+public class SAVE_LOAD_ADAPTER: ISaveLoadSystem
 {
-    public static void SAVE_DATA_GAME(DATA_GAME dataGame)
+    public void SAVE_DATA_GAME(DATA_GAME dataGame)
     {
         try
         {
@@ -23,7 +23,7 @@ public static class SAVE_LOAD
             Debug.LogError("LA DATA NO PUDO GUARDARSE!!!");
         }
     }
-    public static DATA_GAME LOAD_DATA_GAME()
+    public DATA_GAME LOAD_DATA_GAME()
     {
         string dataPath = Application.persistentDataPath + "/game.save";
         if (File.Exists(dataPath))
