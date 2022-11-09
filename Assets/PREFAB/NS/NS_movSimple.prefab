@@ -79,7 +79,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -114,11 +114,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direccionCaminata: 0
-  velocidad: 2
+  velocidad: 7
   rangoPatrulla: 2.2
   m_rigidbody: {fileID: 9191541061142396745}
   factorRetrocesoAlRecibirDanio: 10
   m_NS_Generico: {fileID: 8908168559966511377}
+  withGravity: 1
 --- !u!1 &4975702817355035118
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +200,8 @@ MonoBehaviour:
   m_cadenciaRecibirDanio: 0.2
   recibeEmpuje: 1
   factorEmpuje: 2
-  m_Animator: {fileID: 7919427898990606572}
+  m_Animator:
+  - {fileID: 7919427898990606572}
   m_Collider2D_realizarDanio: {fileID: 2756543388191884619}
   m_Collider2D_recibirDanio: {fileID: 3950827904447015486}
   m_FlashSprite: {fileID: 1237403028}
@@ -224,7 +226,8 @@ MonoBehaviour:
   m_cadenciaRecibirDanio: 0.2
   recibeEmpuje: 1
   factorEmpuje: 2
-  m_Animator: {fileID: 0}
+  m_Animator:
+  - {fileID: 0}
   m_Collider2D_realizarDanio: {fileID: 0}
   m_Collider2D_recibirDanio: {fileID: 0}
   m_FlashSprite: {fileID: 0}

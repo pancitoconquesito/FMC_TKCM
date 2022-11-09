@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc51c3eb007c4564d930794c29c7264e, type: 3}
   m_Name: Pesado
   m_EditorClassIdentifier: 
-  velocidadCaminar: 2.2
-  factorRun: 2
+  velocidadCaminar: 3
+  factorRun: 2.3
   velocidadLimiteCaida: -18
-  potenciaSalto: 15
+  potenciaSalto: 18
   factorCaidaWall: 0.65
   potenciaRepulsionWALL_X: 4
-  potenciaRepulsionWALL_Y: 15
+  potenciaRepulsionWALL_Y: 17
   tiempoInactivoRepulsionWALL: 0.2
   factorMov_X_RepulsionWALL: 0.2
   potenciaDash: 18

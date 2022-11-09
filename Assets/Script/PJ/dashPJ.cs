@@ -11,6 +11,7 @@ public class dashPJ : MonoBehaviour
     [SerializeField] private ObjectPooling m_part_dash;
     [SerializeField] private TrailRenderer m_TrailRenderer;
     [SerializeField]private changeMirada m_changeMirada;
+    [SerializeField] private Animator m_at_DashRecharge;
     private float current_cadencia;
 
     public void setValores(float _potenciaDash, float _cadenciaDash, float _duracionDash)
@@ -25,15 +26,32 @@ public class dashPJ : MonoBehaviour
     {
         current_cadencia = 0;
     }
+    private bool mostrarRecharge = false;
+    private bool firstDash = false;
     private void Update()
     {
-        if(current_cadencia>-1)
+        if (current_cadencia > -1)
             current_cadencia -= Time.deltaTime;
+        DashRecharge();
     }
+
+    private void DashRecharge()
+    {
+        if (current_cadencia < 0 && !mostrarRecharge && firstDash && m_movementPJ.pjCanRechargeDash() && !m_at_DashRecharge.GetCurrentAnimatorStateInfo(0).IsName("anima_dashRecharge_start"))
+        {
+            mostrarRecharge = true;
+            //print("ahhhhhh");
+            m_at_DashRecharge.SetTrigger("Start");
+        }
+    }
+
     public bool startDash(GLOBAL_TYPES.ladoMirada lado)
     {
         if(current_cadencia < 0)
         {
+            firstDash = true;
+            mostrarRecharge = false;
+            //m_at_DashRecharge.SetTrigger("Start");
             GameObject objDash =  m_part_dash.emitirObj(0.4f,false);
             cameraShake.instancia.shake(4f, 0.5f);
             Vector3 scaleCurrent = objDash.transform.localScale;

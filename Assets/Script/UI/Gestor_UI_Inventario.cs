@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 //using UnityEditor.UI;
 using UnityEngine.EventSystems;
@@ -9,6 +6,7 @@ public class Gestor_UI_Inventario : MonoBehaviour
     [SerializeField] private GameObject m_obgALL;
     [SerializeField]private GameObject firstButton_Nivel;
     [SerializeField] private GameObject firstButton_Etapa;
+    [SerializeField] private ChangeButtonSelected m_changeButtonSelected;
     private NewControls m_ControlINVENTARY;
     private GLOBAL_TYPES.TIPO_SCENE m_tipoScene;
     private void Start()
@@ -54,30 +52,33 @@ public class Gestor_UI_Inventario : MonoBehaviour
             {
                 case GLOBAL_TYPES.TIPO_SCENE.etapa:
                     {
-                        EventSystem.current.SetSelectedGameObject(firstButton_Etapa);
+                        //EventSystem.current.SetSelectedGameObject(firstButton_Etapa);
+                        m_changeButtonSelected.setGO_Selected(firstButton_Etapa);
+
                         break;
                     }
                 case GLOBAL_TYPES.TIPO_SCENE.nivel:
                     {
-                        EventSystem.current.SetSelectedGameObject(firstButton_Nivel);
+                        //EventSystem.current.SetSelectedGameObject(firstButton_Nivel);
+                        m_changeButtonSelected.setGO_Selected(firstButton_Nivel);
                         break;
                     }
                 case GLOBAL_TYPES.TIPO_SCENE.TESTEO_SIN_ARMA:
                     {
-                        EventSystem.current.SetSelectedGameObject(firstButton_Nivel);
+                        //EventSystem.current.SetSelectedGameObject(firstButton_Nivel);
+                        m_changeButtonSelected.setGO_Selected(firstButton_Nivel);
                         break;
                     }
                 case GLOBAL_TYPES.TIPO_SCENE.TESTEO_CON_ARMA:
                     {
-                        EventSystem.current.SetSelectedGameObject(firstButton_Nivel);
+                        //EventSystem.current.SetSelectedGameObject(firstButton_Nivel);
+                        m_changeButtonSelected.setGO_Selected(firstButton_Nivel);
                         break;
                     }
             }
             habilitarControles();
         }
-        
     }
-
     internal void closeInventary()
     {
         

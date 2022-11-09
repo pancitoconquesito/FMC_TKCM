@@ -110,7 +110,9 @@ MonoBehaviour:
   m_cadenciaRecibirDanio: 0.15
   recibeEmpuje: 0
   factorEmpuje: 0
-  m_Animator: {fileID: 2724052577886581679}
+  m_Animator:
+  - {fileID: 2724052577886581679}
+  - {fileID: 981415463946040344}
   m_Collider2D_realizarDanio: {fileID: 1059506542888653450}
   m_Collider2D_recibirDanio: {fileID: 2712277393327026174}
   m_FlashSprite: {fileID: 6720771492130435611}
@@ -325,7 +327,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4774019558785872766}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -0.05, y: -0.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -333,7 +335,7 @@ Transform:
   - {fileID: 6271598907627370462}
   m_Father: {fileID: 2698906874443652802}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &5585526781289997068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,6 +355,7 @@ MonoBehaviour:
   cadenciaDisparo: 0.5
   m_ObjectPooling_BALA: {fileID: 7804825324635525177}
   m_ObjectPooling_PArtDisp_INI: {fileID: 2491628448685630574}
+  quieroDestruir_PO: 0
   m_estadoDisparador: 0
 --- !u!114 &7804825324635525177
 MonoBehaviour:
@@ -398,7 +401,7 @@ GameObject:
   - component: {fileID: 981415463946040344}
   - component: {fileID: 3694357723053256086}
   m_Layer: 7
-  m_Name: visual
+  m_Name: visual_cabeza
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -588,7 +591,7 @@ GameObject:
   - component: {fileID: 2724052577886581679}
   - component: {fileID: 6720771492130435611}
   m_Layer: 0
-  m_Name: visual
+  m_Name: visual_cuerpo
   m_TagString: NS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,7 +605,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7279619205778285434}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.06, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

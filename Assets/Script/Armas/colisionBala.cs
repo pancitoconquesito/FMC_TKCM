@@ -41,8 +41,8 @@ public class colisionBala : MonoBehaviour
         if (collision.CompareTag("kick"))
         {
             print("nombre " + collision.name);
-            Vector2 newDirection = transform.position- collision.transform.position;
-            m_balaMovement.setDireccion(newDirection,1.8f,GLOBAL_TYPES.AFECTA_A_.daniaA_ALLL);
+            Vector2 newDirection = (transform.position - collision.transform.position).normalized;
+            m_balaMovement.setDireccion(newDirection,2.5f,GLOBAL_TYPES.AFECTA_A_.daniaA_ALLL);
             return;
         }
         if (idamageable != null)

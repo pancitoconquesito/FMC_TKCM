@@ -12,7 +12,7 @@ public class NS_Generico : MonoBehaviour, IDamageable
     [SerializeField]private float m_cadenciaRecibirDanio=0.15f;
     [SerializeField] private bool recibeEmpuje = true;
     [SerializeField] private float factorEmpuje = 1f;
-    [SerializeField] private Animator m_Animator;
+    [SerializeField] private Animator[] m_Animator;
     [SerializeField] private Collider2D m_Collider2D_realizarDanio;
     [SerializeField] private Collider2D m_Collider2D_recibirDanio;
     [SerializeField] private FlashSprite m_FlashSprite;
@@ -98,9 +98,12 @@ public class NS_Generico : MonoBehaviour, IDamageable
     {
         Invoke("instanciarPartMuerte",delayPartMuerte);
         vivo = false;
-        //print("acabo de morir!");
+        print("acabo de morir!");
         //Destroy(container);
-        m_Animator.SetTrigger("died");
+        for (int i = 0; i < m_Animator.Length; i++)
+        {
+            m_Animator[i].SetTrigger("died");
+        }
         m_Collider2D_realizarDanio.enabled = false;
         m_Collider2D_recibirDanio.enabled = false;
     }

@@ -11,6 +11,7 @@ public class Rotar : MonoBehaviour
     }
     [SerializeField] private bool _X, _Y,_Z;
     [SerializeField] private float speed;
+    [SerializeField] private bool activar;
     private TipoRect m_TipoRect;
     private RectTransform m_RectTransform;
     private Transform m_Transform;
@@ -35,6 +36,7 @@ public class Rotar : MonoBehaviour
             m_Transform = transform;
             m_TipoRect = TipoRect.transform;
         }
+        activo = activar;
     }
     void Update()
     {
@@ -57,9 +59,11 @@ public class Rotar : MonoBehaviour
         }
         else
         {
-            /*Vector3 compassRotation = compass.transform.eulerAngles;
-            compassRotation.z = player.eulerAngles.y;
-            compass.transform.eulerAngles = compassRotation;*/
+            Vector3 currentRotation = transform.rotation.eulerAngles;
+            if (_X) currentRotation.x += speed;
+            if (_Y) currentRotation.y += speed;
+            if (_Z) currentRotation.z += speed;
+            transform.rotation = Quaternion.Euler(currentRotation);
         }
     }
 

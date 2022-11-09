@@ -45,6 +45,7 @@ public class TIPO_DIALOGO
         {
             case EMOTIONS.normal: { retorno = "_normal"; break; }
             case EMOTIONS.pensando: { retorno = "_pensando"; break; }
+            case EMOTIONS.triste: { retorno = "_triste"; break; }
         }
         return retorno;
     }

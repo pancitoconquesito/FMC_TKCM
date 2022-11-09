@@ -184,7 +184,8 @@ MonoBehaviour:
   m_cadenciaRecibirDanio: 0.15
   recibeEmpuje: 1
   factorEmpuje: 3
-  m_Animator: {fileID: 8155903005567371703}
+  m_Animator:
+  - {fileID: 8155903005567371703}
   m_Collider2D_realizarDanio: {fileID: 4849005402042075080}
   m_Collider2D_recibirDanio: {fileID: 6932805019617328932}
   m_FlashSprite: {fileID: 7345613930079035016}
@@ -363,6 +364,7 @@ MonoBehaviour:
   m_rigidbody: {fileID: 3147512875465109444}
   factorRetrocesoAlRecibirDanio: 10
   m_NS_Generico: {fileID: 2177041567697576455}
+  withGravity: 0
 --- !u!1 &8276528649663078787
 GameObject:
   m_ObjectHideFlags: 0

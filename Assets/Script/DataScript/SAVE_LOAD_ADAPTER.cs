@@ -5,13 +5,12 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
 
-public class SAVE_LOAD_ADAPTER: ISaveLoadSystem
+public static class SAVE_LOAD_ADAPTER//: ISaveLoadSystem
 {
-    public void SAVE_DATA_GAME(DATA_GAME dataGame)
+    public static void SAVE_DATA_GAME(DATA_GAME dataGame)
     {
         try
         {
-
             string dataPath = Application.persistentDataPath + "/game.save";
             FileStream fileStream = new FileStream(dataPath, FileMode.Create);
             BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -23,7 +22,7 @@ public class SAVE_LOAD_ADAPTER: ISaveLoadSystem
             Debug.LogError("LA DATA NO PUDO GUARDARSE!!!");
         }
     }
-    public DATA_GAME LOAD_DATA_GAME()
+    public static DATA_GAME LOAD_DATA_GAME()
     {
         string dataPath = Application.persistentDataPath + "/game.save";
         if (File.Exists(dataPath))

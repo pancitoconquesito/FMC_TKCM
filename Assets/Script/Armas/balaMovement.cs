@@ -47,7 +47,7 @@ public class balaMovement : MonoBehaviour, IDamageable
     {
         if (m_dataDanio != null)
             m_dataDanio.m_A_QuienDania= m_afectaAQuien;
-
+        extraVelocity = 1f;
         /*if (firstTime)
         {
             m_OP_patInicio.emitirObj(0.3f, false);
@@ -68,15 +68,16 @@ public class balaMovement : MonoBehaviour, IDamageable
             //Debug.Break();
         }
         if(bulletENEMY)
-            m_Rigidbody2D.velocity = direccion * velocidad * lado;
+            m_Rigidbody2D.velocity = direccion * velocidad * lado * extraVelocity;
         else
             m_Rigidbody2D.velocity = transform.right * velocidad * lado;
 
     }
+    private float extraVelocity=1f;
     public void setDireccion(Vector2 newDirection, float potVelocidad, GLOBAL_TYPES.AFECTA_A_ _afectaA)
     {
         direccion = newDirection;
-        velocidad *= potVelocidad;
+        extraVelocity= potVelocidad;
 
         if (m_dataDanio != null)
             m_dataDanio.setAfectaA(_afectaA);

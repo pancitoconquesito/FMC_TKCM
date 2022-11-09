@@ -11,6 +11,7 @@ public class Disparador_NS : MonoBehaviour
     [SerializeField, Range(0, 1)] private float factorVelocidadRotacion_Disparo;
     [SerializeField] private float cadenciaDisparo;
     [SerializeField] private ObjectPooling m_ObjectPooling_BALA, m_ObjectPooling_PArtDisp_INI;
+    [SerializeField] private bool quieroDestruir_PO;
     private float current_CadenciaDisparo;
     private float rangoVisionDisparar;
     public enum EstadoDisparador
@@ -99,6 +100,7 @@ public class Disparador_NS : MonoBehaviour
 
     private void OnDestroy()
     {
-        m_ObjectPooling_BALA.DestruirPool();
+        if(quieroDestruir_PO)
+            m_ObjectPooling_BALA.DestruirPool();
     }
 }

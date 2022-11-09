@@ -26,8 +26,9 @@ public class retornarObjectPooling : MonoBehaviour
         if (m_ObjectPooling == null)
         {
             print("ES NULO");
+            Destroy(gameObject);
             //Debug.Break();
-        }
-        m_ObjectPooling.ReturnObjPool(gameObject);
+        }else
+            m_ObjectPooling.ReturnObjPool(gameObject);
     }
 }

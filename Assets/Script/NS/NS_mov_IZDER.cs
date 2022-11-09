@@ -11,6 +11,10 @@ public class NS_mov_IZDER : MonoBehaviour
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private float factorRetrocesoAlRecibirDanio;
     [SerializeField] private NS_Generico m_NS_Generico;
+
+    [SerializeField] private bool withGravity = true;
+
+
     //[SerializeField] private Animator m_Animator;
     private changeMirada m_changeMirada;
     void Start()
@@ -64,6 +68,9 @@ public class NS_mov_IZDER : MonoBehaviour
                 m_rigidbody.velocity = velocidad * lado;
             else
                 m_rigidbody.velocity = lado;
+
+            if (withGravity)
+                m_rigidbody.velocity =new Vector2(m_rigidbody.velocity.x, -9.8f);
         }
         else {
             m_rigidbody.velocity = Vector2.zero;

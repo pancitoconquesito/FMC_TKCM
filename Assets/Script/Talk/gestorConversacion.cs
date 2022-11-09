@@ -108,13 +108,19 @@ public class gestorConversacion : MonoBehaviour
     private bool parrafoComplete;
     private void updateSRC()//"Conv_PJ/ pj_pensando"
     {
-        print("actualziando!!!");
+        print("iz : "+ "Conv_PJS/"
+            + TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_iz.sp_PJ)
+            + TIPO_DIALOGO.getEmotion(dialogoActual.parrafo[current_turno].pj_iz.sp_emotion));
+
+        print("der : " + Resources.Load<Sprite>("Conv_PJS/"
+            + TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_der.sp_PJ)
+            + TIPO_DIALOGO.getEmotion(dialogoActual.parrafo[current_turno].pj_der.sp_emotion)));
         //pjs
         img_IZ.sprite = Resources.Load<Sprite>("Conv_PJS/"
             + TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_iz.sp_PJ)
             + TIPO_DIALOGO.getEmotion(dialogoActual.parrafo[current_turno].pj_iz.sp_emotion));
 
-        img_DER.sprite = Resources.Load<Sprite>("Conv_PJS/"
+        img_DER.sprite = Resources.Load<Sprite>("Conv_NPC/"
             + TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_der.sp_PJ)
             + TIPO_DIALOGO.getEmotion(dialogoActual.parrafo[current_turno].pj_der.sp_emotion));
         if (dialogoActual.parrafo[current_turno].IZ_isTalking)

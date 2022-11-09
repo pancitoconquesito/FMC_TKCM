@@ -16,7 +16,7 @@ MonoBehaviour:
   - IZ_isTalking: 1
     pj_iz:
       sp_PJ: 0
-      sp_emotion: 0
+      sp_emotion: 1
     pj_der:
       sp_PJ: 1
       sp_emotion: 0
@@ -34,9 +34,27 @@ MonoBehaviour:
   - IZ_isTalking: 0
     pj_iz:
       sp_PJ: 0
-      sp_emotion: 0
+      sp_emotion: 1
     pj_der:
+      sp_PJ: 1
+      sp_emotion: 0
+    sp_globo: 3
+    text_name:
+    - nombre
+    - name
+    text_IDIOMA:
+    - text_textoParrafo:
+      - "parrafo 1 en espa\xF1ol:B"
+      - "parrafo 2 en espa\xF1ol:B"
+    - text_textoParrafo:
+      - parrafo 1 en ingles
+      - parrafo 1 en ingles
+  - IZ_isTalking: 1
+    pj_iz:
       sp_PJ: 0
+      sp_emotion: 3
+    pj_der:
+      sp_PJ: 1
       sp_emotion: 0
     sp_globo: 3
     text_name:

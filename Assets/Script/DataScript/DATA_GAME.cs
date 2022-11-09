@@ -12,11 +12,13 @@ public class DATA_GAME
 
     public DATA_NEKO_ESFERA m_DATA_NEKO_ESFERA;
 
-    private ISaveLoadSystem m_ISaveLoadSystem;
-    public DATA_GAME(ISaveLoadSystem _ISaveLoadSystem)
+    //public ISaveLoadSystem m_ISaveLoadSystem;
+    public DATA_GAME()//ISaveLoadSystem _ISaveLoadSystem)
     {
-        m_ISaveLoadSystem = _ISaveLoadSystem;
-
+        //SAVE_LOAD_ADAPTER aaa = new SAVE_LOAD_ADAPTER();
+        //m_ISaveLoadSystem = aaa;
+        //m_ISaveLoadSystem = new SAVE_LOAD_ADAPTER();
+        //Debug.Log("ok");
 
         m_DATA_TEST = new DATA_TEST();
         m_DATA_ITEMS = new DATA_ITEMS();
@@ -29,12 +31,25 @@ public class DATA_GAME
 
     public void Save_DATA(DATA_GAME data)
     {
-        //SAVE_LOAD.SAVE_DATA_GAME(data);
+        //S0AVE_LOAD_ADAPTER aaa = new SAVE_LOAD_ADAPTER();
+
+        //m_ISaveLoadSystem.SAVE_DATA_GAME(data);
+        // SAVE_LOAD_ADAPTER aaa = new SAVE_LOAD_ADAPTER();
+        /*SAVE_LOAD_ADAPTER aaa = new SAVE_LOAD_ADAPTER();
+        m_ISaveLoadSystem = aaa;
+
         m_ISaveLoadSystem.SAVE_DATA_GAME(data);
+
+        E_MetodosGuardados.Save_DATA(data, new SAVE_LOAD_ADAPTER());*/
+
+        SAVE_LOAD_ADAPTER.SAVE_DATA_GAME(data);
     }
     public DATA_GAME Load_DATA()
     {
-        //return SAVE_LOAD.LOAD_DATA_GAME();
-        return m_ISaveLoadSystem.LOAD_DATA_GAME();
+        //SAVE_LOAD_ADAPTER aaa = new SAVE_LOAD_ADAPTER();
+        return SAVE_LOAD_ADAPTER.LOAD_DATA_GAME();
+        //m_ISaveLoadSystem = aaa;
+        //return m_ISaveLoadSystem.LOAD_DATA_GAME();
+        //return E_MetodosGuardados.Load_DATA(new SAVE_LOAD_ADAPTER());
     }
 }

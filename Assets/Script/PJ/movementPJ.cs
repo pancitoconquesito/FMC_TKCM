@@ -55,6 +55,7 @@ public class movementPJ : MonoBehaviour
     private float currentTiempoPolvoPared=0f;
     [SerializeField] private emitirParticulas m_PO_polvoSaltoSuelo;
     [SerializeField] private emitirParticulas m_PO_polvoSaltoPared;
+    [SerializeField] private ObjectPooling m_PO_kick;
 
     private NewControls m_ControlPJ;
     private float valorInput_Horizontal;
@@ -88,6 +89,11 @@ public class movementPJ : MonoBehaviour
         if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canInventary(m_estados)) return;
         if (m_estados!= GLOBAL_TYPES.ESTADOS_PJ.inventary)
         {
+
+            valorInput_Horizontal = 0;
+            m_currentValor_X = 0;
+            m_animator.SetFloat("velocidad_X", 0);
+
             m_estados = GLOBAL_TYPES.ESTADOS_PJ.inventary;
             m_animator.ResetTrigger("Inventario");
             m_animator.SetTrigger("Inventario");
@@ -153,12 +159,17 @@ public class movementPJ : MonoBehaviour
         if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canKick(m_estados) || onWalk) return;
         if (current_cadenciaKick < 0)//m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || m_estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk)
         {
+            m_PO_kick.emitirObj(0.5f, false);
             current_cadenciaKick = cadenciaKick;
             m_animator.SetTrigger("Kick");
             m_estados = GLOBAL_TYPES.ESTADOS_PJ.kick;
         }
     }
     private bool accesoDash = true;
+    public bool pjCanRechargeDash()
+    {
+        return accesoDash && GLOBAL_TYPES.canDash(m_estados) && m_vida_PJ.isVivo();
+    }
     private void dash()
     {
         if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canDash(m_estados)) return;
@@ -230,7 +241,7 @@ public class movementPJ : MonoBehaviour
     private float m_currentValor_X;
     private void getInput_Axis_LEFT(float currentValor_X)
     {
-        if (!m_vida_PJ.isVivo()) return;
+        if (!m_vida_PJ.isVivo() || m_estados == GLOBAL_TYPES.ESTADOS_PJ.inventary) return;
         /**/
 
 
@@ -244,7 +255,7 @@ public class movementPJ : MonoBehaviour
 
             m_animator.SetFloat("velocidad_X",currentValorX_abs);
         // }
-       if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.inventary )//|| m_estados == GLOBAL_TYPES.ESTADOS_PJ.dash || m_estados == GLOBAL_TYPES.ESTADOS_PJ.kick)//|| !GLOBAL_TYPES.canMov_X(m_estados))
+       /*if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.inventary )//|| m_estados == GLOBAL_TYPES.ESTADOS_PJ.dash || m_estados == GLOBAL_TYPES.ESTADOS_PJ.kick)//|| !GLOBAL_TYPES.canMov_X(m_estados))
         {
             valorInput_Horizontal = 0;
             m_currentValor_X = 0;
@@ -252,7 +263,7 @@ public class movementPJ : MonoBehaviour
             //else 
             m_animator.SetFloat("velocidad_X", 0);
             //return;
-        }
+        }*/
     }
     private void setZerotInput_Axis_LEFT(InputAction.CallbackContext ctx)
     {
@@ -491,6 +502,9 @@ public class movementPJ : MonoBehaviour
         //desactivarControles();
         m_rigidbody.constraints= RigidbodyConstraints2D.FreezeAll;
         respawnear();
+
+        Destroy(referencesMASTER.instancia.m_GO_ConfinerCamera.gameObject);
+        
 
         disabledALL();
         referencesMASTER.instancia.m_GO_UI_died.SetActive(true);
