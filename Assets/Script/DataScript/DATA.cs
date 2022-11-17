@@ -8,7 +8,7 @@ public class DATA : MonoBehaviour
 
     [SerializeField] private testIdiomaSAVE_LOAD idioma_data;
     [SerializeField] private Data_Singleton m_Data_Singleton;
-    [SerializeField] private bool cargarArma=true;
+    [SerializeField] private bool cargarArma = true;
     [SerializeField] private bool testSinArma;
     public SAVE_LOAD_SYSTEM save_load_system;
     //private int indiceSiguientePosicion;
@@ -19,14 +19,22 @@ public class DATA : MonoBehaviour
 
         instance = this;
         idioma_data.cargarIdioma(save_load_system.m_dataGame.m_DATA_CONFIG_GAME.IDIOMA);
-        if(GameObject.FindGameObjectWithTag("DataScene").GetComponent<DataScene>().getTipoScene() != GLOBAL_TYPES.TIPO_SCENE.TEST_OST)
+        if (GameObject.FindGameObjectWithTag("DataScene").GetComponent<DataScene>().getTipoScene() != GLOBAL_TYPES.TIPO_SCENE.TEST_OST)
             GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent<Data_Singleton>().setCantidadVidaPJ(save_load_system.m_dataGame.m_DATA_PROGRESS.cantidadDeCorazonesTotales);
-        if(!cargarArma && !testSinArma)
-            GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent< Data_Singleton >().setArmaSeleccionada(TIPO_arma.ArmaTipo.none);
+        if (!cargarArma && !testSinArma)
+            GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent<Data_Singleton>().setArmaSeleccionada(TIPO_arma.ArmaTipo.none);
 
         if (GameObject.FindGameObjectWithTag("DataScene").GetComponent<DataScene>().getTipoScene() == GLOBAL_TYPES.TIPO_SCENE.nivel)
             GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent<Data_Singleton>().setInitialPosition(0);
     }
+
+    public float Nivel_Audio_FX{get{return save_load_system.m_dataGame.m_DATA_CONF_AUDIO.lv_FX;}}
+    public float Nivel_Audio_Background { get { return save_load_system.m_dataGame.m_DATA_CONF_AUDIO.lv_BackgroundMusic; } }
+    public float Nivel_Audio_voces { get { return save_load_system.m_dataGame.m_DATA_CONF_AUDIO.lv_Voces; } }
+    public float Nivel_Audio_MASTER { get { return save_load_system.m_dataGame.m_DATA_CONF_AUDIO.lv_MASTER; } }
+
+
+
 
     internal int getCantidadNekoEsfera()
     {

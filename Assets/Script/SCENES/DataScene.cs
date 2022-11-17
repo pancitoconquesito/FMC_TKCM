@@ -9,12 +9,24 @@ public class DataScene : MonoBehaviour
 {
     
     [SerializeField] private GLOBAL_TYPES.TIPO_SCENE m_tipoScene;
-    
+    [SerializeField] private playBackgorundMusic.NAME_BACKGROUND m_nameBackground;
+
+    private int id_musicBackground;
     private Image m_img_vida;
     //[SerializeField] private Image m_img_nekoEsfera;
     private GameObject m_GO_nekoEsfera;
     // Start is called before the first frame update
-    
+    /*public int ID_BackGorunMusic
+    {
+        get
+        {
+            return id_musicBackground;
+        }
+    }
+    public void setIDBackground(int value)
+    {
+        id_musicBackground = value;
+    }*/
     void Start()
     {
         if(m_tipoScene!= GLOBAL_TYPES.TIPO_SCENE.TEST_OST)
@@ -75,13 +87,26 @@ public class DataScene : MonoBehaviour
         //vida visible
         m_GO_nekoEsfera.SetActive(false);
         //dejar visible opcionde volver al nivel
+
+        transform.GetComponent<setMusicBackground>().setBakcground(m_nameBackground);
+        GetComponent<setMusicBackground>().startBackgroundMusic_NO_Repeat();
     }
     private void setNivel()
     {
+
         GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent<Data_Singleton>().setNextLevel_singleton(SceneManager.GetActiveScene().name);
         m_img_vida.enabled = false;
         //neko esfera visible
         referencesMASTER.instancia.m_GO_UI_volverNivel.SetActive(false);
         referencesMASTER.instancia.m_GO_UI_CargadorPoder.SetActive(false);
+        
+        transform.GetComponent<setMusicBackground>().setBakcground(m_nameBackground);
+        GetComponent<setMusicBackground>().startBackgroundMusic_NO_Repeat();
+       // GetComponent<setMusicBackground>().startBackgroundMusic();sdsd
     }
+
+
+
+
+
 }

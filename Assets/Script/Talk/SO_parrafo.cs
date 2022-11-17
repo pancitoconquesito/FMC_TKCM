@@ -14,8 +14,8 @@ public class SO_parrafo
     public TIPO_DIALOGO.GLOBO sp_globo;
     //public Sprite sp_btnNext;
 
-    [Header("----- NOMBRES -----")]
-    public string[] text_name;//es:0 en:1
+    //[Header("----- NOMBRES -----")]
+    //public string[] text_name;//es:0 en:1
     
     [Space(15)]
 

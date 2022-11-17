@@ -62,7 +62,7 @@ void Awake()
     }
     public void setArmaSeleccionada(TIPO_arma.ArmaTipo _arma)
     {
-        print("cambio de arma a : "+_arma);
+        //print("cambio de arma a : "+_arma);
         armaSeleccionada = _arma;
     }
     public TIPO_arma.ArmaTipo getArmaSeleccionada()

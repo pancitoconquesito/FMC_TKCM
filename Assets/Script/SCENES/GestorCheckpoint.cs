@@ -6,12 +6,17 @@ using UnityEngine;
 public class GestorCheckpoint : MonoBehaviour
 {
     [SerializeField] private Checkpoint[] m_L_checkpoints;
+    [SerializeField] private AudioClip m_clip;
+    private AudioSource m_audiosource;
     private Transform m_trans_PJ;
     private Data_Singleton m_Data_Singleton;
 
     private int cantidadHijos;
     private void Awake()
     {
+        m_audiosource = GetComponent<AudioSource>();
+        if(m_audiosource!=null)
+            m_audiosource.clip = m_clip;
         cantidadHijos = transform.childCount;
         m_L_checkpoints = new Checkpoint[cantidadHijos];
         for (int i = 0; i < cantidadHijos; i++) { 
@@ -43,5 +48,11 @@ public class GestorCheckpoint : MonoBehaviour
             m_L_checkpoints[i].activo = m_L_checkpoints[i].numero > numero;
         }
         m_Data_Singleton.setInitialPosition(numero);
+    }
+
+    public void reproducirAudio()
+    {
+        if(m_audiosource!=null)
+            m_audiosource.Play();
     }
 }

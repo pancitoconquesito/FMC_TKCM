@@ -19,7 +19,7 @@ public class gestorConversacion : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text_name_der;
 
     private SO_DIALOGO dialogoActual;
-
+    private GLOBAL_TYPES.IDIOMA currentIdioma_tipo;
     private int current_Idioma;
 
     private int totalTurnos;
@@ -40,6 +40,7 @@ public class gestorConversacion : MonoBehaviour
 
         //current_Idioma = TIPO_DIALOGO.getIDIOMA(TIPO_DIALOGO.IDIOMA.es);//TODO: CARGAR IDIOMA
         current_Idioma = DATA.instance.getIdioma_INT();
+        currentIdioma_tipo = TIPO_DIALOGO.getIDIOMA_TIPO(current_Idioma);
 
         totalTurnos = dialogoActual.parrafo.Length;
         current_turno= 0;
@@ -53,6 +54,7 @@ public class gestorConversacion : MonoBehaviour
     IEnumerator mostrarTexto()
     {
         updateSRC();
+        //print("totalParrafos : "+ totalParrafos);
         parrafoComplete = false;
         int largoParrafo = textoParrafo.Length;
         string textoMostrado = "";
@@ -67,7 +69,7 @@ public class gestorConversacion : MonoBehaviour
     }
     public void siguiente()
     {
-        print("siguiente");
+        //print("siguiente");
         // ver si el texto esta listo, promover a un booleano
         if (parrafoComplete)
         {
@@ -108,14 +110,16 @@ public class gestorConversacion : MonoBehaviour
     private bool parrafoComplete;
     private void updateSRC()//"Conv_PJ/ pj_pensando"
     {
-        print("iz : "+ "Conv_PJS/"
+        /*print("iz : "+ "Conv_PJS/"
             + TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_iz.sp_PJ)
             + TIPO_DIALOGO.getEmotion(dialogoActual.parrafo[current_turno].pj_iz.sp_emotion));
 
-        print("der : " + Resources.Load<Sprite>("Conv_PJS/"
-            + TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_der.sp_PJ)
-            + TIPO_DIALOGO.getEmotion(dialogoActual.parrafo[current_turno].pj_der.sp_emotion)));
+        print("der : " + "Conv_NPC/"
+            + TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_iz.sp_PJ)
+            + TIPO_DIALOGO.getEmotion(dialogoActual.parrafo[current_turno].pj_iz.sp_emotion));*/
+
         //pjs
+        totalParrafos = dialogoActual.parrafo[current_turno].text_IDIOMA[current_Idioma].text_textoParrafo.Length;
         img_IZ.sprite = Resources.Load<Sprite>("Conv_PJS/"
             + TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_iz.sp_PJ)
             + TIPO_DIALOGO.getEmotion(dialogoActual.parrafo[current_turno].pj_iz.sp_emotion));
@@ -123,6 +127,7 @@ public class gestorConversacion : MonoBehaviour
         img_DER.sprite = Resources.Load<Sprite>("Conv_NPC/"
             + TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_der.sp_PJ)
             + TIPO_DIALOGO.getEmotion(dialogoActual.parrafo[current_turno].pj_der.sp_emotion));
+
         if (dialogoActual.parrafo[current_turno].IZ_isTalking)
         {
             img_IZ.color = new Color32(255, 255, 255, 255);
@@ -142,8 +147,13 @@ public class gestorConversacion : MonoBehaviour
         }else img_btnNext.sprite = Resources.Load<Sprite>("Conv_globo/btn_NEXT");
         img_btnNext.color = new Color32(255,255,255,0);
         //nombres
-        text_name_iz.text = TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_iz.sp_PJ);
-        text_name_der.text = TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_der.sp_PJ);
+        //current_Idioma
+        text_name_iz.text = TIPO_DIALOGO.get_REAL_UI_Name(dialogoActual.parrafo[current_turno].pj_iz.sp_PJ, currentIdioma_tipo);
+        text_name_der.text = TIPO_DIALOGO.get_REAL_UI_Name(dialogoActual.parrafo[current_turno].pj_der.sp_PJ, currentIdioma_tipo);
+
+        //text_name_iz.text = TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_iz.sp_PJ);
+        //text_name_der.text = TIPO_DIALOGO.getName(dialogoActual.parrafo[current_turno].pj_der.sp_PJ);
+
         //
         textoParrafo = dialogoActual.parrafo[current_turno].text_IDIOMA[current_Idioma].text_textoParrafo[current_parrafo];
         //text_text.text = textoParrafo;

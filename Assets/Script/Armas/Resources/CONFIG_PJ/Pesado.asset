@@ -18,7 +18,7 @@ MonoBehaviour:
   potenciaSalto: 18
   factorCaidaWall: 0.65
   potenciaRepulsionWALL_X: 4
-  potenciaRepulsionWALL_Y: 17
+  potenciaRepulsionWALL_Y: 18.7
   tiempoInactivoRepulsionWALL: 0.2
   factorMov_X_RepulsionWALL: 0.2
   potenciaDash: 18

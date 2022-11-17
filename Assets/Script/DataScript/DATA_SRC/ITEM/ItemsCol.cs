@@ -10,7 +10,7 @@ public class ItemsCol : MonoBehaviour
     }
     //[SerializeField]private 
     //[SerializeField] private ui_itemObtenido m_ui_itemObtenido;
-    [SerializeField] private SO_ITEM m_so_item;
+    [SerializeField] protected SO_ITEM m_so_item;
     [SerializeField] private GameObject ui_item_GO;
     [SerializeField] private float tiempoDespuesDeColisionar;
     [SerializeField] protected ACTION_TO_GET m_ACTION_TO_GET;
@@ -18,7 +18,7 @@ public class ItemsCol : MonoBehaviour
     [SerializeField] private string TriggerNameNewAnimation;
     public UnityEvent alColisionar;
     public UnityEvent XTiempoDespuesDeColisionar;
-    private movementPJ m_movementPJ;
+    protected movementPJ m_movementPJ;
     void Start()
     {
         m_movementPJ=GameObject.FindGameObjectWithTag("Player").GetComponent<movementPJ>();
@@ -59,7 +59,7 @@ public class ItemsCol : MonoBehaviour
             //m_ui_itemObtenido.setValues(m_so_item);
             alColisionar.Invoke();
 
-            DATA.instance.save_load_system.saveItem(m_so_item.ID_ITEM);
+            //DATA.instance.save_load_system.saveItem(m_so_item.ID_ITEM);
         }
     }
     private void ejecutar_eventoXtiempoDespuesDeCol()

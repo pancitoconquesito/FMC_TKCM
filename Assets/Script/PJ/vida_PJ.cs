@@ -22,6 +22,7 @@ public class vida_PJ : MonoBehaviour, IDamageable
     [SerializeField] private TransicionMuerte m_transicionMuerte;
 
     [SerializeField] private FlashSprite[] m_L_FlashSprite;
+    [SerializeField] private Collider2D m_collider;
     //[SerializeField] private FlashSprite m_FlashSprite_arm;
 
     void Start()
@@ -132,6 +133,7 @@ public class vida_PJ : MonoBehaviour, IDamageable
     public void turnInvulnerable(bool valor) => m_invulnerable = valor;
     private void morir()
     {
+        m_collider.enabled = false;
         print("me mori!!!");
         m_movementPJ.morir();
         m_DATA_SINGLETON.resetDataMorir();

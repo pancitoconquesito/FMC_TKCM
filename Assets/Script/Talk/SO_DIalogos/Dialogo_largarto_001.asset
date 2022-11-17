@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa63b12188761ac4fb81e8d49504c56b, type: 3}
+  m_Name: Dialogo_largarto_001
+  m_EditorClassIdentifier: 
+  parrafo:
+  - IZ_isTalking: 1
+    pj_iz:
+      sp_PJ: 0
+      sp_emotion: 1
+    pj_der:
+      sp_PJ: 2
+      sp_emotion: 0
+    sp_globo: 2
+    text_IDIOMA:
+    - text_textoParrafo:
+      - mmm... creo que lo he visto antes...
+    - text_textoParrafo:
+      - "\rHmm... i think i've seen it before..."
+  - IZ_isTalking: 0
+    pj_iz:
+      sp_PJ: 0
+      sp_emotion: 6
+    pj_der:
+      sp_PJ: 2
+      sp_emotion: 5
+    sp_globo: 1
+    text_IDIOMA:
+    - text_textoParrafo:
+      - estoy asustado
+      - AHH!! deja de mirarme! no me asustes!
+    - text_textoParrafo:
+      - "\rI am scared"
+      - "\rAHH!! stop looking at me! do not scare me!"
+  - IZ_isTalking: 1
+    pj_iz:
+      sp_PJ: 0
+      sp_emotion: 3
+    pj_der:
+      sp_PJ: 2
+      sp_emotion: 5
+    sp_globo: 0
+    text_IDIOMA:
+    - text_textoParrafo:
+      - Disculpa, no queria asustarte
+    - text_textoParrafo:
+      - Sorry, I didn't mean to scare you.
+  - IZ_isTalking: 1
+    pj_iz:
+      sp_PJ: 0
+      sp_emotion: 3
+    pj_der:
+      sp_PJ: 2
+      sp_emotion: 5
+    sp_globo: 2
+    text_IDIOMA:
+    - text_textoParrafo:
+      - Pero que copo de nieve
+    - text_textoParrafo:
+      - What a snowflake

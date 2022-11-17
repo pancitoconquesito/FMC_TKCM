@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class Col_NekoEsfera : ItemsCol
 {
     [Header("-- ColNeko Params --")]
@@ -11,37 +8,26 @@ public class Col_NekoEsfera : ItemsCol
     [SerializeField] private Collider2D m_Collider2D;
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        print("hijo");
+        //print("hijo");
         m_Collider2D.enabled = false;
-        //m_ACTION_TO_GET = ACTION_TO_GET.animation;
-        // inhabilitar pj mov
-        // no danio pj
-        // set anim festejo => camara + cerca
         referencesMASTER.instancia.m_movementPJ.getNekoEsfera();
-        // esfera get animation
-
-        // anim target
-        //referencesMASTER.instancia.m_animatorNekoEsfera.Settrigger("Start");
-
-
-        // transicion
-        //referencesMASTER.instancia.
         Invoke("transicion", delayTransicion);
-        // exit etapa
         Invoke("changeStage", delayChangeStage);
+        //setNekoEsfera(int idPrefab)
+        DATA.instance.save_load_system.setNekoEsfera(m_so_item.ID_ITEM);
 
         base.OnTriggerEnter2D(collision);
     }
     private void transicion()
     {
-        print("transicion");
         referencesMASTER.instancia.m_anim_UI_transicion.SetTrigger("negro");
-
     }
     private void changeStage()
     {
-        print("changeStage");
-
+        playBackgorundMusic m_playBackgorundMusic = GameObject.FindGameObjectWithTag("Data_Singleton").transform.GetChild(0).transform.GetComponent<playBackgorundMusic>();
+        m_playBackgorundMusic.setIndexBakcground(m_playBackgorundMusic.parseNameBackground(playBackgorundMusic.NAME_BACKGROUND.nivel));
+        m_playBackgorundMusic.startBackground_and_Stop();
+        //print("changeStage");
         m_CambiarScene.changeScene();
     }
 }

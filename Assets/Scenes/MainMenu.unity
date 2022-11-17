@@ -1143,52 +1143,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textos:
-  - textMesh: {fileID: 2061627840}
+  - textMesh: {fileID: 2069563743}
     texto_ESPANOL: "Configuraci\xF3n de audio"
     texto_INGLES: Audio settings
-  - textMesh: {fileID: 1576729654}
+  - textMesh: {fileID: 1478521288}
     texto_ESPANOL: Etapa de prueba
     texto_INGLES: Test Stage
-  - textMesh: {fileID: 172172319}
+  - textMesh: {fileID: 579929038}
     texto_ESPANOL: Borrar datos
     texto_INGLES: Erase Data
-  - textMesh: {fileID: 939806301}
+  - textMesh: {fileID: 722771359}
     texto_ESPANOL: Salir
     texto_INGLES: Exit
-  - textMesh: {fileID: 89627995}
+  - textMesh: {fileID: 1272222838}
     texto_ESPANOL: "Selecci\xF3n de idioma"
     texto_INGLES: Language selection
-  - textMesh: {fileID: 1505454520}
+  - textMesh: {fileID: 1629743817}
     texto_ESPANOL: Movimiento del personaje principal
     texto_INGLES: Character movement
-  - textMesh: {fileID: 659713659}
+  - textMesh: {fileID: 1537652724}
     texto_ESPANOL: Prueba de armas y poder especial
     texto_INGLES: Weapon test and special power
-  - textMesh: {fileID: 2059299922}
+  - textMesh: {fileID: 704590244}
     texto_ESPANOL: "Interacci\xF3n de conversaci\xF3n"
     texto_INGLES: Conversation interaction
-  - textMesh: {fileID: 1529325783}
+  - textMesh: {fileID: 1389698418}
     texto_ESPANOL: Prueba de enemigos
     texto_INGLES: Enemies test
-  - textMesh: {fileID: 1858621494}
+  - textMesh: {fileID: 47859764}
     texto_ESPANOL: "Reproducci\xF3n de Banda sonora"
     texto_INGLES: Soundtrack Playback
-  - textMesh: {fileID: 918394074}
+  - textMesh: {fileID: 1704130552}
     texto_ESPANOL: "Men\xFA principal"
     texto_INGLES: Main menu
-  - textMesh: {fileID: 636759922}
+  - textMesh: {fileID: 1710537077}
     texto_ESPANOL: "\xBF Estas Seguro de eliminar el progreso ?"
     texto_INGLES: Are you sure you want to delete the progress?
-  - textMesh: {fileID: 810727326}
+  - textMesh: {fileID: 788527736}
     texto_ESPANOL: Si
     texto_INGLES: Yes
-  - textMesh: {fileID: 1711690535}
+  - textMesh: {fileID: 617829155}
     texto_ESPANOL: Selecciona tu idioma
     texto_INGLES: ' Select your language'
-  - textMesh: {fileID: 1234902226}
+  - textMesh: {fileID: 50099239}
     texto_ESPANOL: "Espa\xF1ol"
     texto_INGLES: Ingles
-  - textMesh: {fileID: 1335198936}
+  - textMesh: {fileID: 216571975}
     texto_ESPANOL: 'Idioma seleccionado : '
     texto_INGLES: ' Selected language :'
 --- !u!4 &98074880
@@ -1333,9 +1333,9 @@ MonoBehaviour:
           m_StringArgument: Start
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 396905071}
-        m_TargetAssemblyTypeName: desactivarBotones, Assembly-CSharp
-        m_MethodName: desactivar
+      - m_Target: {fileID: 1558200357}
+        m_TargetAssemblyTypeName: startMusicWith, Assembly-CSharp
+        m_MethodName: stopMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2177,6 +2177,18 @@ MonoBehaviour:
       - m_Target: {fileID: 396905071}
         m_TargetAssemblyTypeName: desactivarBotones, Assembly-CSharp
         m_MethodName: desactivar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1558200357}
+        m_TargetAssemblyTypeName: startMusicWith, Assembly-CSharp
+        m_MethodName: stopMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3035,7 +3047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -1.5, y: -2, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -523, y: -85}
+  m_AnchoredPosition: {x: -1564, y: -85}
   m_SizeDelta: {x: -1165.1538, y: -234.0421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &399329061
@@ -4726,9 +4738,33 @@ MonoBehaviour:
           m_StringArgument: Start
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 954442033}
+        m_TargetAssemblyTypeName: playBackgorundMusic, Assembly-CSharp
+        m_MethodName: stopBackgroundMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 396905071}
         m_TargetAssemblyTypeName: desactivarBotones, Assembly-CSharp
         m_MethodName: desactivar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1558200357}
+        m_TargetAssemblyTypeName: startMusicWith, Assembly-CSharp
+        m_MethodName: stopMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10898,7 +10934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_FollowOffset: {x: 1243.05, y: -282.6705, z: -797.0774}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -11323,6 +11359,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_GO_Selected: {fileID: 0}
+--- !u!114 &954442033 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4766221592413233664, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+  m_PrefabInstance: {fileID: 8912701940555668436}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85902b9f0cf9a9044b1fce76a0b0394d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &980565902
 GameObject:
   m_ObjectHideFlags: 0
@@ -11510,6 +11557,7 @@ GameObject:
   - component: {fileID: 1037394729}
   - component: {fileID: 1037394728}
   - component: {fileID: 1037394727}
+  - component: {fileID: 1037394731}
   m_Layer: 5
   m_Name: Canvas (1)
   m_TagString: Untagged
@@ -11605,6 +11653,26 @@ RectTransform:
   m_AnchoredPosition: {x: 2976, y: 1006}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1037394731
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037394726}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3ddb02587f80dc7479503182547fb524, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1053460947
 GameObject:
   m_ObjectHideFlags: 0
@@ -12658,6 +12726,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1558200357}
+        m_TargetAssemblyTypeName: startMusicWith, Assembly-CSharp
+        m_MethodName: stopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1258688266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12824,6 +12904,18 @@ MonoBehaviour:
       - m_Target: {fileID: 396905071}
         m_TargetAssemblyTypeName: desactivarBotones, Assembly-CSharp
         m_MethodName: desactivar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1558200357}
+        m_TargetAssemblyTypeName: startMusicWith, Assembly-CSharp
+        m_MethodName: stopMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15043,6 +15135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1558200356}
   - component: {fileID: 1558200355}
+  - component: {fileID: 1558200357}
   m_Layer: 0
   m_Name: DataScene
   m_TagString: DataScene
@@ -15063,6 +15156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_tipoScene: 4
+  m_nameBackground: 0
 --- !u!4 &1558200356
 Transform:
   m_ObjectHideFlags: 0
@@ -15078,6 +15172,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1558200357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558200354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6de39a3cc2b36b43a3f1dcd9223d23c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWithMusic: 1
+  indexStart: 1
 --- !u!1 &1576729652
 GameObject:
   m_ObjectHideFlags: 0
@@ -17315,6 +17423,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1558200357}
+        m_TargetAssemblyTypeName: startMusicWith, Assembly-CSharp
+        m_MethodName: stopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1911022578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18142,6 +18262,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1558200357}
+        m_TargetAssemblyTypeName: startMusicWith, Assembly-CSharp
+        m_MethodName: stopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2044687952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18897,6 +19029,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1558200357}
+        m_TargetAssemblyTypeName: startMusicWith, Assembly-CSharp
+        m_MethodName: stopMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2085744510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19486,6 +19630,14 @@ PrefabInstance:
     - target: {fileID: 2160364873722904563, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
       propertyPath: m_Name
       value: Singleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766221592413233664, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: indexStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766221592413233664, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
+      propertyPath: startWithMusic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5126358582685000849, guid: 69ed68ad944fbf24696b3350882f2492, type: 3}
       propertyPath: m_RootOrder

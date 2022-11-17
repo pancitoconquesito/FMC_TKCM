@@ -73,7 +73,7 @@ public class triggerTalk : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.CompareTag("Player")) return;
-        print("saliendo por trigger exit");
+        //print("saliendo por trigger exit");
         if (m_estado == estadoTalk.stay)
         {
             m_animator_globoBTN.ResetTrigger("end");
@@ -90,7 +90,7 @@ public class triggerTalk : MonoBehaviour
 
     public void exit()
     {
-        print("ya sali!");
+        //print("ya sali!");
         collider_alejarPj_Conv.enabled = false;
         m_estado = estadoTalk.stay;
         m_movementPJ.returnNormalMovement();

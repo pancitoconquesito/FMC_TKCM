@@ -17,9 +17,10 @@ public class objDepProgress : MonoBehaviour
     [SerializeField] private string tagTrigger;
     void Start()
     {
+        //print(tipoPrefab);
         if(DATA.instance.save_load_system.isGenericProgress(tipoPrefab, idPrefab))
         {
-            //print("obtenido");
+            //print("obtenido por : "+transform.name+" __tipo : " + tipoPrefab);
             switch (accion)
             {
                 case ACCION.destruir:

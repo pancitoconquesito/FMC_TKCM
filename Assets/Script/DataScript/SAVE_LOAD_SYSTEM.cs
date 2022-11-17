@@ -130,7 +130,7 @@ public class SAVE_LOAD_SYSTEM : MonoBehaviour
     public bool isGenericProgress(GLOBAL_TYPES.TIPO_PREFAB tipoPrefab, int idPrefab)
     {
         bool retorno = false;
-
+        //print(tipoPrefab);
         switch (tipoPrefab)
         {
             case GLOBAL_TYPES.TIPO_PREFAB.ITEM:
@@ -141,7 +141,7 @@ public class SAVE_LOAD_SYSTEM : MonoBehaviour
             case GLOBAL_TYPES.TIPO_PREFAB.NekoEsfera:
                 {
                     retorno=isNekoEsfera(idPrefab);
-                    if (!retorno) setNekoEsfera(idPrefab);
+                    //if (!retorno) setNekoEsfera(idPrefab);
                     //retorno = true;//siempre true para que reaccione a animarse o destruirse
                     break;
                 }
@@ -149,10 +149,13 @@ public class SAVE_LOAD_SYSTEM : MonoBehaviour
         return retorno;
     }
 
-    private void setNekoEsfera(int idPrefab)
+    public void setNekoEsfera(int idPrefab)
     {
+        print("SET NEKO ESFERA");
+        if (isNekoEsfera(idPrefab)) return;
         m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas[idPrefab].completado = true;
         m_dataGame.m_DATA_NEKO_ESFERA.addNekoEsfera();
+        save_();
     }
 
     private bool isNekoEsfera(int idPrefab)

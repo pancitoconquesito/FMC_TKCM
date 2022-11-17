@@ -19,7 +19,7 @@ public class shootPJ : MonoBehaviour
     void Start()
     {
         m_armaTipo = Data_Singleton.instancia.getArmaSeleccionada();
-        print("arma seleccionada : "+m_armaTipo);
+        //print("arma seleccionada : "+m_armaTipo);
         referencesMASTER.instancia.animator_ARMA.SetInteger("Arma_ID", TIPO_arma.getParse_TipoArma_INTEGER(m_armaTipo));
         referencesMASTER.instancia.animator_ARMA.SetTrigger("ChangeGun");
 

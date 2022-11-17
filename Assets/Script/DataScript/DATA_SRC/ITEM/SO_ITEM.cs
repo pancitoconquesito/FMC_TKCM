@@ -6,8 +6,8 @@ using UnityEngine;
 public class SO_ITEM : ScriptableObject
 {
     public int ID_ITEM;
-    public InfoItem infoEspanol;
-    public InfoItem infoIngles;
+    public InfoItem[] info;//0:español, 1:ingles
+    //public InfoItem infoIngles;
 
 
 }

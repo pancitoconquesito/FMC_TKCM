@@ -17,7 +17,7 @@ public class dropdown_cambioIdioma : MonoBehaviour
     }
     public void OnDropDownChanged()
     {
-        print("Se cambio");
+        //print("Se cambio");
         valorIdiomaSelect = m_Dropdown.value;
         if(m_GestorCambioIdioma==null) m_GestorCambioIdioma = referencesMASTER.instancia.m_GestorCambioIdioma;
         m_GestorCambioIdioma.InvokeCambioIdioma(valorIdiomaSelect);

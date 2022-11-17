@@ -70,7 +70,9 @@ public class Disparador_NS : MonoBehaviour
         //Instantiate(m_ObjectPooling.objeto, transform.position, transform.rotation);
         Vector2 direccion = (m_transformPJ.position - transform.position).normalized;
         direccion = transform.up;
-        m_ObjectPooling_BALA.emitirObj(1, false).GetComponent<balaMovement>().direccion = direccion;
+        GameObject obj = m_ObjectPooling_BALA.emitirObj(1, false);
+        if(obj!=null)
+            obj.GetComponent<balaMovement>().direccion = direccion;
         //nuevaBala.GetComponent<balaMovement>().direccion = (m_transformPJ.position - transform.position).normalized;
     }
 

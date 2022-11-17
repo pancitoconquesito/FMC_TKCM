@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Checkpoint : MonoBehaviour
 {
+    public GameObject particles;
     public int numero;
     private bool valor;
     public bool activo;
@@ -24,13 +24,14 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (activo && collision.CompareTag("Player"))
+        if (activo && collision.CompareTag("Player") && !valor)
         {
-            //if(m_Data_Singleton.getIndiceCheckpoint() < numero)
-            //{
-                valor = true;
-                m_GestorCheckpoint.setCheckpoint(numero);
-            //}
+            valor = true;
+            m_GestorCheckpoint.setCheckpoint(numero);
+
+            if(particles!=null)
+                Instantiate(particles, new Vector3(transform.position.x, transform.position.y-2f,0), Quaternion.identity);
+            m_GestorCheckpoint.reproducirAudio();
         }
     }
     private void OnDrawGizmosSelected()

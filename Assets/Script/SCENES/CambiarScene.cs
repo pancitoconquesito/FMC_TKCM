@@ -39,6 +39,16 @@ public class CambiarScene : MonoBehaviour
     {
         //if(nameStage=="asdf") nameStage= DATA.instance.save_load_system.m_dataGame.m_DATA_PROGRESS.nameStageSaveRoom;
         if (loadNameStage_singleton && referencesMASTER.instancia.m_Data_Singleton.getNextLevel_singleton()=="") nameStage = "Nivel_1";
+        try
+        {
+            referencesMASTER.instancia.m_Data_Singleton.setCantidadVidaPJ(3);
+
+        }
+        catch (System.Exception)
+        {
+
+            print("no existe reference master en scene");
+        }
         SceneManager.LoadScene(nameStage);
     }
     private void changeStageWithOutDATA()

@@ -86,6 +86,7 @@ public class ObjectPooling : MonoBehaviour
     public GameObject emitirObj(float tiempo, bool withTime)
     {
         GameObject objA = this.getObjPool();
+        if (objA == null) return null;
         objA.transform.SetParent(null);
         //print("AHHH");
         //objA.GetComponent<retornarObjectPooling>().setObjectPoolingMASTER(this);

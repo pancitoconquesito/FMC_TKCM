@@ -17,10 +17,10 @@ MonoBehaviour:
   velocidadLimiteCaida: -21
   potenciaSalto: 22
   factorCaidaWall: 0.5
-  potenciaRepulsionWALL_X: 12
-  potenciaRepulsionWALL_Y: 25
-  tiempoInactivoRepulsionWALL: 0.25
-  factorMov_X_RepulsionWALL: 0.25
+  potenciaRepulsionWALL_X: 9
+  potenciaRepulsionWALL_Y: 27.5
+  tiempoInactivoRepulsionWALL: 0.2
+  factorMov_X_RepulsionWALL: 0.2
   potenciaDash: 35
   cadenciaDash: 0.7
   duracionDash: 0.2

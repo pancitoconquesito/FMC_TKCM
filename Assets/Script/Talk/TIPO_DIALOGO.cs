@@ -20,11 +20,12 @@ public class TIPO_DIALOGO
     public enum PJ_NAMES
     {
         PJ,
-        test
+        test,
+        lagarto
     }
     public enum EMOTIONS
     {
-        normal, pensando, alegre, triste, enojado
+        normal, pensando, alegre, triste, enojado, asustado, cringe
     }
 
 
@@ -35,7 +36,37 @@ public class TIPO_DIALOGO
         {
             case PJ_NAMES.PJ: { retorno = "Pj"; break; }
             case PJ_NAMES.test: { retorno = "Test";break; }
+            case PJ_NAMES.lagarto: { retorno = "lagarto"; break; }
         }
+        return retorno;
+    }
+    static public string get_REAL_UI_Name(TIPO_DIALOGO.PJ_NAMES _name, GLOBAL_TYPES.IDIOMA _idioma)
+    {
+        string retorno = "ERROR";
+        switch (_idioma)
+        {
+            case GLOBAL_TYPES.IDIOMA.ES:
+                {
+                    switch (_name)
+                    {
+                        case PJ_NAMES.PJ: { retorno = "Betty"; break; }
+                        case PJ_NAMES.test: { retorno = "Test"; break; }
+                        case PJ_NAMES.lagarto: { retorno = "Lagarto Freddy"; break; }
+                    }
+                    break;
+                }
+            case GLOBAL_TYPES.IDIOMA.EN:
+                {
+                    switch (_name)
+                    {
+                        case PJ_NAMES.PJ: { retorno = "Betty"; break; }
+                        case PJ_NAMES.test: { retorno = "Test"; break; }
+                        case PJ_NAMES.lagarto: { retorno = "Botanical lizard"; break; }
+                    }
+                    break;
+                }
+        }
+        
         return retorno;
     }
     static public string getEmotion(TIPO_DIALOGO.EMOTIONS _emotion)
@@ -46,6 +77,9 @@ public class TIPO_DIALOGO
             case EMOTIONS.normal: { retorno = "_normal"; break; }
             case EMOTIONS.pensando: { retorno = "_pensando"; break; }
             case EMOTIONS.triste: { retorno = "_triste"; break; }
+            case EMOTIONS.cringe: { retorno = "_cringe"; break; }
+            case EMOTIONS.asustado: { retorno = "_asustado"; break; }
+
         }
         return retorno;
     }
@@ -61,13 +95,23 @@ public class TIPO_DIALOGO
         }
         return retorno;
     }
-    static public int getIDIOMA(TIPO_DIALOGO.IDIOMA _idioma)
+    static public int getIDIOMA_INT(TIPO_DIALOGO.IDIOMA _idioma)
     {
         int retorno = 0;
         switch (_idioma)
         {
             case IDIOMA.es: { retorno = 0; break; }
             case IDIOMA.en: { retorno = 1; break; }
+        }
+        return retorno;
+    }
+    static public GLOBAL_TYPES.IDIOMA getIDIOMA_TIPO(int _idioma)
+    {
+        GLOBAL_TYPES.IDIOMA retorno = 0;
+        switch (_idioma)
+        {
+            case 0: { retorno = GLOBAL_TYPES.IDIOMA.ES; break; }
+            case 1: { retorno = GLOBAL_TYPES.IDIOMA.EN; break; }
         }
         return retorno;
     }

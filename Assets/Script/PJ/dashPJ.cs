@@ -12,6 +12,8 @@ public class dashPJ : MonoBehaviour
     [SerializeField] private TrailRenderer m_TrailRenderer;
     [SerializeField]private changeMirada m_changeMirada;
     [SerializeField] private Animator m_at_DashRecharge;
+    [SerializeField] private SonidosPj m_SonidosPj;
+
     private float current_cadencia;
 
     public void setValores(float _potenciaDash, float _cadenciaDash, float _duracionDash)
@@ -42,6 +44,7 @@ public class dashPJ : MonoBehaviour
             mostrarRecharge = true;
             //print("ahhhhhh");
             m_at_DashRecharge.SetTrigger("Start");
+            m_SonidosPj.playRestartDash();
         }
     }
 

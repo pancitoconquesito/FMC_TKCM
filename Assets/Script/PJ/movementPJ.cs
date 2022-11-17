@@ -57,6 +57,10 @@ public class movementPJ : MonoBehaviour
     [SerializeField] private emitirParticulas m_PO_polvoSaltoPared;
     [SerializeField] private ObjectPooling m_PO_kick;
 
+
+    [Header("-- Audio --")]
+    [SerializeField] private SonidosPj m_SonidosPj;
+
     private NewControls m_ControlPJ;
     private float valorInput_Horizontal;
     private bool m_isGrounded = false;
@@ -71,7 +75,7 @@ public class movementPJ : MonoBehaviour
         m_ControlPJ = new NewControls();
         m_ControlPJ.PLAYER.Enable();
 
-        m_ControlPJ.PLAYER.Horizontal.performed += ctx => getInput_Axis_LEFT(ctx.ReadValue<Vector2>().x);
+        //m_ControlPJ.PLAYER.Horizontal.performed += ctx => getInput_Axis_LEFT(ctx.ReadValue<Vector2>().x);
         m_ControlPJ.PLAYER.Horizontal.canceled += setZerotInput_Axis_LEFT;
         m_ControlPJ.PLAYER.Jump.performed += ctx => jump();
         m_ControlPJ.PLAYER.Jump.canceled += ctx => detenerJump();
@@ -89,6 +93,7 @@ public class movementPJ : MonoBehaviour
         if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canInventary(m_estados)) return;
         if (m_estados!= GLOBAL_TYPES.ESTADOS_PJ.inventary)
         {
+            m_SonidosPj.playStartInventario();
 
             valorInput_Horizontal = 0;
             m_currentValor_X = 0;
@@ -97,12 +102,15 @@ public class movementPJ : MonoBehaviour
             m_estados = GLOBAL_TYPES.ESTADOS_PJ.inventary;
             m_animator.ResetTrigger("Inventario");
             m_animator.SetTrigger("Inventario");
-            print("ENTRAR Inventario");
+            //print("ENTRAR Inventario");
             referencesMASTER.instancia.m_Gestor_UI_Inventario.turnActive(true);
         }
         else
         {
-            print("SALIR Inventario");
+            m_SonidosPj.playExitInventario();
+
+
+            //print("SALIR Inventario");
             m_animator.ResetTrigger("resetInventario");
             m_animator.SetTrigger("resetInventario");
             this.returnNormalMovement();
@@ -159,6 +167,8 @@ public class movementPJ : MonoBehaviour
         if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canKick(m_estados) || onWalk) return;
         if (current_cadenciaKick < 0)//m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || m_estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk)
         {
+            m_SonidosPj.playPatada();
+
             m_PO_kick.emitirObj(0.5f, false);
             current_cadenciaKick = cadenciaKick;
             m_animator.SetTrigger("Kick");
@@ -172,12 +182,16 @@ public class movementPJ : MonoBehaviour
     }
     private void dash()
     {
-        if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canDash(m_estados)) return;
+        if (!m_vida_PJ.isVivo() || !GLOBAL_TYPES.canDash(m_estados) || (m_grounded && onWalk)) return;//|| (m_checkPared && !m_grounded)//FIX
         if (m_estadoAlterado == GLOBAL_TYPES.ESTADO_ALTERADO.plasma) return;
         if (accesoDash )//&& (m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || m_estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk))
         {
             if (m_dashPJ.startDash(m_changeMirada.getMirada()))
             {
+                m_animator.ResetTrigger("finish_Dash");
+
+                m_SonidosPj.playDash();
+
                 accesoDash = false;
                 m_estados = GLOBAL_TYPES.ESTADOS_PJ.dash;
                 m_animator.SetTrigger("start_Dash");
@@ -191,12 +205,17 @@ public class movementPJ : MonoBehaviour
         //{
         if (m_isGrounded)
         {
+            m_SonidosPj.playSalto();
+
             m_PO_polvoSaltoSuelo.emitir();
             fisrtCencelJump = false;
             m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, potenciaSalto);
         }
         if (onWalk)//&& m_estados!= GLOBAL_TYPES.ESTADOS_PJ.dash )
         {
+            m_SonidosPj.playSalto();
+
+
             m_PO_polvoSaltoPared.emitir();
 
             fisrtCencelJump = false;
@@ -244,16 +263,19 @@ public class movementPJ : MonoBehaviour
         if (!m_vida_PJ.isVivo() || m_estados == GLOBAL_TYPES.ESTADOS_PJ.inventary) return;
         /**/
 
+        //m_ControlPJ.PLAYER.Horizontal.performed += ctx => getInput_Axis_LEFT(ctx.ReadValue<Vector2>().x);
 
         //if(m_estados == GLOBAL_TYPES.ESTADOS_PJ.normalMovement || m_estados == GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk || m_estados == GLOBAL_TYPES.ESTADOS_PJ.pain)
         //{
+         //getInput_Axis_LEFT(m_ControlPJ.PLAYER.Horizontal.ReadValue<Vector2>().x);
+
             m_currentValor_X = currentValor_X;
+            //print("m_currentValor_X : "+ m_currentValor_X);
             float currentValorX_abs = Mathf.Abs(currentValor_X);
             if (currentValorX_abs > limiteInput_movX)
                 valorInput_Horizontal = currentValor_X;
             else valorInput_Horizontal = 0;
-
-            m_animator.SetFloat("velocidad_X",currentValorX_abs);
+            m_animator.SetFloat("velocidad_X", currentValorX_abs);//FIX
         // }
        /*if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.inventary )//|| m_estados == GLOBAL_TYPES.ESTADOS_PJ.dash || m_estados == GLOBAL_TYPES.ESTADOS_PJ.kick)//|| !GLOBAL_TYPES.canMov_X(m_estados))
         {
@@ -267,6 +289,7 @@ public class movementPJ : MonoBehaviour
     }
     private void setZerotInput_Axis_LEFT(InputAction.CallbackContext ctx)
     {
+        //if (m_currentValor_X != 0) return;
         valorInput_Horizontal = 0;
         m_animator.SetFloat("velocidad_X", 0);
     }
@@ -277,16 +300,22 @@ public class movementPJ : MonoBehaviour
     void Start()
     {
         m_estados = GLOBAL_TYPES.ESTADOS_PJ.normalMovement;//GONZO
+        m_animator.SetBool("Vivo", true);
+
     }
     private void landed_function()
     {
-        //print("landed()");
+        m_SonidosPj.playLanded();
+
     }
     // Update is called once per frame
     void Update()
     {
         if (m_vida_PJ.isVivo())
         {
+            if (m_ControlPJ!=null)
+                getInput_Axis_LEFT(m_ControlPJ.PLAYER.Horizontal.ReadValue<Vector2>().x);
+
             m_animator.SetFloat("Velocidad_Y",m_rigidbody.velocity.y);
 
             grounded_landed();
@@ -307,6 +336,7 @@ public class movementPJ : MonoBehaviour
     }
     private void emitirParticulas()
     {
+        if (m_estados == GLOBAL_TYPES.ESTADOS_PJ.talk) return;
         emitirPolvoSuelo();
         emitirPolvoPared();
     }
@@ -375,7 +405,7 @@ public class movementPJ : MonoBehaviour
         }
         else onWalk = false;
 
-        if (m_estados != GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk)
+        /*if (m_estados != GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk)
         {
             if (onWalk)
             {
@@ -383,11 +413,14 @@ public class movementPJ : MonoBehaviour
                     m_animator.SetTrigger("onWalk");
                 m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, m_rigidbody.velocity.y*factorCaidaWall);
             }else m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, m_rigidbody.velocity.y);
-        }
+        }*/
         m_animator.SetBool("checkWalk", onWalk);
     }
     private void FixedUpdate()
     {
+
+        
+
         switch (m_estados)
         {
             case GLOBAL_TYPES.ESTADOS_PJ.normalMovement:
@@ -434,6 +467,20 @@ public class movementPJ : MonoBehaviour
                     break;
                 }
         }
+
+
+
+        if (m_estados != GLOBAL_TYPES.ESTADOS_PJ.jumpingWalk)
+        {
+            if (onWalk)
+            {
+                if (!m_animator.GetBool("checkWalk") || !m_animator.GetCurrentAnimatorStateInfo(0).IsName("anim_pj_onWalk"))
+                    m_animator.SetTrigger("onWalk");
+                m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, m_rigidbody.velocity.y * factorCaidaWall);
+            }
+            else m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, m_rigidbody.velocity.y);
+        }
+
     }
     private void OnDisable() { desactivarControles(); }
     private void desactivarControles()
@@ -469,6 +516,9 @@ public class movementPJ : MonoBehaviour
     private Animator m_at_ui_dolor;
     public void recibirDanio(dataDanio m_dataDanio, bool vvv)
     {
+        m_SonidosPj.playRecibirDanio();
+
+
         referencesMASTER.instancia.m_Gestor_UI_Inventario.closeInventary();
         m_at_ui_dolor = referencesMASTER.instancia.m_at_ui_dolor;
         m_at_ui_dolor.SetTrigger("Start");
@@ -494,6 +544,11 @@ public class movementPJ : MonoBehaviour
 
     public void morir()
     {
+        m_animator.SetBool("Vivo",false);
+
+
+        m_SonidosPj.playMorir();
+
         setEstadoAlterado_param(GLOBAL_TYPES.ESTADO_ALTERADO.none,null);
         m_estados = GLOBAL_TYPES.ESTADOS_PJ.die;
         m_animator.SetTrigger("Die");
@@ -598,5 +653,22 @@ public class movementPJ : MonoBehaviour
         m_animator.SetTrigger("Win_A");
         m_rigidbody.velocity = Vector2.zero;
 
+    }
+    public void startObjectGeneric(float delay)
+    {
+        m_rigidbody.velocity = Vector2.zero;
+        m_rigidbody.constraints = RigidbodyConstraints2D.FreezePositionX;
+        m_estados = GLOBAL_TYPES.ESTADOS_PJ.talk;
+        m_animator.SetTrigger("StartGetOBject");
+        disabledALL();
+        Invoke("salirGetObject", delay);
+    }
+    private void salirGetObject()
+    {
+        m_rigidbody.constraints = RigidbodyConstraints2D.None;
+        m_rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        m_estados = GLOBAL_TYPES.ESTADOS_PJ.normalMovement;
+        m_animator.SetTrigger("ExitGetOBject");
+        setControl();
     }
 }

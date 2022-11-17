@@ -7,7 +7,8 @@ public class TYPE_NPC
 {
     public enum NPC_NAME
     {
-        test
+        test,
+        largarto
     }
 
     internal static int getInt_NPC(NPC_NAME m_npc)
@@ -18,6 +19,11 @@ public class TYPE_NPC
             case TYPE_NPC.NPC_NAME.test:
                 {
                     retorno = 0;
+                    break;
+                }
+            case TYPE_NPC.NPC_NAME.largarto:
+                {
+                    retorno = 1;
                     break;
                 }
         }

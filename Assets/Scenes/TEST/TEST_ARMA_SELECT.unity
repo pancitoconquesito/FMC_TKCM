@@ -553,6 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dedeb5268968de45ad2ce75058253d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particles: {fileID: 0}
   numero: 0
   activo: 0
   miPosicion: {x: 0, y: 0, z: 0}
@@ -566,6 +567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 751620908}
   - component: {fileID: 751620907}
+  - component: {fileID: 751620909}
   m_Layer: 0
   m_Name: DataScene
   m_TagString: DataScene
@@ -586,6 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_tipoScene: 2
+  m_nameBackground: 0
 --- !u!4 &751620908
 Transform:
   m_ObjectHideFlags: 0
@@ -601,6 +604,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &751620909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751620906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded111c0cbb625f4c9c5ffffc50a4aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1016705173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1285,17 @@ SortingGroup:
   m_SortingLayerID: -237126565
   m_SortingLayer: 3
   m_SortingOrder: 0
+--- !u!114 &1906144169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2860734453995179644, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+  m_PrefabInstance: {fileID: 7022516599922327756}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5360d33cdb7600346a7520cf113cc34e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1910165702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1368,6 +1394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_L_checkpoints: []
+  m_clip: {fileID: 0}
 --- !u!4 &1956255760
 Transform:
   m_ObjectHideFlags: 0
@@ -2272,9 +2299,173 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1480310246081471159, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480310246081471159, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480310246081471159, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 751620909}
+    - target: {fileID: 1480310246081471159, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1906144169}
+    - target: {fileID: 1480310246081471159, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480310246081471159, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: stopbackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480310246081471159, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: changeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480310246081471159, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: setMusicBackground, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480310246081471159, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: CambiarScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480310246081471159, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2976511319074862175, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -62.7218
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465368861379230299, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465368861379230299, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465368861379230299, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 751620909}
+    - target: {fileID: 5465368861379230299, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1906144169}
+    - target: {fileID: 5465368861379230299, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465368861379230299, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: stopbackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465368861379230299, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: changeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465368861379230299, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: setMusicBackground, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465368861379230299, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: CambiarScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465368861379230299, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519853208872625575, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519853208872625575, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519853208872625575, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 751620909}
+    - target: {fileID: 5519853208872625575, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1906144169}
+    - target: {fileID: 5519853208872625575, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519853208872625575, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: stopbackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519853208872625575, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: changeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519853208872625575, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: setMusicBackground, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519853208872625575, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: CambiarScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519853208872625575, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825668372270913561, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825668372270913561, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825668372270913561, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 751620909}
+    - target: {fileID: 6825668372270913561, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1906144169}
+    - target: {fileID: 6825668372270913561, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825668372270913561, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825668372270913561, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: stopbackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825668372270913561, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: changeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825668372270913561, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: setMusicBackground, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825668372270913561, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: CambiarScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825668372270913561, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7022516600218728524, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_LocalPosition.x
