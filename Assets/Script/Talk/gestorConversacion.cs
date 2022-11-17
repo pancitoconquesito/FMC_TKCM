@@ -60,9 +60,21 @@ public class gestorConversacion : MonoBehaviour
         string textoMostrado = "";
         for(int i = 0; i < largoParrafo; i++)
         {
-            textoMostrado += textoParrafo[i];
-            text_text.text = textoMostrado;
-            yield return new WaitForSeconds(0.02f);
+            switch (textoParrafo[i])
+            {
+                case '*':
+                    {
+                        yield return new WaitForSeconds(0.5f);
+                        break;
+                    }
+                default:
+                    {
+                        textoMostrado += textoParrafo[i];
+                        text_text.text = textoMostrado;
+                        yield return new WaitForSeconds(0.01f);
+                        break;
+                    }
+            }
         }
         parrafoComplete = true;
         img_btnNext.color = new Color32(255, 255, 255, 255);
@@ -101,7 +113,12 @@ public class gestorConversacion : MonoBehaviour
             StopCoroutine(rutinaMostrarTexto);
             //completar texto
             parrafoComplete = true;
-            text_text.text = textoParrafo;
+            string textoSinSimbolos="";
+            for (int i = 0; i < textoParrafo.Length; i++)
+            {
+                if (textoParrafo[i] != '*') textoSinSimbolos += textoParrafo[i];
+            }
+            text_text.text = textoSinSimbolos;
             parrafoComplete = true;
             img_btnNext.color = new Color32(255, 255, 255, 255);
         }

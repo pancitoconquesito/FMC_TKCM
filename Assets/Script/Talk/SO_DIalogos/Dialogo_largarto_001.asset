@@ -23,9 +23,9 @@ MonoBehaviour:
     sp_globo: 2
     text_IDIOMA:
     - text_textoParrafo:
-      - mmm... creo que lo he visto antes...
+      - mmm...creo que lo he visto antes *.*.*.
     - text_textoParrafo:
-      - "\rHmm... i think i've seen it before..."
+      - "\rHmm... i think i've seen it before *.*.*."
   - IZ_isTalking: 0
     pj_iz:
       sp_PJ: 0
