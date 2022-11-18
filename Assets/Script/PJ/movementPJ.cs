@@ -313,8 +313,13 @@ public class movementPJ : MonoBehaviour
     {
         if (m_vida_PJ.isVivo())
         {
-            if (m_ControlPJ!=null)
+            if (m_ControlPJ != null)
+            {
                 getInput_Axis_LEFT(m_ControlPJ.PLAYER.Horizontal.ReadValue<Vector2>().x);
+                
+                //print(InputSystem.GetDevice<Gamepad>().IsActuated());
+
+            }
 
             m_animator.SetFloat("Velocidad_Y",m_rigidbody.velocity.y);
 
