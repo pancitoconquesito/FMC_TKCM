@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.UI;
+[System.Serializable]
 public class referencesMASTER : MonoBehaviour
 {
     public static referencesMASTER instancia;

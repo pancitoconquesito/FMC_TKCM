@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+[System.Serializable]
 public class singleton : MonoBehaviour
 {
     private static singleton _instance;

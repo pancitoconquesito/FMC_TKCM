@@ -23348,6 +23348,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &1195141918 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7737679087741849412, guid: ac9ecf187290953468b0265a9280c058, type: 3}
+  m_PrefabInstance: {fileID: 7022516599922327756}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1200637693
 GameObject:
   m_ObjectHideFlags: 0
@@ -41444,7 +41449,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881805960977058864}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -906.19, y: -421.57, z: 0}
+  m_LocalPosition: {x: -906.72, y: -421, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -41509,11 +41514,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1881805960994945128, guid: 8538e7f66e6d55746afa28c2bdaa3a4b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -808.32
+      value: -808.27
       objectReference: {fileID: 0}
     - target: {fileID: 1881805960994945128, guid: 8538e7f66e6d55746afa28c2bdaa3a4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -431.48
+      value: -431.51
       objectReference: {fileID: 0}
     - target: {fileID: 1881805960994945128, guid: 8538e7f66e6d55746afa28c2bdaa3a4b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41860,7 +41865,7 @@ PrefabInstance:
     - target: {fileID: 1123610179861090387, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1195141918}
     - target: {fileID: 1261024212521356276, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -41912,7 +41917,7 @@ PrefabInstance:
     - target: {fileID: 3470711742156516510, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1195141918}
     - target: {fileID: 3969445972359633723, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: ShapeModule.m_Scale.x
       value: 230
@@ -41956,7 +41961,7 @@ PrefabInstance:
     - target: {fileID: 5061726405787837883, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1195141918}
     - target: {fileID: 5685343249627424572, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -42.77588
@@ -42039,7 +42044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7022516600781753629, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_Offset.x
-      value: 1.2
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7022516601060190330, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_ChildCameras.Array.size
@@ -42092,7 +42097,7 @@ PrefabInstance:
     - target: {fileID: 7623460229209908531, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1195141918}
     - target: {fileID: 7737679087741849412, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
       value: 11
@@ -42216,7 +42221,7 @@ PrefabInstance:
     - target: {fileID: 8810077594470071115, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1195141918}
     - target: {fileID: 9109362693398547911, guid: ac9ecf187290953468b0265a9280c058, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0

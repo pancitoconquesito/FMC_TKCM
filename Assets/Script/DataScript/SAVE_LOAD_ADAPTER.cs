@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
-
+[System.Serializable]
 public static class SAVE_LOAD_ADAPTER//: ISaveLoadSystem
 {
     public static void SAVE_DATA_GAME(DATA_GAME dataGame)
@@ -12,7 +12,7 @@ public static class SAVE_LOAD_ADAPTER//: ISaveLoadSystem
         try
         {
             string dataPath = Application.persistentDataPath + "/game.save";
-            FileStream fileStream = new FileStream(dataPath, FileMode.Create);
+            FileStream fileStream = new FileStream(dataPath, FileMode.OpenOrCreate);
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             binaryFormatter.Serialize(fileStream, dataGame);
             fileStream.Close();
@@ -24,6 +24,7 @@ public static class SAVE_LOAD_ADAPTER//: ISaveLoadSystem
     }
     public static DATA_GAME LOAD_DATA_GAME()
     {
+        
         string dataPath = Application.persistentDataPath + "/game.save";
         if (File.Exists(dataPath))
         {
@@ -38,13 +39,15 @@ public static class SAVE_LOAD_ADAPTER//: ISaveLoadSystem
             catch (Exception e)
             {
                 Debug.LogError("LA DATA NO PUDO CARGARSE!!!");
-                return null;
+                return new DATA_GAME();
             }
         }
         else
         {
             Debug.LogError("_LA DATA NO PUDO CARGARSE!!!");
-            return null;
+            return new DATA_GAME();
         }
+        //DATA_GAME newData = new DATA_GAME();
+        //return newData;
     }
 }

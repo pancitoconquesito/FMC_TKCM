@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+
+
 [System.Serializable]
 public class DATA_NEKO_ESFERA
 {
@@ -47,4 +50,65 @@ public class DATA_NEKO_ESFERA
     {
         cantidadDe_NekoEsfera+=1;
     }
+    public bool isNekoESferaOK(int id)
+    {
+        return L_D_etapas[id].completado;
+    }
+    public void setNekoESferaOK(int id, bool estado)
+    {
+        L_D_etapas[id].completado = estado;
+    }
 }
+
+ 
+
+/*
+
+[System.Serializable]
+public class DATA_NEKO_ESFERA
+{
+    //public DATA_ETAPA[] L_D_etapas;
+    //public DATA_ETAPA[] L_D_etapas_SECRETAS;
+    public int cantidadDe_NekoEsfera;
+
+
+    public DATA_ETAPA N0_B0_E0;
+    public DATA_ETAPA N0_B0_E1;
+
+    public DATA_NEKO_ESFERA()
+    {
+        cantidadDe_NekoEsfera = 0;
+
+        //int TAM_NIVELES = 5;
+        //int TAM_BIOMAS = 3;
+        //int TAM_ETAPAS = 4;
+        //int TAM_SECRETAS = TAM_NIVELES;
+
+        DATA_ETAPA N0_B0_E0 = new DATA_ETAPA($"N0 - B0 - E0",0,0);//nombre, numero de nivel, numero de bioma
+        DATA_ETAPA N0_B0_E1 = new DATA_ETAPA($"N0 - B0 - E1", 0, 0);
+    }
+
+    internal void addNekoEsfera()
+    {
+        cantidadDe_NekoEsfera += 1;
+    }
+    public bool isNekoESferaOK(int id)
+    {
+        bool estado=false;
+        switch (id)
+        {
+            case 0:{estado = N0_B0_E0.completado;break;}
+            case 1: { estado = N0_B0_E1.completado; break;}
+        }
+        return estado;
+    }
+    public void setNekoESferaOK(int id, bool estado)
+    {
+        switch (id)
+        {
+            case 0: {N0_B0_E0.completado=estado; break; }
+            case 1: { N0_B0_E1.completado= estado; break; }
+        }
+    }
+}
+*/

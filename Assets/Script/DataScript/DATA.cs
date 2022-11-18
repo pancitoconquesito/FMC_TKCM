@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
 public class DATA : MonoBehaviour
 {
     public static DATA instance;
@@ -14,8 +16,7 @@ public class DATA : MonoBehaviour
     //private int indiceSiguientePosicion;
     private void Awake()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        
 
         instance = this;
         idioma_data.cargarIdioma(save_load_system.m_dataGame.m_DATA_CONFIG_GAME.IDIOMA);
@@ -43,7 +44,8 @@ public class DATA : MonoBehaviour
 
     void Start()
     {
-        
+        Cursor.visible = false; 
+        Cursor.lockState = CursorLockMode.Locked;
     }
     /*public void setIndiceSiguientePosicion(int valor)
     {

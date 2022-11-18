@@ -6,6 +6,7 @@ using UnityEngine;
 public class SAVE_LOAD_SYSTEM : MonoBehaviour
 {
     public DATA_GAME m_dataGame;
+    public TMPro.TextMeshProUGUI textoTEST;
     private void Awake()
     {
         //m_dataGame = new DATA_GAME();
@@ -18,7 +19,18 @@ public class SAVE_LOAD_SYSTEM : MonoBehaviour
         /*DATA_GAME dataGame = new DATA_GAME();
 
         m_dataGame = dataGame.Load_DATA();*/
-        m_dataGame = SAVE_LOAD_ADAPTER.LOAD_DATA_GAME();
+        try
+        {
+            m_dataGame = SAVE_LOAD_ADAPTER.LOAD_DATA_GAME();
+            /*textoTEST.text = $"total neko esfera : {m_dataGame.m_DATA_NEKO_ESFERA.cantidadDe_NekoEsfera}\n" +
+                $"Volumen MASTER: {m_dataGame.m_DATA_CONF_AUDIO.lv_MASTER}\n" +
+                $"cantidad corazones{m_dataGame.m_DATA_PROGRESS.cantidadDeCorazonesTotales}" ;*/
+        }
+        catch (Exception)
+        {
+
+            textoTEST.text = "error al cargar data";
+        }
 
         if (m_dataGame == null
             || m_dataGame.m_DATA_ITEMS == null
@@ -153,14 +165,17 @@ public class SAVE_LOAD_SYSTEM : MonoBehaviour
     {
         print("SET NEKO ESFERA");
         if (isNekoEsfera(idPrefab)) return;
-        m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas[idPrefab].completado = true;
+        m_dataGame.m_DATA_NEKO_ESFERA.setNekoESferaOK(idPrefab, true);
+        //m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas[idPrefab].completado = true;
         m_dataGame.m_DATA_NEKO_ESFERA.addNekoEsfera();
         save_();
     }
 
     private bool isNekoEsfera(int idPrefab)
     {
-        return m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas[idPrefab].completado;
+        //return m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas[idPrefab].completado;
+        //return m_dataGame.m_DATA_NEKO_ESFERA.L_D_etapas[idPrefab].completado;
+        return m_dataGame.m_DATA_NEKO_ESFERA.isNekoESferaOK(idPrefab);
     }
 
     public bool isItemObtenido(int idItem)

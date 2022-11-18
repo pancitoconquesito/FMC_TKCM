@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class GLOBAL_TYPES 
+public static class GLOBAL_TYPES 
 {
-
    public enum ESTADOS_PJ
    {
         cinematic,
