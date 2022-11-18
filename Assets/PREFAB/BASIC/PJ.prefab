@@ -262,6 +262,7 @@ MonoBehaviour:
   m_timeChangeTo_flash: 0.08
   m_timeChangeTo_normal: 0.04
   m_SpriteRenderer: {fileID: 1498399806114659081}
+  m_AudioClip: {fileID: 8300000, guid: 18b97ea8904de1b4d839a6ed7a6ef349, type: 3}
 --- !u!114 &4079404633362614650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +280,7 @@ MonoBehaviour:
   m_timeChangeTo_flash: 0.08
   m_timeChangeTo_normal: 0.04
   m_SpriteRenderer: {fileID: 1498399805434583320}
+  m_AudioClip: {fileID: 0}
 --- !u!61 &1498399805238534551
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -33,6 +33,7 @@ public class vida_PJ : MonoBehaviour, IDamageable
         totalVida = 10;
         //vidaActual = 10;
         vidaActual = GameObject.FindGameObjectWithTag("Data_Singleton").GetComponent<Data_Singleton>().getCantidadVidaPJ();
+        vidaActual = 3;
 
         if (textTestVida!=null)
             textTestVida.text = "Vida : " + vidaActual;

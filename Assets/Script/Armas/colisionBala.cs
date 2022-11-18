@@ -19,8 +19,13 @@ public class colisionBala : MonoBehaviour
     private bool explosionActiva=false;
     //private ObjectPooling m_ObjectPooling;
     [SerializeField] private retornarObjectPooling m_retornarObjectPooling;
+
+
+    [SerializeField] private AudioClip m_AudioClip_col;
+    private AudioSource m_AudioSource;
     void Start()
     {
+        m_AudioSource = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -47,6 +52,8 @@ public class colisionBala : MonoBehaviour
         }
         if (idamageable != null)
         {
+            if(m_AudioClip_col!=null)
+                m_AudioSource.PlayOneShot(m_AudioClip_col);
             verificarExplosion();
 
             if (collision.transform.parent!=null && collision.transform.parent.CompareTag("Player"))

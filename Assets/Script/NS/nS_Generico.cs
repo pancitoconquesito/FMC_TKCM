@@ -22,12 +22,20 @@ public class NS_Generico : MonoBehaviour, IDamageable
     [SerializeField] private GameObject m_GO_Part_Destroy;
     [SerializeField] private float delayPartMuerte;
 
+    [Header("-- Audio --")]
+    [SerializeField] protected AudioClip m_AudioClip_dolor, m_AudioClip_morir;
+    protected AudioSource m_AudioSource;
+
     protected bool vivo;
     private float current_cadenciaRecibirDanio=0;
+
+    
     public NS_Generico()
     {
         vivo = true;
-       //m_ObjectPooling = _ObjectPooling;
+        //m_AudioSource = GetComponent<AudioSource>();
+
+        //m_ObjectPooling = _ObjectPooling;
     }
     public bool RecibirDanio_I(dataDanio m_dataDanio)
     {
@@ -44,19 +52,30 @@ public class NS_Generico : MonoBehaviour, IDamageable
     public virtual bool recibirDanio(dataDanio m_dataDanio)
     {
         //print("ns generico");
+
+
         if (current_cadenciaRecibirDanio > 0) return false;
         if (m_dataDanio.m_A_QuienDania != GLOBAL_TYPES.AFECTA_A_.daniA_ns && m_dataDanio.m_A_QuienDania != GLOBAL_TYPES.AFECTA_A_.daniaA_ALLL) return false;
 
         m_OP_Pain.emitirObj(0.3f, false);
         m_FlashSprite.Flashear();
 
+        if(m_AudioClip_dolor!=null)
+            if(m_AudioSource ==null)m_AudioSource = GetComponent<AudioSource>();
+            m_AudioSource.PlayOneShot(m_AudioClip_dolor);
+
         //print("yo emiti??");
+
         bool retorno = false;
         //print("Yo " + gameObject.name + " recibi danio desde Generico");
         vidaTotal -= m_dataDanio.danio;
         current_cadenciaRecibirDanio = m_cadenciaRecibirDanio;
         if (vidaTotal < 0)
         {
+            if(m_AudioClip_morir!=null)
+                if (m_AudioSource == null) m_AudioSource = GetComponent<AudioSource>();
+                m_AudioSource.PlayOneShot(m_AudioClip_morir);
+
             morir(m_dataDanio);
             retorno = true;
         }
@@ -116,7 +135,7 @@ public class NS_Generico : MonoBehaviour, IDamageable
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_AudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

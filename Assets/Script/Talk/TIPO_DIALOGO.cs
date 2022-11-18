@@ -51,7 +51,7 @@ public class TIPO_DIALOGO
                     {
                         case PJ_NAMES.PJ: { retorno = "Betty"; break; }
                         case PJ_NAMES.test: { retorno = "Test"; break; }
-                        case PJ_NAMES.lagarto: { retorno = "Lagarto Freddy"; break; }
+                        case PJ_NAMES.lagarto: { retorno = "Lagarto botánico"; break; }
                     }
                     break;
                 }

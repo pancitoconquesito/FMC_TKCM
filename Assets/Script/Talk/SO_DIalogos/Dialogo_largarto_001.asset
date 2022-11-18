@@ -23,7 +23,7 @@ MonoBehaviour:
     sp_globo: 2
     text_IDIOMA:
     - text_textoParrafo:
-      - mmm...creo que lo he visto antes *.*.*.
+      - Mmm...creo que lo he visto antes *.*.*.
     - text_textoParrafo:
       - "\rHmm... i think i've seen it before *.*.*."
   - IZ_isTalking: 0
@@ -37,10 +37,10 @@ MonoBehaviour:
     text_IDIOMA:
     - text_textoParrafo:
       - estoy asustado
-      - AHH!! deja de mirarme! no me asustes!
+      - "\xA1\xA1\xA1AHH!!! deja de mirarme! no me asustes!"
     - text_textoParrafo:
       - "\rI am scared"
-      - "\rAHH!! stop looking at me! do not scare me!"
+      - "\xA1\xA1\xA1AHH!!! stop looking at me! do not scare me!"
   - IZ_isTalking: 1
     pj_iz:
       sp_PJ: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
     sp_globo: 0
     text_IDIOMA:
     - text_textoParrafo:
-      - Disculpa, no queria asustarte
+      - "Disculpa, no quer\xEDa asustarte"
     - text_textoParrafo:
       - Sorry, I didn't mean to scare you.
   - IZ_isTalking: 1
@@ -64,6 +64,6 @@ MonoBehaviour:
     sp_globo: 2
     text_IDIOMA:
     - text_textoParrafo:
-      - Pero que copo de nieve
+      - Pero que copo de nieve.
     - text_textoParrafo:
-      - What a snowflake
+      - What a snowflake.
