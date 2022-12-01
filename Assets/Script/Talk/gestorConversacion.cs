@@ -49,7 +49,6 @@ public class gestorConversacion : MonoBehaviour
         current_parrafo=0;
 
         rutinaMostrarTexto = StartCoroutine(mostrarTexto());
-        // Resources.Load<Sprite>("Conv_PJ/" + m_conversacion.parrafos[currentSTEP].PJ_img);
     }
     IEnumerator mostrarTexto()
     {

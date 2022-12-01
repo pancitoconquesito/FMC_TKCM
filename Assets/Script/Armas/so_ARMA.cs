@@ -25,4 +25,9 @@ public class so_ARMA : ScriptableObject
 
     [Header("- CONFIG PJ -")]
     public so_CONFIG_PJ m_so_CONFIG_PJ;
+
+    [Header("- Sonidos -")]
+    public AudioClip sonidoPRE;
+    public AudioClip sonidoSHOOT;
+
 }

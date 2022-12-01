@@ -359,6 +359,8 @@ MonoBehaviour:
   velocidad: 1
   bulletENEMY: 0
   m_dataDanio: {fileID: 0}
+  updateLadosp: 1
+  M_SP: {fileID: 5520350364496002166}
   direccion: {x: 0, y: 0}
 --- !u!114 &6188334112463514414
 MonoBehaviour:

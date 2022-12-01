@@ -20,6 +20,26 @@ public class balaMovement : MonoBehaviour, IDamageable
     private Rigidbody2D m_Rigidbody2D;
     private GLOBAL_TYPES.AFECTA_A_ m_afectaAQuien;
 
+
+    [SerializeField] private bool updateLadosp;
+    [SerializeField] private SpriteRenderer M_SP;
+    private void fixLado()
+    {
+        if (updateLadosp)
+        {
+            if (lado == 1 && transform.localScale.x < 0)
+            {
+                print("FIX! der");
+                M_SP.flipX = true;
+            }
+            if (lado == -1 && transform.localScale.x > 0)
+            {
+                print("FIX! iz __  "+ transform.localScale.x);
+                M_SP.flipX = false;
+            }
+        }
+    }
+
     void Start()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -54,8 +74,11 @@ public class balaMovement : MonoBehaviour, IDamageable
         }*/
         //firstTime = true;
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
-        if(!bulletENEMY)
+        if (!bulletENEMY)
+        {
             setLado();
+            fixLado();
+        }
     }
     [Header("Mostrar vector")]
     public Vector2 direccion;
@@ -89,6 +112,7 @@ public class balaMovement : MonoBehaviour, IDamageable
             print("ay!!!!");
             //Debug.Break();
             //cambair direccion
+            
         }
         return true;
     }

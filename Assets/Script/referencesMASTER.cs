@@ -16,7 +16,8 @@ public class referencesMASTER : MonoBehaviour
     public changeMirada miradaPJ;
     public shootPJ      m_shootPJ;
     public GameObject   m_GO_recibirDanio;
-    public respawnPJ m_respawnPJ;
+    public respawnPJ    m_respawnPJ;
+    public SonidosPj    m_sonidosPJ;
 
     [Header("------------  ARMA  ------------")]
     public SpriteRenderer   sp_brazo;

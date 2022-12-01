@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1097864610}
     m_SelectOnDown: {fileID: 132469178}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -1228,7 +1228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_tipoScene: 4
-  id_musicBackground: 0
+  m_nameBackground: 0
 --- !u!4 &194608591
 Transform:
   m_ObjectHideFlags: 0

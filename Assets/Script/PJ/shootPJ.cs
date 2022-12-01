@@ -15,9 +15,12 @@ public class shootPJ : MonoBehaviour
     private TIPO_arma.ArmaTipo m_armaTipo;
     private movementPJ m_movementPJ;
     private bool automatica;
+
+    private SonidosPj m_SonidosPj;
     // Start is called before the first frame update
     void Start()
     {
+        m_SonidosPj = referencesMASTER.instancia.m_sonidosPJ;
         m_armaTipo = Data_Singleton.instancia.getArmaSeleccionada();
         //print("arma seleccionada : "+m_armaTipo);
         referencesMASTER.instancia.animator_ARMA.SetInteger("Arma_ID", TIPO_arma.getParse_TipoArma_INTEGER(m_armaTipo));
@@ -81,10 +84,14 @@ public class shootPJ : MonoBehaviour
     {
         if (m_movementPJ.canShoot())
         {
-            cameraShake.instancia.shake(m_so_ARMA.shake_amount, m_so_ARMA.shake_time);
+            
 
             if (m_so_ARMA.instantaneo)
             {
+                //print("Sonido bala");
+                m_SonidosPj.playDisparo(m_so_ARMA.sonidoSHOOT);
+
+                cameraShake.instancia.shake(m_so_ARMA.shake_amount, m_so_ARMA.shake_time);
                 current_Cadencia = m_so_ARMA.cadencia;
                 //print("Shoot");
                 m_Animator.SetTrigger("Shoot");
@@ -94,16 +101,32 @@ public class shootPJ : MonoBehaviour
                 m_ObjectPooling_BALA_PJ.emitirObj(m_so_ARMA._bala.duracion, false);
             }
             else
+            {
+                if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("PRE"))
+                {
+                    print("RETURN!!");
+                    return;
+                }
+                m_SonidosPj.playDisparo(m_so_ARMA.sonidoPRE);
+                //print("Sonido PRE plasma");
+
+                cameraShake.instancia.shake(m_so_ARMA.shake_amount, m_so_ARMA.shake_time);
                 m_Animator.SetTrigger("Shoot");
 
+            }
 
-            
-        }else shootHold = false;
+
+
+        }
+        else shootHold = false;
     }
     public void spawnBullet_NoInstantaneo()
     {
         if (m_movementPJ.canShoot())
         {
+            //print("Sonido DISp plasma");
+            m_SonidosPj.playDisparo(m_so_ARMA.sonidoSHOOT);
+
             cameraShake.instancia.shake(m_so_ARMA.shake_amount, m_so_ARMA.shake_time);
 
             current_Cadencia = m_so_ARMA.cadencia;

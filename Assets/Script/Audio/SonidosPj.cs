@@ -69,4 +69,14 @@ public class SonidosPj : MonoBehaviour
     {
         m_AudioSource.PlayOneShot(m_ExitInventario_AudioClip);
     }
+
+    public void playDisparo(AudioClip _audioClip)
+    {
+        if (_audioClip == null)
+        {
+            print("Audioclip nulo=>return");
+            return;
+        }
+        m_AudioSource.PlayOneShot(_audioClip);
+    }
 }

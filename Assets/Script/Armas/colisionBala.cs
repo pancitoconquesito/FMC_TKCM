@@ -22,6 +22,8 @@ public class colisionBala : MonoBehaviour
 
 
     [SerializeField] private AudioClip m_AudioClip_col;
+
+    [SerializeField]private bool flag_escudo;
     private AudioSource m_AudioSource;
     void Start()
     {
@@ -69,6 +71,8 @@ public class colisionBala : MonoBehaviour
         }
         if (collision.CompareTag("Platform"))
         {
+            FlagGenerico flagGnerico = collision.transform.GetComponent<FlagGenerico>();
+            if (flag_escudo && flagGnerico != null && flagGnerico.Tipo_Flag == FlagGenerico.TIPO_FLAG.soyCol_Escudo) return;
             verificarExplosion();
 
             if (destruible_Platform) {
@@ -88,7 +92,7 @@ public class colisionBala : MonoBehaviour
         {
             explosionActiva = true;
             Instantiate(prefabExplosion, transform.position, Quaternion.identity);
-            print("explosion _");
+            //print("explosion _");
         }
     }
 

@@ -139,6 +139,7 @@ MonoBehaviour:
   prefabExplosion: {fileID: 0}
   m_retornarObjectPooling: {fileID: 5608196635649208479}
   m_AudioClip_col: {fileID: 0}
+  flag_escudo: 1
 --- !u!114 &7012397364886410561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +363,8 @@ MonoBehaviour:
   velocidad: 1
   bulletENEMY: 0
   m_dataDanio: {fileID: 0}
+  updateLadosp: 0
+  M_SP: {fileID: 0}
   direccion: {x: 0, y: 0}
 --- !u!114 &6188334112463514414
 MonoBehaviour:

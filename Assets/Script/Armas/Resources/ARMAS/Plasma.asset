@@ -21,3 +21,5 @@ MonoBehaviour:
   shake_time: 0.25
   _bala: {fileID: 11400000, guid: 14e61322ff92fbf459b52f7f7a5a419c, type: 2}
   m_so_CONFIG_PJ: {fileID: 11400000, guid: 4130f05ad1749fb449c204c3b77b0bce, type: 2}
+  sonidoPRE: {fileID: 8300000, guid: 79b9e2dfe09c2c2459c62ff286de118a, type: 3}
+  sonidoSHOOT: {fileID: 8300000, guid: 9c59a939b0a6783498f083c3cd131545, type: 3}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 526705127}
   - component: {fileID: 526705129}
   - component: {fileID: 526705128}
+  - component: {fileID: 5484395960934731095}
   m_Layer: 6
   m_Name: escudo_A
   m_TagString: Platform
@@ -112,6 +113,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25294685, y: 0.95983577}
   m_EdgeRadius: 0
+--- !u!114 &5484395960934731095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526705126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c45dbf3f8cd7584b843c683cac27f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tipoFlag: 0
 --- !u!1 &1108193047
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +137,7 @@ GameObject:
   - component: {fileID: 1108193048}
   - component: {fileID: 1108193050}
   - component: {fileID: 1108193049}
+  - component: {fileID: 7605051295089330315}
   m_Layer: 6
   m_Name: escudo_B
   m_TagString: Platform
@@ -224,6 +239,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28796768, y: 0.9545646}
   m_EdgeRadius: 0
+--- !u!114 &7605051295089330315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108193047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c45dbf3f8cd7584b843c683cac27f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tipoFlag: 0
 --- !u!1 &587032024143471751
 GameObject:
   m_ObjectHideFlags: 0

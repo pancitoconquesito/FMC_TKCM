@@ -6,7 +6,7 @@ using UnityEngine;
 public class SAVE_LOAD_SYSTEM : MonoBehaviour
 {
     public DATA_GAME m_dataGame;
-    public TMPro.TextMeshProUGUI textoTEST;
+    //public TMPro.TextMeshProUGUI textoTEST;
     private void Awake()
     {
         //m_dataGame = new DATA_GAME();
@@ -29,7 +29,7 @@ public class SAVE_LOAD_SYSTEM : MonoBehaviour
         catch (Exception)
         {
 
-            textoTEST.text = "error al cargar data";
+            //textoTEST.text = "error al cargar data";
         }
 
         if (m_dataGame == null

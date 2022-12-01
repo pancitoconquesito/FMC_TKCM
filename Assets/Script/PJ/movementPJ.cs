@@ -109,7 +109,6 @@ public class movementPJ : MonoBehaviour
         {
             m_SonidosPj.playExitInventario();
 
-
             //print("SALIR Inventario");
             m_animator.ResetTrigger("resetInventario");
             m_animator.SetTrigger("resetInventario");
@@ -316,9 +315,6 @@ public class movementPJ : MonoBehaviour
             if (m_ControlPJ != null)
             {
                 getInput_Axis_LEFT(m_ControlPJ.PLAYER.Horizontal.ReadValue<Vector2>().x);
-                
-                //print(InputSystem.GetDevice<Gamepad>().IsActuated());
-
             }
 
             m_animator.SetFloat("Velocidad_Y",m_rigidbody.velocity.y);
